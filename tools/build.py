@@ -231,8 +231,19 @@ def home():
     yr = TODAY.year
     recent = [p for p in pubs if p["type"] == "journal"][:5]
     n_members = 1 + len(LAB["postdocs"]) + len(LAB["phd"])
-    facts = [(len(pubs), "publications"), (sum(1 for p in pubs if (p["year"] or 0) >= yr - 2), f"papers since {yr - 2}"),
-             (n_members, "people in the group"), (len(LAB["alumni_phd"]) + len(LAB["alumni_ms"]), "PhD & MS graduates")]
+    # hero slideshow: one highlight per theme, in theme order
+    seen, show = set(), []
+    for t in THEMES:
+        for k, h in enumerate(HL):
+            if h["theme"] == t["id"] and t["id"] not in seen:
+                seen.add(t["id"]); show.append(k); break
+    slides = "".join(
+        f'<button type="button" class="slide{" on" if j == 0 else ""}" data-hl="{k}" aria-label="Enlarge: {E(HL[k]["title"])}"'
+        f'{"" if j == 0 else " tabindex=-1"}><img src="{E(HL[k]["image"])}" alt="{E(HL[k]["title"])}"{"" if j == 0 else " loading=lazy"}>'
+        f'<span class="cap"><span class="th">{E(THEME_NAME.get(HL[k]["theme"], ""))}</span><b>{E(HL[k]["title"])}</b></span></button>'
+        for j, k in enumerate(show))
+    dots = "".join(f'<button type="button" aria-label="Slide {j + 1}"{" aria-current=true" if j == 0 else ""}></button>' for j in range(len(show)))
+    latest = LAB["news"][0] if LAB["news"] else None
     theme_cards = "".join(theme_card(t, i, sum(t["id"] in p["themes"] for p in pubs)) for i, t in enumerate(THEMES))
     picks = [0, 5, 10, 14, 7, 1]
     hl_home = "".join(hl_button(HL[k], k) for k in picks if k < len(HL))
@@ -241,14 +252,18 @@ def home():
     ev = LAB["events"][0]
     news += f'<li><time>{E(ev["when"])}</time><div class="what"><b>{E(ev["title"])}</b><p>{E(ev["text"])}</p></div></li>'
     body = f"""
-<div class="hero"><canvas aria-hidden="true"></canvas><div class="wrap"><div>
-<div class="eyebrow">{E(L['school'])} · IIT Kharagpur</div>
+<div class="hero"><div class="wrap"><div>
+<div class="mark"><img src="{E(L['logo'])}" alt="TeNSorE Lab logo" width="64" height="64"><div class="eyebrow">{E(L['school'])}<br>IIT Kharagpur</div></div>
 <h1><em>Thermofluidics</em> and <em>Nanotechnology</em> for Sustainable Energy Systems Laboratory</h1>
 <p class="tagline">{E(L.get('tagline', ''))}</p>
 <p class="lead">{E(L['intro'])}</p>
 <div class="cta"><a class="btn solid" href="research.html">Our research</a><a class="btn ghost" href="publications.html">Publications</a><a class="btn ghost" href="join.html">Join the lab</a></div>
-<div class="facts">{"".join(f'<div><b>{n}</b><span>{E(t)}</span></div>' for n, t in facts)}</div>
-</div><img class="logo" src="{E(L['logo'])}" alt="TeNSorE Lab logo" width="300" height="300"></div></div>
+</div>
+<div><div class="carousel" aria-roledescription="carousel" aria-label="Research highlights"><div class="track">{slides}</div>
+<button type="button" class="nav prev" aria-label="Previous slide">‹</button><button type="button" class="nav next" aria-label="Next slide">›</button>
+<div class="dots">{dots}</div></div>
+{f'<a class="latest" href="news.html"><span class="tag">Latest</span><span>{md(latest["text"])}</span></a>' if latest else ''}</div>
+</div></div>
 <div class="wrap">
 <section><div class="eyebrow">Research platform</div><h2 class="sec">From molecules to systems</h2>
 <a class="platform reveal" href="{E(L['platform']['image'])}" title="Open full size"><img src="{E(L['platform']['small'])}" srcset="{E(L['platform']['small'])} 1000w, {E(L['platform']['image'])} 1672w" sizes="(min-width: 1120px) 1064px, 100vw" alt="{E(L['platform']['caption'])}" width="1672" height="941"></a>
@@ -362,8 +377,7 @@ def publications():
     seg = f'<button data-type="all" aria-pressed="true">All {len(pubs)}</button>' + "".join(
         f'<button data-type="{k}" aria-pressed="false">{TYPE_LABEL[k]} {v}</button>' for k, v in counts.items() if v)
     opts = '<option value="">All themes</option>' + "".join(f'<option value="{t["id"]}">{E(t["name"])}</option>' for t in THEMES)
-    body = phead("Publications", "Publications",
-                 f'{len(pubs)} publications from <a href="{PUBS["source"]}">Dr. Bakli\'s ORCID record</a> (updated {E(PUBS["updated"])}). Lab members are highlighted; themes are assigned automatically from titles.') + f"""
+    body = phead("Publications", "Publications", "") + f"""
 <div class="wrap"><section style="padding-top:12px">
 <div class="tools"><input type="search" id="q" placeholder="Search title, author, journal, year…" aria-label="Search publications">
 <div class="seg" role="group" aria-label="Type">{seg}</div>

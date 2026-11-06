@@ -32,6 +32,7 @@
     heroField();
     pubFilters();
     highlights();
+    carousel();
   });
 
   // Drifting particles with faint links: a nod to molecules in a nanochannel.
@@ -97,6 +98,29 @@
         grid.querySelectorAll("button").forEach(function (x) { x.hidden = !!b.dataset.f && x.dataset.theme !== b.dataset.f; });
       });
     });
+  }
+
+  // Hero slideshow: cross-fade every 5 s; pauses on hover/focus or when off-screen; no autoplay for reduced motion.
+  function carousel() {
+    var c = document.querySelector(".carousel");
+    if (!c) return;
+    var S = c.querySelectorAll(".slide"), D = c.querySelectorAll(".dots button"), i = 0, timer = null, paused = false, visible = true;
+    function go(n) {
+      S[i].classList.remove("on"); S[i].tabIndex = -1; D[i].removeAttribute("aria-current");
+      i = (n + S.length) % S.length;
+      S[i].classList.add("on"); S[i].tabIndex = 0; D[i].setAttribute("aria-current", "true");
+      var im = S[(i + 1) % S.length].querySelector("img"); if (im) im.loading = "eager";   // preload the next one
+    }
+    function tick() { if (!paused && visible && !document.hidden) go(i + 1); }
+    c.querySelector(".prev").addEventListener("click", function () { go(i - 1); });
+    c.querySelector(".next").addEventListener("click", function () { go(i + 1); });
+    D.forEach(function (d, k) { d.addEventListener("click", function () { go(k); }); });
+    c.addEventListener("mouseenter", function () { paused = true; });
+    c.addEventListener("mouseleave", function () { paused = false; });
+    c.addEventListener("focusin", function () { paused = true; });
+    c.addEventListener("focusout", function () { paused = false; });
+    if ("IntersectionObserver" in window) new IntersectionObserver(function (e) { visible = e[0].isIntersecting; }).observe(c);
+    if (!reduce) timer = setInterval(tick, 5000);
   }
 
   function pubFilters() {
