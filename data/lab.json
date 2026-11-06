@@ -267,6 +267,61 @@
  ],
  "themes": [
   {
+   "id": "solar",
+   "name": "Passive Cooling, Solar PV and Buildings",
+   "icon": "building",
+   "image": "images/themes/solar.jpg",
+   "short": "Hydrogel cooling of photovoltaics, phase-change materials, façades and net-zero buildings.",
+   "text": "Interfacial ideas scale up to buildings and solar plants. We develop dual-function hydrogels for passive photovoltaic cooling and hybrid hydrogel–thermoelectric coolers, phase-change materials for PV panels and direct-gain walls, water-cooled and retrofitted glass façades, machine-learning-guided façade design, rooftop PV with battery dispatch, and pathways to net-zero energy buildings.",
+   "keys": [
+    "photovoltaic",
+    "pv ",
+    "solar",
+    "building",
+    "facade",
+    "façade",
+    "phase change material",
+    "hydrogel",
+    "net-zero",
+    "rooftop"
+   ]
+  },
+  {
+   "id": "ml",
+   "name": "Machine Learning for Transport",
+   "icon": "net",
+   "image": "images/themes/ml.jpg",
+   "short": "Physics-informed and data-driven models that speed up multiscale simulations.",
+   "text": "A thread running through the themes: neural networks trained on molecular simulations predict flow enhancement in nanochannels, physics-informed machine learning models electroosmotic flow for desalination membranes, and deep learning and data-driven optimisation are used for microchannel flows, battery cooling and building façades.",
+   "keys": [
+    "machine learning",
+    "neural",
+    "deep learning",
+    "physics-informed",
+    "physics informed"
+   ]
+  },
+  {
+   "id": "materials",
+   "name": "Energy Storage and Functional Materials",
+   "icon": "battery",
+   "short": "Pseudocapacitors, Li–S batteries, electrocatalysts and engineered composites.",
+   "text": "With materials collaborators we combine experiments with atomistic simulation to explain why new energy materials work: high-voltage and flexible pseudocapacitors with water-in-salt electrolytes, ZnS electrocatalysts for Li–S batteries, strain-activated metal–organic frameworks for water splitting, rubber–epoxy and liquid-phase-reinforced composites, and 3D-printed bio-inspired architectures.",
+   "keys": [
+    "pseudocapacitor",
+    "capacitor",
+    "battery",
+    "batteries",
+    "electrocataly",
+    "composite",
+    "metal-organic",
+    "metal–organic",
+    "water splitting",
+    "3d printed"
+   ],
+   "image": "images/themes/materials.jpg"
+  },
+  {
    "id": "nano",
    "name": "Nanoconfined Fluids and Interfaces",
    "icon": "hex",
@@ -290,26 +345,6 @@
    ]
   },
   {
-   "id": "ek",
-   "name": "Electrokinetics and Nanofluidic Energy Harvesting",
-   "icon": "bolt",
-   "image": "images/themes/ek.jpg",
-   "short": "Streaming potential, ion rectification, electroosmosis and DNA translocation, and turning flow into electricity.",
-   "text": "When a liquid moves past a charged surface it carries ions with it. We study this coupling between flow and charge — electric double layers, streaming potential, electroosmotic flow, ion rectification in polyelectrolyte- and zwitterion-coated nanochannels, programmable surface charge and DNA translocation — and use it to convert energy: electrokinetic energy harvesting over nanometre and sub-nanometre scales, carbonized cotton fibres with ultrahigh power density, and even electrokinetics in living plants.",
-   "keys": [
-    "electrokinetic",
-    "electroosmotic",
-    "electro-osmotic",
-    "streaming potential",
-    "rectification",
-    "translocation",
-    "double layer",
-    "double-layer",
-    "surface charge",
-    "ion "
-   ]
-  },
-  {
    "id": "thermal",
    "name": "Heat Transfer and Thermal Management",
    "icon": "flame",
@@ -329,24 +364,23 @@
    ]
   },
   {
-   "id": "droplets",
-   "name": "Droplets, Wetting and Smart Surfaces",
-   "icon": "drop",
-   "image": "images/themes/droplets.jpg",
-   "short": "Drop impact, self-propulsion and water removal on textured, slippery and bio-inspired surfaces.",
-   "text": "Surface texture and wettability decide what a drop does. We study drop impact and touchdown on patterned and oil-infused slippery surfaces, wettability-driven self-propulsion of droplets, draining and meniscus dynamics, bio-inspired fog and water harvesting, wettability-guided self-assembly of Janus particles, and microstructured surfaces that remove water from PEM fuel cells.",
+   "id": "ek",
+   "name": "Electrokinetics and Nanofluidic Energy Harvesting",
+   "icon": "bolt",
+   "image": "images/themes/ek.jpg",
+   "short": "Streaming potential, ion rectification, electroosmosis and DNA translocation, and turning flow into electricity.",
+   "text": "When a liquid moves past a charged surface it carries ions with it. We study this coupling between flow and charge — electric double layers, streaming potential, electroosmotic flow, ion rectification in polyelectrolyte- and zwitterion-coated nanochannels, programmable surface charge and DNA translocation — and use it to convert energy: electrokinetic energy harvesting over nanometre and sub-nanometre scales, carbonized cotton fibres with ultrahigh power density, and even electrokinetics in living plants.",
    "keys": [
-    "droplet",
-    "drop ",
-    "wetting",
-    "wettability",
-    "meniscus",
-    "spill",
-    "draining",
-    "fuel cell",
-    "fog",
-    "water harvesting",
-    "touchdown"
+    "electrokinetic",
+    "electroosmotic",
+    "electro-osmotic",
+    "streaming potential",
+    "rectification",
+    "translocation",
+    "double layer",
+    "double-layer",
+    "surface charge",
+    "ion "
    ]
   },
   {
@@ -374,58 +408,24 @@
    ]
   },
   {
-   "id": "solar",
-   "name": "Passive Cooling, Solar PV and Buildings",
-   "icon": "building",
-   "image": "images/themes/solar.jpg",
-   "short": "Hydrogel cooling of photovoltaics, phase-change materials, façades and net-zero buildings.",
-   "text": "Interfacial ideas scale up to buildings and solar plants. We develop dual-function hydrogels for passive photovoltaic cooling and hybrid hydrogel–thermoelectric coolers, phase-change materials for PV panels and direct-gain walls, water-cooled and retrofitted glass façades, machine-learning-guided façade design, rooftop PV with battery dispatch, and pathways to net-zero energy buildings.",
+   "id": "droplets",
+   "name": "Droplets, Wetting and Smart Surfaces",
+   "icon": "drop",
+   "image": "images/themes/droplets.jpg",
+   "short": "Drop impact, self-propulsion and water removal on textured, slippery and bio-inspired surfaces.",
+   "text": "Surface texture and wettability decide what a drop does. We study drop impact and touchdown on patterned and oil-infused slippery surfaces, wettability-driven self-propulsion of droplets, draining and meniscus dynamics, bio-inspired fog and water harvesting, wettability-guided self-assembly of Janus particles, and microstructured surfaces that remove water from PEM fuel cells.",
    "keys": [
-    "photovoltaic",
-    "pv ",
-    "solar",
-    "building",
-    "facade",
-    "façade",
-    "phase change material",
-    "hydrogel",
-    "net-zero",
-    "rooftop"
-   ]
-  },
-  {
-   "id": "materials",
-   "name": "Energy Storage and Functional Materials",
-   "icon": "battery",
-   "short": "Pseudocapacitors, Li–S batteries, electrocatalysts and engineered composites.",
-   "text": "With materials collaborators we combine experiments with atomistic simulation to explain why new energy materials work: high-voltage and flexible pseudocapacitors with water-in-salt electrolytes, ZnS electrocatalysts for Li–S batteries, strain-activated metal–organic frameworks for water splitting, rubber–epoxy and liquid-phase-reinforced composites, and 3D-printed bio-inspired architectures.",
-   "keys": [
-    "pseudocapacitor",
-    "capacitor",
-    "battery",
-    "batteries",
-    "electrocataly",
-    "composite",
-    "metal-organic",
-    "metal–organic",
-    "water splitting",
-    "3d printed"
-   ],
-   "image": "images/themes/materials.jpg"
-  },
-  {
-   "id": "ml",
-   "name": "Machine Learning for Transport",
-   "icon": "net",
-   "image": "images/themes/ml.jpg",
-   "short": "Physics-informed and data-driven models that speed up multiscale simulations.",
-   "text": "A thread running through the themes: neural networks trained on molecular simulations predict flow enhancement in nanochannels, physics-informed machine learning models electroosmotic flow for desalination membranes, and deep learning and data-driven optimisation are used for microchannel flows, battery cooling and building façades.",
-   "keys": [
-    "machine learning",
-    "neural",
-    "deep learning",
-    "physics-informed",
-    "physics informed"
+    "droplet",
+    "drop ",
+    "wetting",
+    "wettability",
+    "meniscus",
+    "spill",
+    "draining",
+    "fuel cell",
+    "fog",
+    "water harvesting",
+    "touchdown"
    ]
   }
  ],
