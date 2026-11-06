@@ -75,14 +75,19 @@
   }
   $("pw-go").addEventListener("click", openWithPassword);
   $("pw").addEventListener("keydown", function (e) { if (e.key === "Enter") openWithPassword(); });
+  // Read the encrypted key from the published site; if it is missing or does not match (e.g. GitHub Pages has
+  // not finished publishing a just-changed password), fall back to the copy in the repository itself.
+  var RAW = "https://raw.githubusercontent.com/" + REPO + "/" + BRANCH + "/" + KEYFILE;
+  function fetchKey(url) {
+    return fetch(url + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error("missing"); return r.json(); });
+  }
+  function tryKey(url, pw) { return fetchKey(url).then(function (blob) { return decryptToken(blob, pw); }); }
   function openWithPassword() {
     var pw = $("pw").value; if (!pw) return;
-    status("pw-status", "Checking…");
-    fetch(KEYFILE + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) {
-      if (!r.ok) throw new Error("no password has been set up yet — use “Set up or change the password”");
-      return r.json();
-    }).then(function (blob) {
-      return decryptToken(blob, pw).catch(function () { throw new Error("wrong password"); });
+    status("pw-status", "Checking… (this takes a few seconds)");
+    tryKey(KEYFILE, pw).catch(function () { return tryKey(RAW, pw); }).catch(function () {
+      return fetchKey(RAW).then(function () { throw new Error("wrong password"); },
+                                function () { throw new Error("no password has been set up yet — use “Set up or change the password”"); });
     }).then(unlock).then(function () { status("pw-status", ""); }).catch(function (e) {
       token = ""; status("pw-status", "Could not open: " + e.message + (/expired|Bad credentials/i.test(e.message) ? " — the GitHub token has expired; set up the password again with a new token" : ""), "err");
     });
@@ -107,7 +112,7 @@
       });
     }).then(function () {
       $("tok").value = $("newpw").value = $("newpw2").value = "";
-      status("setup-status", "Password saved. It works on the live site in about a minute.", "ok");
+      status("setup-status", "Password saved.", "ok");
       return unlock(token);
     }).catch(function (e) { token = ""; status("setup-status", "Not saved: " + e.message, "err"); });
   });
