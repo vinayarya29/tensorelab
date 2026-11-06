@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin | TeNSorE Lab</title>
+<link rel="icon" href="images/tensore-logo-64.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  .adm { max-width: 980px; margin: 0 auto; padding: 0 28px 60px; }
+  .adm section { padding: 28px 0 6px; }
+  .adm h2 { font-size: 1.35em; margin: 0 0 6px; }
+  .adm .hint { color: var(--muted); font-size: .88em; margin: 0 0 14px; }
+  .adm label { display: block; font-size: .78em; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 12px 0 4px; }
+  .adm input[type=text], .adm input[type=password], .adm textarea, .adm select { width: 100%; font: inherit; font-size: .94em; padding: 9px 12px; border: 1px solid var(--rule); border-radius: 9px; background: #fff; color: var(--text); }
+  .adm textarea { min-height: 84px; resize: vertical; }
+  .adm textarea.code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .8em; min-height: 420px; }
+  .adm .row { display: grid; grid-template-columns: 11em minmax(0, 1fr); gap: 12px; }
+  .adm .actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 14px; }
+  .adm button { font: inherit; font-size: .9em; font-weight: 600; padding: 8px 16px; border-radius: 999px; border: 1px solid var(--rule); background: #fff; color: var(--accent); cursor: pointer; }
+  .adm button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .adm button.danger { color: #b3261e; }
+  .adm button:disabled { opacity: .5; cursor: default; }
+  .adm .items { list-style: none; margin: 0; padding: 0; border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; }
+  .adm .items li { display: grid; grid-template-columns: 8em minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 10px 14px; border-bottom: 1px solid var(--rule); font-size: .92em; }
+  .adm .items li:last-child { border-bottom: none; }
+  .adm .items time { font-weight: 700; color: var(--accent-2); font-size: .85em; }
+  .adm .items .ops { display: flex; gap: 4px; }
+  .adm .items .ops button { padding: 3px 9px; font-size: .8em; }
+  .adm .status { font-size: .88em; color: var(--muted); }
+  .adm .status.ok { color: #1b7a43; } .adm .status.err { color: #b3261e; }
+  .adm .card { padding: 18px 20px; }
+  .adm .pubrow { padding: 10px 0; border-bottom: 1px solid var(--rule); }
+  .adm .pubrow b { font-weight: 600; }
+  .adm .pubrow .ths { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 6px; font-size: .86em; }
+  .adm .pubrow .ths label { display: inline-flex; gap: 5px; align-items: center; text-transform: none; letter-spacing: 0; font-weight: 500; color: var(--soft); margin: 0; font-size: 1em; }
+  .adm #locked .card { max-width: 640px; }
+  .adm ol.steps { padding-left: 1.2em; color: var(--soft); font-size: .92em; }
+  .adm ol.steps li { margin: 4px 0; }
+  .adm .runs { font-size: .86em; color: var(--soft); margin: 8px 0 0; padding-left: 1.1em; }
+  @media (max-width: 700px) { .adm { padding: 0 16px 40px; } .adm .row, .adm .items li { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header class="topbar"><div class="in">
+<a class="brand" href="index.html"><img src="images/tensore-logo-64.png" width="34" height="34" alt=""><span><b>TeNSorE Lab</b><small>Site admin</small></span></a>
+<nav aria-label="Main"><a href="index.html">View site</a><a href="https://github.com/vinayarya29/tensorelab/actions">Build status ↗</a></nav>
+</div></header>
+
+<main class="adm">
+<div class="phead" style="border:none;background:none"><div style="padding:34px 0 0"><div class="eyebrow">Admin</div><h1 style="margin:4px 0 6px">Update the lab website</h1>
+<p class="hint" style="font-size:.95em">Changes are saved to the site's GitHub repository. The pages rebuild automatically and go live about 3–4 minutes after saving.</p></div></div>
+
+<!-- ---------------- sign in ---------------- -->
+<section id="locked">
+  <div class="card" id="pw-card">
+    <h2>Admin password</h2>
+    <p class="hint">Enter the admin password to edit the site.</p>
+    <label for="pw">Password</label>
+    <input type="password" id="pw" autocomplete="current-password">
+    <div class="actions"><button class="primary" id="pw-go">Open admin</button><span class="status" id="pw-status"></span></div>
+    <p class="hint" style="margin-top:16px"><a href="#" id="show-setup">Set up or change the password</a></p>
+  </div>
+
+  <div class="card" id="setup-card" hidden>
+    <h2>Set up the admin password (one time)</h2>
+    <p class="hint">This needs a GitHub token once. The token is encrypted with the password you choose and stored on the site; after that, editors only need the password.</p>
+    <ol class="steps">
+      <li>Open <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">GitHub → New fine-grained token</a> (as an account that can write to the repository). Choose an expiry (e.g. 1 year).</li>
+      <li><b>Repository access</b>: Only select repositories → <code>vinayarya29/tensorelab</code>.</li>
+      <li><b>Permissions</b>: Contents → Read and write; Actions → Read and write.</li>
+      <li>Generate, copy and paste it below, then choose a password.</li>
+    </ol>
+    <label for="tok">GitHub token</label>
+    <input type="password" id="tok" autocomplete="off" placeholder="github_pat_…">
+    <label for="newpw">New admin password (a long passphrase is safest)</label>
+    <input type="password" id="newpw" autocomplete="new-password">
+    <label for="newpw2">Repeat password</label>
+    <input type="password" id="newpw2" autocomplete="new-password">
+    <div class="actions"><button class="primary" id="setup-go">Save password</button><button id="hide-setup">Cancel</button><span class="status" id="setup-status"></span></div>
+  </div>
+</section>
+
+<div id="unlocked" hidden>
+<p class="status" id="who" style="margin-top:18px"></p>
+
+<!-- ---------------- news ---------------- -->
+<section id="news">
+  <h2>News</h2>
+  <p class="hint">Newest first. The first item also appears as “Latest” on the home page. Use <code>**bold**</code> for names.</p>
+  <ul class="items" id="news-list"></ul>
+  <div class="card" style="margin-top:14px">
+    <div class="row"><div><label for="n-when">When</label><input type="text" id="n-when" placeholder="2026-11 or Nov 2026"></div>
+    <div><label for="n-text">Text</label><input type="text" id="n-text" placeholder="**Name** received the … award."></div></div>
+    <div class="actions"><button class="primary" id="n-add">Add news</button><span class="status" id="n-status"></span></div>
+  </div>
+</section>
+
+<!-- ---------------- events ---------------- -->
+<section id="events">
+  <h2>Workshops and events</h2>
+  <p class="hint">Newest first. The first event is also shown in the News box on the home page.</p>
+  <ul class="items" id="ev-list"></ul>
+  <div class="card" style="margin-top:14px">
+    <div class="row"><div><label for="e-when">When</label><input type="text" id="e-when" placeholder="12–14 March 2027"></div>
+    <div><label for="e-title">Title</label><input type="text" id="e-title" placeholder="Workshop on …"></div></div>
+    <label for="e-text">Description (optional)</label><textarea id="e-text" placeholder="Organised by …"></textarea>
+    <div class="actions"><button class="primary" id="e-add">Add event</button><span class="status" id="e-status"></span></div>
+  </div>
+</section>
+
+<!-- ---------------- publications ---------------- -->
+<section id="pubs">
+  <h2>Publications</h2>
+  <p class="hint">Publications are read from Dr. Bakli's ORCID record automatically every Monday. Add new papers to ORCID first, then refresh here to update the site now.</p>
+  <div class="card">
+    <div class="actions" style="margin-top:0"><button class="primary" id="p-refresh">Refresh publications from ORCID now</button><span class="status" id="p-status"></span></div>
+    <ul class="runs" id="runs"></ul>
+  </div>
+  <h2 style="margin-top:26px;font-size:1.1em">Themes of new papers</h2>
+  <p class="hint">Papers without a hand-picked theme are placed by keywords in their titles. Tick the right themes and save.</p>
+  <div id="unassigned"></div>
+  <div class="actions"><button class="primary" id="t-save" disabled>Save themes</button><span class="status" id="t-status"></span></div>
+</section>
+
+<!-- ---------------- advanced ---------------- -->
+<section id="advanced">
+  <h2>Everything else (people, projects, themes, openings…)</h2>
+  <p class="hint">Edit the full site data. Keep the JSON format (quotes, commas). It is checked before saving.</p>
+  <details><summary style="cursor:pointer;font-weight:600;color:var(--link)">Open the data editor</summary>
+    <textarea class="code" id="raw" spellcheck="false"></textarea>
+    <div class="actions"><button class="primary" id="raw-save">Save data</button><button id="raw-reload">Discard changes</button><span class="status" id="raw-status"></span></div>
+  </details>
+</section>
+
+<section>
+  <div class="actions"><button id="signout" class="danger">Lock admin</button></div>
+</section>
+</div>
+</main>
+<script src="assets/admin.js"></script>
+</body>
+</html>

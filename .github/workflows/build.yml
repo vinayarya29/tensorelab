@@ -1,0 +1,32 @@
+# Rebuild the HTML pages whenever the data, the builder or the images change
+# (e.g. after the admin page saves news), and commit the result.
+name: Build site
+on:
+  push:
+    branches: [main]
+    paths: ["data/**", "tools/**", "images/people/**"]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: site-update
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build pages
+        run: python3 tools/build.py
+      - name: Commit generated pages
+        run: |
+          git config user.name "tensorelab-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git commit -m "Rebuild pages"
+          git pull --rebase origin main
+          git push origin HEAD:main

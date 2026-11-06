@@ -92,6 +92,9 @@ def main():
                 p.update(fix)
         pubs.append(p)
     pubs.sort(key=lambda p: (-(p["year"] or 0), p["title"].lower()))
+    if OUT.exists() and json.loads(OUT.read_text()).get("publications") == pubs:
+        print(f"{len(pubs)} publications, unchanged")
+        return
     OUT.write_text(json.dumps({"source": f"https://orcid.org/{ORCID}", "updated": time.strftime("%Y-%m-%d"),
                                "publications": pubs}, indent=1, ensure_ascii=False))
     print(f"{len(pubs)} publications -> {OUT}  (no authors: {sum(not p['authors'] for p in pubs)})")

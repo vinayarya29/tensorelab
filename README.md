@@ -41,3 +41,15 @@ Sources (Nov 2026): members, projects, roles and awards from the IIT Kharagpur f
 (https://www.iitkgp.ac.in/department/ES/faculty/es-chirodeep); themes, facilities, events,
 lectures, collaborators and M.Tech alumni from https://sites.google.com/view/tensore;
 publications from https://orcid.org/0000-0002-5882-143X.
+
+## Admin page (no coding needed)
+
+`admin.html` (https://vinayarya29.github.io/tensorelab/admin.html, not linked from the menu) lets an
+admin add/remove/reorder **news** and **events**, **refresh publications** from ORCID, set the
+**themes of new papers**, and edit everything else (people, projects, …) in a checked JSON editor.
+
+- It is opened with the admin password. The password decrypts a GitHub fine-grained token (access to
+  this repository only) stored encrypted in `assets/admin-key.json` (PBKDF2-SHA256 600k → AES-256-GCM).
+  First-time setup / changing the password / renewing an expired token: "Set up or change the password".
+- Every save is a commit. `.github/workflows/build.yml` rebuilds the pages when `data/` changes;
+  `.github/workflows/publications.yml` refreshes publications every Monday and on demand.
