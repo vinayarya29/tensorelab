@@ -191,7 +191,7 @@ def page(fname, title, desc, body):
 </main>
 <footer><div class="wrap">
 <span>{E(L['name'])} · <a href="{L['school_url']}">{E(L['school'])}</a>, <a href="{L['institute_url']}">IIT Kharagpur</a></span>
-<span><a href="mailto:{L['email']}">{L['email']}</a> · Updated {TODAY.strftime('%B %Y')}</span>
+<span><a href="mailto:{L['email']}">{L['email']}</a> · Updated {TODAY.strftime('%B %Y')} · <a href="admin.html" rel="nofollow">Admin</a></span>
 </div></footer>
 </body>
 </html>
