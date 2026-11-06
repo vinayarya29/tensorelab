@@ -1,5 +1,5 @@
 {
- "_sources": "Members, projects, PI roles and awards: IIT Kharagpur faculty page https://www.iitkgp.ac.in/department/ES/faculty/es-chirodeep (Nov 2026). Postdocs, M.Tech alumni, themes, facilities, events, lectures, collaborators: https://sites.google.com/view/tensore. Publications: data/publications.json (from ORCID). Images: TENSORE_Lab work.pptx (lab deck), Nov 2026. Logo: TeNSoRE lab emblem (brand/tensore-emblem-512.png) supplied by the user.",
+ "_sources": "Members, projects, PI roles and awards: IIT Kharagpur faculty page https://www.iitkgp.ac.in/department/ES/faculty/es-chirodeep (Nov 2026). Postdocs, M.Tech alumni, themes, facilities, events, lectures, collaborators: https://sites.google.com/view/tensore. Publications: data/publications.json (from ORCID). Images: TENSORE_Lab work.pptx (lab deck), Nov 2026. Logo: TeNSoRE lab emblem (brand/tensore-emblem-512.png) supplied by the user. Research-platform figure and two highlights: HTW_SAAR_Energy_Transition.pptx slides 1-8 (lab slides).",
  "lab": {
   "short": "TeNSorE Lab",
   "name": "Thermofluidics and Nanotechnology for Sustainable Energy Systems Laboratory",
@@ -24,7 +24,13 @@
     "Solar thermal, wind and building energy systems, increasingly guided by machine learning."
    ]
   ],
-  "logo": "images/tensore-logo.png"
+  "logo": "images/tensore-logo.png",
+  "tagline": "From interfacial physics to validated energy technologies",
+  "platform": {
+   "image": "images/research-platform.jpg",
+   "small": "images/research-platform-1000.jpg",
+   "caption": "The TeNSorE Lab energy-transition research platform: interfacial and transport physics, from molecules to systems, across four pillars — thermal management and energy efficiency; water–energy nexus and energy harvesting; smart materials and interfaces for energy and water; multiscale physics and AI for energy systems."
+  }
  },
  "pi": {
   "name": "Dr. Chirodeep Bakli",
@@ -404,7 +410,8 @@
     "metal–organic",
     "water splitting",
     "3d printed"
-   ]
+   ],
+   "image": "images/themes/materials.jpg"
   },
   {
    "id": "ml",
@@ -865,6 +872,22 @@
    "image": "images/highlights/slide08.jpg",
    "thumb": "images/highlights/slide08-thumb.jpg",
    "title": "Unified multiscale research framework (Dr. Vinay Arya)",
+   "theme": "ml",
+   "ref": "",
+   "doi": ""
+  },
+  {
+   "image": "images/highlights/htw06.jpg",
+   "thumb": "images/highlights/htw06-thumb.jpg",
+   "title": "AI and nanothermodynamics for advanced thermal and energy-storage materials",
+   "theme": "materials",
+   "ref": "",
+   "doi": ""
+  },
+  {
+   "image": "images/highlights/htw04.jpg",
+   "thumb": "images/highlights/htw04-thumb.jpg",
+   "title": "Physics-informed digital twins for renewable and thermal energy systems",
    "theme": "ml",
    "ref": "",
    "doi": ""

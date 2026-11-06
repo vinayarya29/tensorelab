@@ -244,13 +244,15 @@ def home():
 <div class="hero"><canvas aria-hidden="true"></canvas><div class="wrap"><div>
 <div class="eyebrow">{E(L['school'])} · IIT Kharagpur</div>
 <h1><em>Thermofluidics</em> and <em>Nanotechnology</em> for Sustainable Energy Systems Laboratory</h1>
+<p class="tagline">{E(L.get('tagline', ''))}</p>
 <p class="lead">{E(L['intro'])}</p>
 <div class="cta"><a class="btn solid" href="research.html">Our research</a><a class="btn ghost" href="publications.html">Publications</a><a class="btn ghost" href="join.html">Join the lab</a></div>
 <div class="facts">{"".join(f'<div><b>{n}</b><span>{E(t)}</span></div>' for n, t in facts)}</div>
 </div><img class="logo" src="{E(L['logo'])}" alt="TeNSorE Lab logo" width="300" height="300"></div></div>
 <div class="wrap">
-<section><div class="eyebrow">How we work</div><h2 class="sec">From molecules to systems</h2>
-<div class="scales reveal">{"".join(f'<div><i>{i + 1}</i><b>{E(a)}</b><p>{E(b)}</p></div>' for i, (a, b) in enumerate(L['approach']))}</div></section>
+<section><div class="eyebrow">Research platform</div><h2 class="sec">From molecules to systems</h2>
+<a class="platform reveal" href="{E(L['platform']['image'])}" title="Open full size"><img src="{E(L['platform']['small'])}" srcset="{E(L['platform']['small'])} 1000w, {E(L['platform']['image'])} 1672w" sizes="(min-width: 1120px) 1064px, 100vw" alt="{E(L['platform']['caption'])}" width="1672" height="941"></a>
+<p class="note" style="margin-top:10px">{E(L['platform']['caption'])}</p></section>
 <section><div class="eyebrow">Research themes</div><h2 class="sec">What we study</h2>
 <div class="grid g4">{theme_cards}</div><p class="more"><a href="publications.html">Browse all {len(pubs)} publications by theme →</a></p></section>
 <section><div class="eyebrow">Research highlights</div><h2 class="sec">Selected work</h2>

@@ -268,3 +268,7 @@ dialog.lb .nav button { font: inherit; font-size: .88em; padding: 6px 12px; bord
 .theme .figure { float: right; width: 40%; max-width: 420px; margin: 4px 0 14px 28px; }
 .theme .rel, .theme .theme-hl { clear: both; }
 @media (max-width: 700px) { .theme .figure { float: none; width: 100%; margin: 4px 0 12px; } }
+.hero .tagline { margin: -4px 0 14px; font-family: var(--serif); font-style: italic; font-size: 1.2em; color: var(--accent-2); }
+.platform { display: block; border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden; background: #fff; box-shadow: var(--shadow); transition: box-shadow .2s; }
+.platform:hover { box-shadow: var(--shadow-hover); }
+.platform img { display: block; width: 100%; height: auto; }
