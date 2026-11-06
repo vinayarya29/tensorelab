@@ -41,6 +41,8 @@ ICONS = {
     "drops": '<path d="M8 13.5c-2.2 0-4-1.7-4-3.9C4 7.3 8 3 8 3s4 4.3 4 6.6c0 2.2-1.8 3.9-4 3.9z"/><path d="M16.5 21c-2.2 0-4-1.7-4-3.9 0-2.3 4-6.6 4-6.6s4 4.3 4 6.6c0 2.2-1.8 3.9-4 3.9z"/>',
     "drop": '<path d="M12 21.5c-3.6 0-6.5-2.8-6.5-6.3C5.5 11.4 12 3 12 3s6.5 8.4 6.5 12.2c0 3.5-2.9 6.3-6.5 6.3z"/><path d="M9 15.5c0 1.6 1.3 3 3 3"/>',
     "bolt": '<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',
+    "battery": '<rect x="3" y="7" width="16" height="10" rx="2"/><path d="M21 10.5v3"/><path d="M10 9.5 8 12h4l-2 2.5"/>',
+    "net": '<circle cx="5" cy="7" r="1.8"/><circle cx="5" cy="17" r="1.8"/><circle cx="12" cy="5" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="12" cy="19" r="1.8"/><circle cx="19" cy="12" r="1.8"/><path d="M6.7 7.6 10.3 11M6.7 16.4l3.6-3.4M6.6 6.3l3.6-.8M6.6 17.7l3.6.8M13.8 12h3.4M13.6 5.9l3.8 5.1M13.6 18.1l3.8-5.1"/>',
     "tool": '<circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/>',
     "mail": '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6 8.5 7 8.5-7"/>',
 }
@@ -101,7 +103,13 @@ def _kre(k):
 THEME_RE = {th["id"]: [_kre(k) for k in th["keys"]] for th in THEMES}
 
 
+MANUAL = json.loads((ROOT / "data" / "publication_themes.json").read_text())["themes"]
+
+
 def themes_of(p):
+    key = p.get("doi") or p["title"].lower()[:60]
+    if key in MANUAL:
+        return [t for t in (th["id"] for th in THEMES) if t in MANUAL[key]]
     t = _plain(p["title"]).replace("-", " ").replace("–", " ")
     t2 = _plain(p["title"])
     return [th["id"] for th in THEMES if any(r.search(t) or r.search(t2) for r in THEME_RE[th["id"]])]
@@ -244,7 +252,7 @@ def home():
 <section><div class="eyebrow">How we work</div><h2 class="sec">From molecules to systems</h2>
 <div class="scales reveal">{"".join(f'<div><i>{i + 1}</i><b>{E(a)}</b><p>{E(b)}</p></div>' for i, (a, b) in enumerate(L['approach']))}</div></section>
 <section><div class="eyebrow">Research themes</div><h2 class="sec">What we study</h2>
-<div class="grid g4">{theme_cards}<a href="publications.html" class="card fig reveal" style="--d:420ms"><div class="img noimg">{icon('tool')}</div><div class="body"><h3>All publications</h3><p>Search and filter every paper by theme, type and year.</p><div class="n">{len(pubs)} papers →</div></div></a></div></section>
+<div class="grid g4">{theme_cards}</div><p class="more"><a href="publications.html">Browse all {len(pubs)} publications by theme →</a></p></section>
 <section><div class="eyebrow">Research highlights</div><h2 class="sec">Selected work</h2>
 <div class="hl">{hl_home}</div><p class="more"><a href="research.html#highlights">All {len(HL)} highlights →</a></p></section>
 <section><div class="eyebrow">In the lab</div><h2 class="sec">Experiments and test beds</h2>{photos()}</section>

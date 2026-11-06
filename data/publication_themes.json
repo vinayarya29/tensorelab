@@ -1,0 +1,304 @@
+{
+ "_comment": "Theme of each publication, assigned by hand from titles (key = DOI, or the first 60 characters of the lowercased title when there is no DOI). New papers not listed here fall back to the keyword rules in lab.json.",
+ "themes": {
+  "10.1063/5.0293119": [
+   "nano"
+  ],
+  "10.1016/j.rineng.2026.111534": [
+   "nano"
+  ],
+  "10.1016/j.jcis.2026.141099": [
+   "nano"
+  ],
+  "10.1002/smll.75044": [
+   "nano"
+  ],
+  "10.1063/5.0282500": [
+   "nano"
+  ],
+  "10.1002/smll.202508637": [
+   "nano"
+  ],
+  "10.1039/d5nr00920k": [
+   "nano"
+  ],
+  "10.1016/j.energy.2025.137284": [
+   "nano",
+   "thermal"
+  ],
+  "10.1063/5.0284134": [
+   "nano"
+  ],
+  "10.1063/5.0237885": [
+   "nano"
+  ],
+  "10.1039/d4cp01068j": [
+   "nano"
+  ],
+  "10.1039/d4nr01235f": [
+   "nano"
+  ],
+  "10.1063/5.0185533": [
+   "nano"
+  ],
+  "10.1615/computthermalscien.2022043262": [
+   "nano"
+  ],
+  "10.1063/5.0140765": [
+   "nano",
+   "ml"
+  ],
+  "10.1039/d2nr05552j": [
+   "nano"
+  ],
+  "10.1002/adma.202108940": [
+   "nano"
+  ],
+  "10.1063/5.0050317": [
+   "nano"
+  ],
+  "10.1039/c9nr01572h": [
+   "nano"
+  ],
+  "10.1039/c7nr03320f": [
+   "nano"
+  ],
+  "10.1002/polb.24122": [
+   "nano"
+  ],
+  "on the comparability of chemical structure and roughness of ": [
+   "nano"
+  ],
+  "10.1039/c5nr08704j": [
+   "nano",
+   "ek"
+  ],
+  "10.1039/c4sm02240h": [
+   "nano"
+  ],
+  "10.1021/acs.nanolett.5b03082": [
+   "nano"
+  ],
+  "10.1063/1.4789586": [
+   "nano"
+  ],
+  "10.1063/1.4758683": [
+   "nano"
+  ],
+  "10.1016/j.desal.2025.119824": [
+   "nano",
+   "ek",
+   "ml"
+  ],
+  "10.1002/smll.73324": [
+   "ek"
+  ],
+  "10.1039/d6sm00501b": [
+   "ek"
+  ],
+  "10.1021/acs.analchem.5c05942": [
+   "ek"
+  ],
+  "10.1063/5.0241150": [
+   "ek"
+  ],
+  "10.1002/smll.202404397": [
+   "ek"
+  ],
+  "10.1016/j.euromechflu.2023.11.001": [
+   "ek"
+  ],
+  "10.1063/5.0195088": [
+   "ek"
+  ],
+  "10.1021/acs.langmuir.3c02816": [
+   "ek"
+  ],
+  "10.1016/j.aca.2024.342997": [
+   "ek"
+  ],
+  "10.1021/acsaem.3c02409": [
+   "ek"
+  ],
+  "10.1002/elps.201400317": [
+   "ek"
+  ],
+  "electrokinetic pumping and energy conversion at nanoscales": [
+   "ek"
+  ],
+  "10.1103/physrevlett.110.184503": [
+   "ek"
+  ],
+  "10.1016/j.jpowsour.2026.239362": [
+   "thermal",
+   "ml"
+  ],
+  "10.1016/j.csite.2026.108078": [
+   "thermal"
+  ],
+  "10.1016/j.applthermaleng.2024.123574": [
+   "thermal"
+  ],
+  "10.1080/10407782.2023.2251090": [
+   "thermal"
+  ],
+  "10.1002/htj.22990": [
+   "thermal"
+  ],
+  "10.1016/j.tsep.2023.102359": [
+   "thermal"
+  ],
+  "10.1016/j.applthermaleng.2024.124272": [
+   "thermal"
+  ],
+  "10.1063/5.0153052": [
+   "thermal"
+  ],
+  "10.1115/power2022-86626": [
+   "thermal"
+  ],
+  "10.1016/j.applthermaleng.2022.118865": [
+   "thermal"
+  ],
+  "10.1115/power2021-64248": [
+   "thermal"
+  ],
+  "10.1039/d0na00452a": [
+   "thermal"
+  ],
+  "10.1002/adsu.202501720": [
+   "thermal",
+   "solar"
+  ],
+  "10.1002/adsu.70455": [
+   "thermal",
+   "solar"
+  ],
+  "10.1016/j.ijhydene.2025.153145": [
+   "droplets"
+  ],
+  "10.1007/s10404-026-02915-x": [
+   "droplets"
+  ],
+  "10.1063/5.0282134": [
+   "droplets"
+  ],
+  "10.1063/5.0189609": [
+   "droplets"
+  ],
+  "10.1063/5.0238416": [
+   "droplets"
+  ],
+  "10.1021/acs.langmuir.3c01689": [
+   "droplets"
+  ],
+  "10.1063/5.0171521": [
+   "droplets"
+  ],
+  "10.1063/5.0171953": [
+   "droplets"
+  ],
+  "10.1063/5.0161192": [
+   "droplets"
+  ],
+  "10.1115/power2021-64668": [
+   "droplets"
+  ],
+  "10.1038/s41598-020-80760-w": [
+   "droplets"
+  ],
+  "10.1063/5.0315890": [
+   "droplets",
+   "multiphase"
+  ],
+  "10.1016/j.jiec.2026.02.034": [
+   "multiphase"
+  ],
+  "10.1063/5.0283262": [
+   "multiphase"
+  ],
+  "10.1063/5.0250568": [
+   "multiphase"
+  ],
+  "10.1007/s12046-025-02904-w": [
+   "multiphase"
+  ],
+  "10.1016/j.energy.2025.137027": [
+   "multiphase"
+  ],
+  "10.1016/j.ijmultiphaseflow.2024.105036": [
+   "multiphase"
+  ],
+  "10.1016/j.cep.2025.110193": [
+   "multiphase"
+  ],
+  "10.1021/acs.iecr.5c01699": [
+   "multiphase"
+  ],
+  "10.1063/5.0300606": [
+   "multiphase"
+  ],
+  "10.1063/5.0208554": [
+   "multiphase",
+   "ml"
+  ],
+  "10.1007/s12046-023-02324-8": [
+   "multiphase"
+  ],
+  "assessing effectiveness of pulsed input on mixing characteri": [
+   "multiphase"
+  ],
+  "10.1002/solr.70337": [
+   "solar"
+  ],
+  "10.1002/solr.202500913": [
+   "solar"
+  ],
+  "10.1016/j.enbuild.2026.117642": [
+   "solar"
+  ],
+  "10.1109/odicon66687.2026.11470985": [
+   "solar"
+  ],
+  "10.1109/stpec66316.2025.11490228": [
+   "solar"
+  ],
+  "10.1109/stpec66316.2025.11549549": [
+   "solar"
+  ],
+  "10.1063/5.0128790": [
+   "solar"
+  ],
+  "10.1016/j.jclepro.2023.136942": [
+   "solar"
+  ],
+  "10.1145/3600100.3627030": [
+   "solar"
+  ],
+  "10.1145/3563357.3566139": [
+   "solar",
+   "ml"
+  ],
+  "10.1039/d5ta10251k": [
+   "materials"
+  ],
+  "10.1016/j.compositesa.2026.109687": [
+   "materials"
+  ],
+  "10.1002/chem.202501030": [
+   "materials"
+  ],
+  "10.1002/smll.202400975": [
+   "materials"
+  ],
+  "10.1021/acssuschemeng.4c05046": [
+   "materials"
+  ],
+  "10.1093/oxfmat/itac003": [
+   "materials"
+  ],
+  "liquid-phase reinforced metal matrix (lmm) composite with no": [
+   "materials"
+  ]
+ }
+}

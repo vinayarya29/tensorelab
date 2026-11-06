@@ -19,6 +19,8 @@ Served by GitHub Pages. Separate from Vinay Arya's personal site (vinayarya29.gi
   facilities, news, events, lectures, collaborators, openings). News text supports `**bold**`.
 - `data/publications.json`: generated from Dr. Bakli's ORCID record (+ Crossref for missing authors).
 - `data/publication_fixes.json`: manual corrections applied on top of ORCID.
+- `data/publication_themes.json`: hand-assigned research theme(s) of each paper (by DOI). New papers
+  that are not listed fall back to the keyword rules (`keys`) of each theme in `lab.json`.
 
 ```sh
 python3 tools/update_publications.py   # refresh publications from ORCID (needs internet)
