@@ -137,7 +137,15 @@
         '<button data-op="del" data-i="' + i + '" class="danger" title="Delete">Delete</button></span></li>';
     }).join("");
   }
+  function liUrn(x) {
+    var m = /urn:li:(share|activity|ugcPost):(\d+)/.exec(x) || /(activity)-(\d{15,})/.exec(x);
+    return m ? "urn:li:" + m[1] + ":" + m[2] : null;
+  }
   function render() {
+    lab.linkedin_posts = lab.linkedin_posts || [];
+    $("li-list").innerHTML = listHTML(lab.linkedin_posts, function (u) {
+      return '<time>Post</time><span><a href="https://www.linkedin.com/feed/update/' + esc(u) + '/" target="_blank" rel="noopener">' + esc(u) + "</a></span>";
+    });
     $("news-list").innerHTML = listHTML(lab.news || [], function (n) { return "<time>" + esc(n.when || "—") + "</time><span>" + md(n.text) + "</span>"; });
     $("ev-list").innerHTML = listHTML(lab.events || [], function (e) { return "<time>" + esc(e.when) + "</time><span><b>" + esc(e.title) + "</b>" + (e.text ? "<br><span class=status>" + esc(e.text) + "</span>" : "") + "</span>"; });
   }
@@ -145,13 +153,21 @@
     $(listId).addEventListener("click", function (ev) {
       var b = ev.target.closest("button"); if (!b) return;
       var arr = lab[key], i = +b.dataset.i, op = b.dataset.op, msg;
-      if (op === "del") { if (!confirm("Delete this " + label + "?")) return; msg = "Delete " + label + ": " + (arr[i].title || arr[i].text).slice(0, 60); arr.splice(i, 1); }
+      if (op === "del") { if (!confirm("Delete this " + label + "?")) return; msg = "Delete " + label + ": " + String(arr[i].title || arr[i].text || arr[i]).slice(0, 60); arr.splice(i, 1); }
       else { var j = op === "up" ? i - 1 : i + 1; var t = arr[i]; arr[i] = arr[j]; arr[j] = t; msg = "Reorder " + label + "s"; }
       saveLab(msg, statusId).catch(function () { load(); });
     });
   }
   wireList("news-list", "news", "news item", "n-status");
   wireList("ev-list", "events", "event", "e-status");
+  wireList("li-list", "linkedin_posts", "LinkedIn post", "li-status");
+  $("li-add").addEventListener("click", function () {
+    var urn = liUrn($("li-in").value);
+    if (!urn) return status("li-status", "That does not look like a LinkedIn post link or embed code.", "err");
+    if (lab.linkedin_posts.indexOf(urn) >= 0) return status("li-status", "That post is already on the site.", "err");
+    lab.linkedin_posts.unshift(urn);
+    saveLab("Add LinkedIn post " + urn, "li-status").then(function () { $("li-in").value = ""; }).catch(function () { lab.linkedin_posts.shift(); });
+  });
 
   $("n-add").addEventListener("click", function () {
     var when = $("n-when").value.trim(), text = $("n-text").value.trim();

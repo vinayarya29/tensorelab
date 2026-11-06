@@ -34,7 +34,11 @@ Images (`images/`): the lab emblem (`tensore-logo.png`, supplied by the user); t
 rendered by PowerPoint from `TENSORE_Lab work.pptx`). Theme figures, photos and highlights are
 listed in `data/lab.json` (`image`, `lab_photos`, `highlights`).
 
-Python 3.8+ standard library only. Lab members are highlighted in author lists automatically
+After adding or replacing images run `python3 tools/optimize_images.py` (needs Pillow): it writes
+WebP copies at display sizes (`<name>.<width>.webp`) and `images/manifest.json`, which the builder
+uses for `srcset`/`width`/`height`.
+
+Python 3.8+ standard library only (except the image optimiser). Lab members are highlighted in author lists automatically
 (from the names in `lab.json`); research themes are assigned to papers by keywords in their titles.
 
 Sources (Nov 2026): members, projects, roles and awards from the IIT Kharagpur faculty page

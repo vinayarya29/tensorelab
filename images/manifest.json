@@ -1,0 +1,469 @@
+{
+ "images/highlights/htw04.jpg": {
+  "h": 900,
+  "w": 1600,
+  "webp": [
+   800,
+   1200,
+   1600
+  ]
+ },
+ "images/highlights/htw06.jpg": {
+  "h": 900,
+  "w": 1600,
+  "webp": [
+   800,
+   1200,
+   1600
+  ]
+ },
+ "images/highlights/slide02.jpg": {
+  "h": 900,
+  "w": 1600,
+  "webp": [
+   800,
+   1200,
+   1600
+  ]
+ },
+ "images/highlights/slide03.jpg": {
+  "h": 900,
+  "w": 1600,
+  "webp": [
+   800,
+   1200,
+   1600
+  ]
+ },
+ "images/highlights/slide04.jpg": {
+  "h": 900,
+  "w": 1600,
+  "webp": [
+   800,
+   1200,
+   1600
+  ]
+ },
+ "images/highlights/slide05.jpg": {
+  "h": 900,
+  "w": 1600,
+  "webp": [
+   800,
+   1200,
+   1600
+  ]
+ },
+ "images/highlights/slide06.jpg": {
+  "h": 900,
+  "w": 1600,
+  "webp": [
+   800,
+   1200,
+   1600
+  ]
+ },
+ "images/highlights/slide07.jpg": {
+  "h": 900,
+  "w": 1600,
+  "webp": [
+   800,
+   1200,
+   1600
+  ]
+ },
+ "images/highlights/slide08.jpg": {
+  "h": 900,
+  "w": 1600,
+  "webp": [
+   800,
+   1200,
+   1600
+  ]
+ },
+ "images/highlights/slide09.jpg": {
+  "h": 900,
+  "w": 1600,
+  "webp": [
+   800,
+   1200,
+   1600
+  ]
+ },
+ "images/highlights/slide10.jpg": {
+  "h": 900,
+  "w": 1600,
+  "webp": [
+   800,
+   1200,
+   1600
+  ]
+ },
+ "images/highlights/slide11.jpg": {
+  "h": 900,
+  "w": 1600,
+  "webp": [
+   800,
+   1200,
+   1600
+  ]
+ },
+ "images/highlights/slide12.jpg": {
+  "h": 900,
+  "w": 1600,
+  "webp": [
+   800,
+   1200,
+   1600
+  ]
+ },
+ "images/highlights/slide13.jpg": {
+  "h": 900,
+  "w": 1600,
+  "webp": [
+   800,
+   1200,
+   1600
+  ]
+ },
+ "images/highlights/slide14.jpg": {
+  "h": 900,
+  "w": 1600,
+  "webp": [
+   800,
+   1200,
+   1600
+  ]
+ },
+ "images/highlights/slide15.jpg": {
+  "h": 900,
+  "w": 1600,
+  "webp": [
+   800,
+   1200,
+   1600
+  ]
+ },
+ "images/highlights/slide16.jpg": {
+  "h": 900,
+  "w": 1600,
+  "webp": [
+   800,
+   1200,
+   1600
+  ]
+ },
+ "images/highlights/slide17.jpg": {
+  "h": 900,
+  "w": 1600,
+  "webp": [
+   800,
+   1200,
+   1600
+  ]
+ },
+ "images/highlights/slide18.jpg": {
+  "h": 900,
+  "w": 1600,
+  "webp": [
+   800,
+   1200,
+   1600
+  ]
+ },
+ "images/highlights/slide19.jpg": {
+  "h": 900,
+  "w": 1600,
+  "webp": [
+   800,
+   1200,
+   1600
+  ]
+ },
+ "images/highlights/slide20.jpg": {
+  "h": 900,
+  "w": 1600,
+  "webp": [
+   800,
+   1200,
+   1600
+  ]
+ },
+ "images/lab/3d-printer.jpg": {
+  "h": 540,
+  "w": 1200,
+  "webp": [
+   600,
+   1000
+  ]
+ },
+ "images/lab/battery-cooling.jpg": {
+  "h": 596,
+  "w": 1200,
+  "webp": [
+   600,
+   1000
+  ]
+ },
+ "images/lab/rooftop-pv.jpg": {
+  "h": 900,
+  "w": 1200,
+  "webp": [
+   600,
+   1000
+  ]
+ },
+ "images/lab/workstation.jpg": {
+  "h": 311,
+  "w": 414,
+  "webp": [
+   414
+  ]
+ },
+ "images/people/abhirup-chaudhuri.jpg": {
+  "h": 360,
+  "w": 360,
+  "webp": [
+   160,
+   320
+  ]
+ },
+ "images/people/aditya-shivaji-patwari.jpg": {
+  "h": 360,
+  "w": 360,
+  "webp": [
+   160,
+   320
+  ]
+ },
+ "images/people/anirban-roy.jpg": {
+  "h": 360,
+  "w": 360,
+  "webp": [
+   160,
+   320
+  ]
+ },
+ "images/people/aniruddha-guha.jpg": {
+  "h": 360,
+  "w": 360,
+  "webp": [
+   160,
+   320
+  ]
+ },
+ "images/people/avinash-kumar.jpg": {
+  "h": 360,
+  "w": 360,
+  "webp": [
+   160,
+   320
+  ]
+ },
+ "images/people/chirodeep-bakli.jpg": {
+  "h": 360,
+  "w": 360,
+  "webp": [
+   160,
+   320
+  ]
+ },
+ "images/people/diptesh-biswas.jpg": {
+  "h": 360,
+  "w": 360,
+  "webp": [
+   160,
+   320
+  ]
+ },
+ "images/people/ekta-tayal.jpg": {
+  "h": 360,
+  "w": 360,
+  "webp": [
+   160,
+   320
+  ]
+ },
+ "images/people/jayant-agarwal.jpg": {
+  "h": 360,
+  "w": 360,
+  "webp": [
+   160,
+   320
+  ]
+ },
+ "images/people/krupakar-mani.jpg": {
+  "h": 360,
+  "w": 360,
+  "webp": [
+   160,
+   320
+  ]
+ },
+ "images/people/kunderu-pallavi.jpg": {
+  "h": 360,
+  "w": 360,
+  "webp": [
+   160,
+   320
+  ]
+ },
+ "images/people/nilanjan-mondal.jpg": {
+  "h": 360,
+  "w": 360,
+  "webp": [
+   160,
+   320
+  ]
+ },
+ "images/people/rahul-roy.jpg": {
+  "h": 360,
+  "w": 360,
+  "webp": [
+   160,
+   320
+  ]
+ },
+ "images/people/shashi-rastogi.jpg": {
+  "h": 360,
+  "w": 360,
+  "webp": [
+   160,
+   320
+  ]
+ },
+ "images/people/siva-shankar-s-s.jpg": {
+  "h": 360,
+  "w": 360,
+  "webp": [
+   160,
+   320
+  ]
+ },
+ "images/people/souhardya-modak.jpg": {
+  "h": 360,
+  "w": 360,
+  "webp": [
+   160,
+   320
+  ]
+ },
+ "images/people/souparna-chakraborty.jpg": {
+  "h": 360,
+  "w": 360,
+  "webp": [
+   160,
+   320
+  ]
+ },
+ "images/people/souradeep-satpathy.jpg": {
+  "h": 360,
+  "w": 360,
+  "webp": [
+   160,
+   320
+  ]
+ },
+ "images/people/subradip-debnath.jpg": {
+  "h": 360,
+  "w": 360,
+  "webp": [
+   160,
+   320
+  ]
+ },
+ "images/people/vikash-chandra.jpg": {
+  "h": 360,
+  "w": 360,
+  "webp": [
+   160,
+   320
+  ]
+ },
+ "images/people/vinay-arya.jpg": {
+  "h": 360,
+  "w": 360,
+  "webp": [
+   160,
+   320
+  ]
+ },
+ "images/research-platform.jpg": {
+  "h": 941,
+  "w": 1672,
+  "webp": [
+   1000,
+   1672
+  ]
+ },
+ "images/tensore-logo.png": {
+  "h": 512,
+  "w": 512,
+  "webp": [
+   128,
+   256
+  ]
+ },
+ "images/themes/droplets.jpg": {
+  "h": 220,
+  "w": 646,
+  "webp": [
+   420,
+   646
+  ]
+ },
+ "images/themes/ek.jpg": {
+  "h": 752,
+  "w": 827,
+  "webp": [
+   420,
+   827
+  ]
+ },
+ "images/themes/materials.jpg": {
+  "h": 460,
+  "w": 611,
+  "webp": [
+   420,
+   611
+  ]
+ },
+ "images/themes/ml.jpg": {
+  "h": 612,
+  "w": 900,
+  "webp": [
+   420,
+   840
+  ]
+ },
+ "images/themes/multiphase.jpg": {
+  "h": 305,
+  "w": 900,
+  "webp": [
+   420,
+   840
+  ]
+ },
+ "images/themes/nano.jpg": {
+  "h": 344,
+  "w": 570,
+  "webp": [
+   420,
+   570
+  ]
+ },
+ "images/themes/solar.jpg": {
+  "h": 325,
+  "w": 376,
+  "webp": [
+   376
+  ]
+ },
+ "images/themes/thermal.jpg": {
+  "h": 412,
+  "w": 468,
+  "webp": [
+   420,
+   468
+  ]
+ }
+}

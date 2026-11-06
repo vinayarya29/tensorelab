@@ -111,8 +111,15 @@
       S[i].classList.remove("on"); S[i].tabIndex = -1; D[i].removeAttribute("aria-current");
       i = (n + S.length) % S.length;
       S[i].classList.add("on"); S[i].tabIndex = 0; D[i].setAttribute("aria-current", "true");
-      var im = S[(i + 1) % S.length].querySelector("img"); if (im) im.loading = "eager";   // preload the next one
+      load(S[i]); load(S[(i + 1) % S.length]);   // this slide and the next one
     }
+    function load(slide) {
+      var im = slide && slide.querySelector("img[data-src]"); if (!im) return;
+      if (im.dataset.srcset) { im.sizes = im.getAttribute("sizes") || ""; im.srcset = im.dataset.srcset; }
+      im.src = im.dataset.src; im.removeAttribute("data-src"); im.removeAttribute("data-srcset");
+    }
+    // fetch the 2nd slide once the page has finished loading
+    if (document.readyState === "complete") load(S[1]); else window.addEventListener("load", function () { load(S[1]); });
     function tick() { if (!paused && visible && !document.hidden) go(i + 1); }
     c.querySelector(".prev").addEventListener("click", function () { go(i - 1); });
     c.querySelector(".next").addEventListener("click", function () { go(i + 1); });

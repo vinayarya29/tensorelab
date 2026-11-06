@@ -9,7 +9,7 @@
   "institute_url": "https://www.iitkgp.ac.in",
   "address": "School of Energy Science and Engineering, Indian Institute of Technology Kharagpur, Kharagpur, West Bengal 721302, India",
   "email": "chirodeep@iitkgp.ac.in",
-  "intro": "We are a research group in the School of Energy Science and Engineering at the Indian Institute of Technology Kharagpur. Our work sits at the interface of nanofluidics and microfluidics: graphene-based desalination, streaming potential, nanofluidic channel fabrication, multiphase microfluidics, droplet dynamics, electrokinetics and the energy performance of buildings.",
+  "intro": "We are a research group in the School of Energy Science and Engineering at IIT Kharagpur, working from interfacial physics to validated energy technologies: passive cooling with hydrogels and phase-change materials, physics-informed machine learning, energy-storage materials, nanoscale water and ion transport for desalination, thermal management, electrokinetic energy harvesting, and multiphase and droplet flows.",
   "approach": [
    [
     "Molecular scale",
@@ -30,7 +30,8 @@
    "image": "images/research-platform.jpg",
    "small": "images/research-platform-1000.jpg",
    "caption": "The TeNSorE Lab energy-transition research platform: interfacial and transport physics, from molecules to systems, across four pillars — thermal management and energy efficiency; water–energy nexus and energy harvesting; smart materials and interfaces for energy and water; multiscale physics and AI for energy systems."
-  }
+  },
+  "linkedin": "https://www.linkedin.com/company/tensore-lab-iit-kgp/"
  },
  "pi": {
   "name": "Dr. Chirodeep Bakli",
@@ -892,5 +893,6 @@
    "ref": "",
    "doi": ""
   }
- ]
+ ],
+ "linkedin_posts": []
 }

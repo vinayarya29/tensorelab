@@ -28,6 +28,43 @@ def md(s):
     return re.sub(r"\*(.+?)\*", r"<i>\1</i>", s)
 
 
+_MAN = ROOT / "images" / "manifest.json"
+MANIFEST = json.loads(_MAN.read_text()) if _MAN.exists() else {}
+
+
+def _variants(path):
+    m = MANIFEST.get(path)
+    if not m:
+        return None, []
+    stem = path.rsplit(".", 1)[0]
+    return m, [(f"{stem}.{w}.webp", w) for w in m["webp"]]
+
+
+def best(path, maxw=4000):
+    """Largest optimised variant not wider than maxw (falls back to the original)."""
+    m, v = _variants(path)
+    c = [f for f, w in v if w <= maxw]
+    return c[-1] if c else (v[0][0] if v else path)
+
+
+def pic(path, alt, sizes, cls="", eager=False, defer=False):
+    """<img> with WebP srcset, intrinsic size and lazy loading. defer=True puts the sources in
+    data-* attributes (loaded by site.js just before the image is shown, e.g. carousel slides)."""
+    m, v = _variants(path)
+    a = f' alt="{E(alt)}"'
+    if cls:
+        a += f' class="{cls}"'
+    if m:
+        a += f' width="{m["w"]}" height="{m["h"]}"'
+    srcset = ", ".join(f"{f} {w}w" for f, w in v)
+    pre = "data-" if defer else ""
+    a += f' {pre}src="{E(v[0][0] if v else path)}"'
+    if srcset:
+        a += f' {pre}srcset="{srcset}" sizes="{sizes}"'
+    a += ' loading="eager" fetchpriority="high"' if eager else ' loading="lazy"'
+    return f"<img{a} decoding=\"async\">"
+
+
 def slug(name):
     n = re.sub(r"^(Dr|Prof)\.?\s+", "", name)
     return re.sub(r"[^a-z0-9]+", "-", _plain(n)).strip("-")
@@ -38,7 +75,7 @@ def avatar(name, cls=""):
     f = ROOT / "images" / "people" / (slug(name) + ".jpg")
     c = f"avatar {cls}".strip()
     if f.exists():
-        return f'<img class="{c} photo-av" src="images/people/{slug(name)}.jpg" alt="{E(name)}" loading="lazy">'
+        return pic(f"images/people/{slug(name)}.jpg", name, "132px" if not cls else "56px", f"{c} photo-av")
     return f'<div class="{c}">{initials(name)}</div>'
 
 
@@ -57,6 +94,7 @@ ICONS = {
     "bolt": '<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',
     "battery": '<rect x="3" y="7" width="16" height="10" rx="2"/><path d="M21 10.5v3"/><path d="M10 9.5 8 12h4l-2 2.5"/>',
     "net": '<circle cx="5" cy="7" r="1.8"/><circle cx="5" cy="17" r="1.8"/><circle cx="12" cy="5" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="12" cy="19" r="1.8"/><circle cx="19" cy="12" r="1.8"/><path d="M6.7 7.6 10.3 11M6.7 16.4l3.6-3.4M6.6 6.3l3.6-.8M6.6 17.7l3.6.8M13.8 12h3.4M13.6 5.9l3.8 5.1M13.6 18.1l3.8-5.1"/>',
+    "linkedin": '<rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V17M8 7.2v.1M12 17v-3.6c0-1.7 1-2.7 2.3-2.7s2 .9 2 2.6V17M12 10.5V17"/>',
     "tool": '<circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/>',
     "mail": '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6 8.5 7 8.5-7"/>',
 }
@@ -191,7 +229,7 @@ def page(fname, title, desc, body):
 </main>
 <footer><div class="wrap">
 <span>{E(L['name'])} · <a href="{L['school_url']}">{E(L['school'])}</a>, <a href="{L['institute_url']}">IIT Kharagpur</a></span>
-<span><a href="mailto:{L['email']}">{L['email']}</a> · Updated {TODAY.strftime('%B %Y')} · <a href="admin.html" rel="nofollow">Admin</a></span>
+<span><a href="mailto:{L['email']}">{L['email']}</a> · Updated {TODAY.strftime('%B %Y')} · <a href="{L['linkedin']}">LinkedIn</a> · <a href="admin.html" rel="nofollow">Admin</a></span>
 </div></footer>
 </body>
 </html>
@@ -211,7 +249,7 @@ THEME_NAME = {t["id"]: t["name"] for t in THEMES}
 
 
 def theme_card(t, i, n):
-    img = (f'<div class="img"><img src="{E(t["image"])}" alt="{E(t["name"])}" loading="lazy"></div>' if t.get("image")
+    img = (f'<div class="img">{pic(t["image"], t["name"], "(min-width: 1120px) 250px, (min-width: 960px) 23vw, (min-width: 700px) 45vw, 92vw")}</div>' if t.get("image")
            else f'<div class="img noimg">{icon(t["icon"])}</div>')
     return (f'<a href="research.html#{t["id"]}" class="card fig reveal" style="--d:{min(i, 8) * 60}ms">{img}'
             f'<div class="body"><h3>{E(t["name"])}</h3><p>{E(t["short"])}</p><div class="n">{n} papers →</div></div></a>')
@@ -220,12 +258,12 @@ def theme_card(t, i, n):
 def hl_button(h, idx, cls=""):
     sub = " · ".join(x for x in (THEME_NAME.get(h["theme"], ""), h.get("ref")) if x)
     return (f'<button type="button" data-hl="{idx}" data-theme="{h["theme"]}" aria-label="Enlarge: {E(h["title"])}">'
-            f'<img src="{E(h["thumb"])}" alt="{E(h["title"])}" loading="lazy">'
+            + pic(h["image"], h["title"], "(min-width: 960px) 160px, 45vw" if cls == "mini" else "(min-width: 1120px) 345px, (min-width: 960px) 31vw, (min-width: 700px) 46vw, 92vw")
             + ('' if cls == "mini" else f'<div class="cap"><b>{E(h["title"])}</b><span>{E(sub)}</span></div>') + '</button>')
 
 
 def lightbox():
-    data = json.dumps([{"src": h["image"], "title": h["title"], "ref": h.get("ref", ""),
+    data = json.dumps([{"src": best(h["image"]), "title": h["title"], "ref": h.get("ref", ""),
                         "doi": h.get("doi", "")} for h in HL])
     return (f'<dialog class="lb" id="lb"><img alt=""><div class="bar"><span class="t"></span>'
             f'<span class="nav"><button type="button" data-step="-1">← Prev</button><button type="button" data-step="1">Next →</button>'
@@ -233,9 +271,25 @@ def lightbox():
             f'<script type="application/json" id="hl-data">{data.replace("</", "<\\/")}</script>')
 
 
+def li_button(label="Follow us on LinkedIn"):
+    return (f'<a class="btn li" href="{E(L["linkedin"])}" target="_blank" rel="noopener">'
+            f'{icon("linkedin")}<span>{E(label)}</span></a>')
+
+
+def li_embed_url(post):
+    """Accepts an embed URL/URN or a normal post link and returns the official embed URL."""
+    m = re.search(r"urn:li:(share|activity|ugcPost):(\d+)", post) or re.search(r"(activity)-(\d{15,})", post)
+    return f"https://www.linkedin.com/embed/feed/update/urn:li:{m.group(1)}:{m.group(2)}" if m else None
+
+
+def li_posts(limit=6):
+    urls = [u for u in (li_embed_url(x) for x in LAB.get("linkedin_posts", [])[:limit]) if u]
+    return "".join(f'<div class="li-post"><iframe src="{E(u)}" title="LinkedIn post" loading="lazy" allowfullscreen></iframe></div>' for u in urls)
+
+
 def photos():
     return '<div class="photos">' + "".join(
-        f'<figure class="photo reveal" style="--d:{i * 60}ms"><img src="{E(f)}" alt="{E(c)}" loading="lazy"><figcaption>{E(c)}</figcaption></figure>'
+        f'<figure class="photo reveal" style="--d:{i * 60}ms">{pic(f, c, "(min-width: 960px) 30vw, (min-width: 700px) 46vw, 92vw")}<figcaption>{E(c)}</figcaption></figure>'
         for i, (f, c) in enumerate(LAB.get("lab_photos", []))) + '</div>'
 
 
@@ -253,7 +307,7 @@ def home():
                 seen.add(t["id"]); show.append(k); break
     slides = "".join(
         f'<button type="button" class="slide{" on" if j == 0 else ""}" data-hl="{k}" aria-label="Enlarge: {E(HL[k]["title"])}"'
-        f'{"" if j == 0 else " tabindex=-1"}><img src="{E(HL[k]["image"])}" alt="{E(HL[k]["title"])}"{"" if j == 0 else " loading=lazy"}>'
+        f'{"" if j == 0 else " tabindex=-1"}>' + pic(HL[k]["image"], HL[k]["title"], "(min-width: 960px) 560px, 92vw", eager=(j == 0), defer=(j > 0)) +
         f'<span class="cap"><span class="th">{E(THEME_NAME.get(HL[k]["theme"], ""))}</span><b>{E(HL[k]["title"])}</b></span></button>'
         for j, k in enumerate(show))
     dots = "".join(f'<button type="button" aria-label="Slide {j + 1}"{" aria-current=true" if j == 0 else ""}></button>' for j in range(len(show)))
@@ -267,7 +321,7 @@ def home():
     news += f'<li><time>{E(ev["when"])}</time><div class="what"><b>{E(ev["title"])}</b><p>{E(ev["text"])}</p></div></li>'
     body = f"""
 <div class="hero"><div class="wrap"><div>
-<div class="mark"><img src="{E(L['logo'])}" alt="TeNSorE Lab logo" width="64" height="64"><div class="eyebrow">{E(L['school'])}<br>IIT Kharagpur</div></div>
+<div class="mark">{pic(L['logo'], "TeNSorE Lab logo", "64px", eager=True)}<div class="eyebrow">{E(L['school'])}<br>IIT Kharagpur</div></div>
 <h1><em>Thermofluidics</em> and <em>Nanotechnology</em> for Sustainable Energy Systems Laboratory</h1>
 <p class="tagline">{E(L.get('tagline', ''))}</p>
 <p class="lead">{E(L['intro'])}</p>
@@ -280,7 +334,7 @@ def home():
 </div></div>
 <div class="wrap">
 <section><div class="eyebrow">Research platform</div><h2 class="sec">From molecules to systems</h2>
-<a class="platform reveal" href="{E(L['platform']['image'])}" title="Open full size"><img src="{E(L['platform']['small'])}" srcset="{E(L['platform']['small'])} 1000w, {E(L['platform']['image'])} 1672w" sizes="(min-width: 1120px) 1064px, 100vw" alt="{E(L['platform']['caption'])}" width="1672" height="941"></a>
+<a class="platform reveal" href="{E(best(L['platform']['image']))}" title="Open full size">{pic(L['platform']['image'], L['platform']['caption'], "(min-width: 1120px) 1064px, 96vw")}</a>
 <p class="note" style="margin-top:10px">{E(L['platform']['caption'])}</p></section>
 <section><div class="eyebrow">Research themes</div><h2 class="sec">What we study</h2>
 <div class="grid g4">{theme_cards}</div><p class="more"><a href="publications.html">Browse all {len(pubs)} publications by theme →</a></p></section>
@@ -294,7 +348,8 @@ def home():
 <p class="lead2" style="margin:10px 0 0">{E(pi['bio'][0])}</p>
 <div class="links"><a href="people.html#pi">Profile</a>{"".join(f'<a href="{E(u)}">{E(t)}</a>' for t, u in pi['links'])}</div></div></div></div>
 <div><div class="eyebrow">Latest</div><h2 class="sec">News</h2><ul class="list reveal">{news}</ul>
-<p class="more"><a href="news.html">All news and events →</a></p></div>
+<p class="more"><a href="news.html">All news and events →</a></p>
+<div class="li-card reveal"><div><b>TeNSorE Lab on LinkedIn</b><span>Updates, new papers and openings.</span></div>{li_button("Follow")}</div></div>
 </div></section>
 <section><div class="eyebrow">Recent work</div><h2 class="sec">Recent journal papers</h2>
 <ol class="pubs">{"".join(pub_li(p) for p in recent)}</ol>
@@ -311,7 +366,7 @@ def research():
         rel = [p for p in pubs if t["id"] in p["themes"]]
         relh = (f'<details class="rel"><summary>{len(rel)} related publications</summary><ol>{"".join(pub_li(p, True) for p in rel[:8])}</ol>'
                 f'<p class="note"><a href="publications.html?theme={t["id"]}">See all {len(rel)} in Publications →</a></p></details>') if rel else ""
-        fig = f'<div class="figure"><img src="{E(t["image"])}" alt="{E(t["name"])}" loading="lazy"></div>' if t.get("image") else ""
+        fig = f'<div class="figure">{pic(t["image"], t["name"], "(min-width: 700px) 400px, 92vw")}</div>' if t.get("image") else ""
         mine = [(k, h) for k, h in enumerate(HL) if h["theme"] == t["id"]]
         minis = (f'<div class="theme-hl">{"".join(hl_button(h, k, "mini") for k, h in mine)}</div>') if mine else ""
         blocks.append(f'<div class="theme reveal" id="{t["id"]}"><div class="ico">{icon(t["icon"])}</div><div><h3>{E(t["name"])}</h3>'
@@ -409,6 +464,9 @@ def news():
 <div class="wrap">
 <section><div class="eyebrow">Group news</div><h2 class="sec">News</h2><ul class="list">{nl}</ul></section>
 <section><div class="eyebrow">Organised by the lab</div><h2 class="sec">Workshops and events</h2><ul class="list">{ev}</ul></section>
+<section id="linkedin"><div class="eyebrow">Social media</div><h2 class="sec">On LinkedIn</h2>
+{f'<div class="li-grid">{li_posts()}</div>' if li_posts() else ''}
+<div class="li-card"><div><b>Follow the TeNSorE Lab on LinkedIn</b><span>Lab news, new papers, events and openings — as they happen.</span></div>{li_button()}</div></section>
 <section id="lectures"><div class="eyebrow">Teaching resources</div><h2 class="sec">Lecture archive</h2>
 <div class="card"><b>{E(lc['program'])}</b><p style="margin:6px 0 12px">{E(lc['text'])}</p>
 <ul class="chips">{"".join(f'<li>{E(t)}</li>' for t in lc['topics'])}</ul>
@@ -429,7 +487,8 @@ def join():
 <div class="card contact-card"><div><h3>{E(LAB['pi']['name'])}</h3><p class="lead2" style="margin:0">Write to Dr. Bakli for positions, internships and collaborations. To reach a lab member, mention them in your email.</p>
 <p style="margin:16px 0 0"><a class="btn plain" href="mailto:{L['email']}">{icon('mail').replace('<svg', '<svg width=18 height=18 fill=none stroke=currentColor stroke-width=1.8')} {L['email']}</a></p></div>
 <div><dl class="kv"><dt>Address</dt><dd>{E(L['address'])}</dd><dt>School</dt><dd><a href="{L['school_url']}">{E(L['school'])}</a></dd>
-<dt>Faculty page</dt><dd><a href="{LAB['pi']['links'][0][1]}">iitkgp.ac.in/department/ES/faculty/es-chirodeep</a></dd></dl></div></div></section>
+<dt>Faculty page</dt><dd><a href="{LAB['pi']['links'][0][1]}">iitkgp.ac.in/department/ES/faculty/es-chirodeep</a></dd>
+<dt>LinkedIn</dt><dd><a href="{L['linkedin']}">linkedin.com/company/tensore-lab-iit-kgp</a></dd></dl></div></div></section>
 </div>"""
     return page("join.html", "Join us", "Openings and contact details for the TeNSorE Lab, IIT Kharagpur.", body)
 
