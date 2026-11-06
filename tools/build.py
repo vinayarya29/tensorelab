@@ -28,6 +28,20 @@ def md(s):
     return re.sub(r"\*(.+?)\*", r"<i>\1</i>", s)
 
 
+def slug(name):
+    n = re.sub(r"^(Dr|Prof)\.?\s+", "", name)
+    return re.sub(r"[^a-z0-9]+", "-", _plain(n)).strip("-")
+
+
+def avatar(name, cls=""):
+    """Photo from images/people/<slug>.jpg when available, otherwise initials."""
+    f = ROOT / "images" / "people" / (slug(name) + ".jpg")
+    c = f"avatar {cls}".strip()
+    if f.exists():
+        return f'<img class="{c} photo-av" src="images/people/{slug(name)}.jpg" alt="{E(name)}" loading="lazy">'
+    return f'<div class="{c}">{initials(name)}</div>'
+
+
 def initials(name):
     parts = [p for p in re.sub(r"^(Dr|Prof)\.?\s+", "", name).split() if p[0].isalpha()]
     return (parts[0][0] + parts[-1][0]).upper() if len(parts) > 1 else parts[0][:2].upper()
@@ -275,7 +289,7 @@ def home():
 <section><div class="eyebrow">In the lab</div><h2 class="sec">Experiments and test beds</h2>{photos()}</section>
 <section><div class="grid g2">
 <div><div class="eyebrow">Principal investigator</div><h2 class="sec">{E(pi['name'])}</h2>
-<div class="card pi reveal"><div class="avatar">{initials(pi['name'])}</div><div>
+<div class="card pi reveal">{avatar(pi['name'])}<div>
 <div class="t">{E(pi['title'])}, {E(L['school'])}</div><div class="note">{E(pi['roles'][0])}</div>
 <p class="lead2" style="margin:10px 0 0">{E(pi['bio'][0])}</p>
 <div class="links"><a href="people.html#pi">Profile</a>{"".join(f'<a href="{E(u)}">{E(t)}</a>' for t, u in pi['links'])}</div></div></div></div>
@@ -330,17 +344,17 @@ def research():
 
 def people():
     pi = LAB["pi"]
-    pd = "".join(f'<div class="card person reveal"><div class="avatar sm">{initials(p["name"])}</div><div>'
+    pd = "".join(f'<div class="card person reveal">{avatar(p["name"], "sm")}<div>'
                  + (f'<b><a href="{E(p["url"])}">{E(p["name"])}</a></b>' if p.get("url") else f'<b>{E(p["name"])}</b>')
                  + f'<span>{E(p["role"])}</span></div></div>' for p in LAB["postdocs"])
-    phd = "".join(f'<div class="card person reveal" style="--d:{(i % 8) * 40}ms"><div class="avatar sm">{initials(n)}</div><div><b>{E(n)}</b><span>{E(a)}</span></div></div>'
+    phd = "".join(f'<div class="card person reveal" style="--d:{(i % 8) * 40}ms">{avatar(n, "sm")}<div><b>{E(n)}</b><span>{E(a)}</span></div></div>'
                   for i, (n, a) in enumerate(sorted(LAB["phd"])))
 
     def alum(lst, label):
-        return "".join(f'<div class="card alum reveal"><div class="y">{label} · {E(a.get("year") or a.get("years"))}</div><b>{E(a["name"])}</b>'
+        return "".join(f'<div class="card alum reveal"><div class="ahead">{avatar(a["name"], "sm")}<div><div class="y">{label} · {E(a.get("year") or a.get("years"))}</div><b>{E(a["name"])}</b></div></div>'
                        + (f'<div class="th">{E(a["thesis"])}</div>' if a.get("thesis") else "")
                        + (f'<div class="now">{E(a["now"])}</div>' if a.get("now") else "") + "</div>" for a in lst)
-    mt = "".join(f'<li><b>{E(a["name"])}</b><span>{E(" · ".join(x for x in (a.get("years"), a.get("now")) if x))}</span></li>' for a in LAB["alumni_mtech"])
+    mt = "".join(f'<div class="card person reveal">{avatar(a["name"], "sm")}<div><b>{E(a["name"])}</b><span>{E(" · ".join(x for x in ("M.Tech. " + (a.get("years") or ""), a.get("now")) if x and x.strip()))}</span></div></div>' for a in LAB["alumni_mtech"])
     col = ""
     for grp, items in LAB["collaborators"].items():
         col += f'<h3 class="sub">{E(grp)}</h3><ul class="collab">' + "".join(
@@ -348,7 +362,7 @@ def people():
     body = phead("People", "The group", f"{1 + len(LAB['postdocs']) + len(LAB['phd'])} people: the PI, {len(LAB['postdocs'])} postdoctoral fellows and {len(LAB['phd'])} PhD scholars, plus alumni and collaborators.") + f"""
 <div class="wrap">
 <section id="pi"><div class="eyebrow">Principal investigator</div><h2 class="sec">{E(pi['name'])}</h2>
-<div class="card pi"><div class="avatar">{initials(pi['name'])}</div><div>
+<div class="card pi">{avatar(pi['name'])}<div>
 <div class="t">{E(pi['title'])}, {E(L['school'])}, IIT Kharagpur</div>
 <ul class="chips">{"".join(f'<li>{E(r)}</li>' for r in pi['roles'])}</ul>
 {"".join(f'<p class="lead2" style="margin:10px 0 0">{E(b)}</p>' for b in pi['bio'])}
@@ -360,7 +374,7 @@ def people():
 <section><div class="eyebrow">Doctoral researchers</div><h2 class="sec">PhD scholars <span class="count">{len(LAB['phd'])}</span></h2><div class="grid g3">{phd}</div></section>
 <section><div class="eyebrow">Alumni</div><h2 class="sec">Graduated</h2>
 <div class="grid g2">{alum(LAB['alumni_phd'], 'PhD')}{alum(LAB['alumni_ms'], 'MS')}</div>
-<h3 class="sub">M.Tech.</h3><ul class="collab">{mt}</ul></section>
+<h3 class="sub">M.Tech.</h3><div class="grid g3">{mt}</div></section>
 <section id="collaborators"><div class="eyebrow">Network</div><h2 class="sec">Collaborators</h2>{col}</section>
 </div>"""
     return page("people.html", "People", "PI, postdocs, PhD scholars, alumni and collaborators of the TeNSorE Lab, IIT Kharagpur.", body)

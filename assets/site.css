@@ -296,3 +296,10 @@ dialog.lb .nav button { font: inherit; font-size: .88em; padding: 6px 12px; bord
 @media (max-width: 960px) { .hero .wrap { grid-template-columns: 1fr; } }
 @media (max-width: 700px) { .carousel .cap { padding: 18px 12px 24px; } .carousel .cap b { font-size: .95em; } .carousel .nav { opacity: 1; width: 30px; height: 30px; } }
 .phead p:empty { display: none; }
+/* People photos */
+img.avatar { object-fit: cover; object-position: center 20%; background: var(--panel); padding: 0; display: block; border: 1px solid var(--rule); }
+.avatar.sm { width: 56px; height: 56px; }
+img.avatar.sm { width: 56px; height: 56px; }
+.alum .ahead { display: flex; gap: 12px; align-items: center; margin-bottom: 6px; }
+.pi img.avatar { width: 132px; height: 132px; }
+@media (max-width: 700px) { .pi img.avatar { width: 104px; height: 104px; } }
