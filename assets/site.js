@@ -4,6 +4,8 @@
   var root = document.documentElement;
   var embedded = false;
   try { embedded = window.self !== window.top; } catch (e) { embedded = true; }
+  // ?embed=1 forces embedded mode (no menus), e.g. for Google Sites embeds
+  if (/[?&]embed(=1|=true)?(&|$)/.test(location.search)) embedded = true;
   root.classList.toggle("embedded", embedded);
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (!reduce && "IntersectionObserver" in window) root.classList.add("anim");

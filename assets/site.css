@@ -303,3 +303,6 @@ img.avatar.sm { width: 56px; height: 56px; }
 .alum .ahead { display: flex; gap: 12px; align-items: center; margin-bottom: 6px; }
 .pi img.avatar { width: 132px; height: 132px; }
 @media (max-width: 700px) { .pi img.avatar { width: 104px; height: 104px; } }
+/* Embedded (Google Sites): the host site supplies navigation, so hide our own menus and page-to-page links */
+.embedded .topbar, .embedded .cta, .embedded .toc, .embedded p.more, .embedded .menu-btn { display: none !important; }
+.embedded .hero .wrap { padding-top: 24px; }
