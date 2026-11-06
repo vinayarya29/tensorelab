@@ -1,0 +1,697 @@
+{
+ "_sources": "Members, projects, PI roles and awards: IIT Kharagpur faculty page https://www.iitkgp.ac.in/department/ES/faculty/es-chirodeep (Nov 2026). Postdocs, M.Tech alumni, themes, facilities, events, lectures, collaborators: https://sites.google.com/view/tensore. Publications: data/publications.json (from ORCID).",
+ "lab": {
+  "short": "TeNSorE Lab",
+  "name": "Thermofluidics and Nanotechnology for Sustainable Energy Systems Laboratory",
+  "school": "School of Energy Science and Engineering",
+  "school_url": "https://www.iitkgp.ac.in/department/ES",
+  "institute": "Indian Institute of Technology Kharagpur",
+  "institute_url": "https://www.iitkgp.ac.in",
+  "address": "School of Energy Science and Engineering, Indian Institute of Technology Kharagpur, Kharagpur, West Bengal 721302, India",
+  "email": "chirodeep@iitkgp.ac.in",
+  "intro": "We are a research group in the School of Energy Science and Engineering at the Indian Institute of Technology Kharagpur. Our work sits at the interface of nanofluidics and microfluidics: graphene-based desalination, streaming potential, nanofluidic channel fabrication, multiphase microfluidics, droplet dynamics, electrokinetics and the energy performance of buildings.",
+  "approach": [
+   [
+    "Molecular scale",
+    "Molecular dynamics of water, ions and polymers in nanoconfinement: slip, wettability and transport below a micron."
+   ],
+   [
+    "Device scale",
+    "Experiments and simulations of electric double layers, droplets and multiphase flow in micro- and millichannels."
+   ],
+   [
+    "System scale",
+    "Solar thermal, wind and building energy systems, increasingly guided by machine learning."
+   ]
+  ]
+ },
+ "pi": {
+  "name": "Dr. Chirodeep Bakli",
+  "title": "Associate Professor",
+  "roles": [
+   "Chairperson, School of Energy Science & Engineering",
+   "Member, SPARC",
+   "Nodal Officer, New Education Policy (NEP) 2020"
+  ],
+  "areas": [
+   "Interfacial phenomena",
+   "Molecular simulation",
+   "Solar and wind energy conversion",
+   "Computational fluid dynamics",
+   "Machine learning"
+  ],
+  "awards": [
+   "Associate, West Bengal Academy of Science and Technology",
+   "Outstanding Reviewer 2023",
+   "Faculty Excellence Award",
+   "J C Ghosh Award",
+   "Institute Silver Medal, IIT Kharagpur"
+  ],
+  "bio": [
+   "My research focuses on multiscale fluid flow and heat transfer with the twin objectives to understand the interfacial interactions and flow physics, and to use them to develop smart surfaces and for renewable energy generation.",
+   "Part of the research focuses on length scales below micron dimensions, where one has to resort to molecular-level investigations. The results are used to propose a capillary-height-dependent dynamic slip length that explains the filling behaviour in nanocapillaries. For flow in confinement, the interfacial slip was shown to be a complex function of the physical and chemical signature of the solid surface and of the ionic inclusions in the solvent. In a pioneering work, the duality of wettability and slip length was challenged: flow on a hydrophobic surface was optimised to obtain stick, and methods were proposed to tune surface wettability by altering the structure of the solid and the fluid at the interface.",
+   "At the device level, theory and experiments decipher the interdependence between the structure of the electric double layer and the structure of the fluid at the interface under dynamic conditions, a road map for optimising electrokinetic energy conversion. At the system level, the research focuses on wind energy conversion and harvesting solar thermal energy."
+  ],
+  "links": [
+   [
+    "IIT Kharagpur faculty page",
+    "https://www.iitkgp.ac.in/department/ES/faculty/es-chirodeep"
+   ],
+   [
+    "Google Scholar",
+    "https://scholar.google.com/citations?user=cBwTBoQAAAAJ&hl=en"
+   ],
+   [
+    "ORCID",
+    "https://orcid.org/0000-0002-5882-143X"
+   ]
+  ]
+ },
+ "postdocs": [
+  {
+   "name": "Dr. Vinay Arya",
+   "role": "Institute Postdoctoral Fellow",
+   "url": "https://vinayarya29.github.io/"
+  },
+  {
+   "name": "Dr. Mayank Mani Pandey",
+   "role": "Postdoctoral Fellow"
+  }
+ ],
+ "phd": [
+  [
+   "Abhirup Chaudhuri",
+   "Microfluidics and Nanofluidics"
+  ],
+  [
+   "Anirban Roy",
+   "Multiphase Microfluidics"
+  ],
+  [
+   "Ashok Kumar",
+   "Solar Energy"
+  ],
+  [
+   "Debajyoti Gupta",
+   "Renewable Energy Management"
+  ],
+  [
+   "Diptesh Biswas",
+   "Droplet Dynamics on Surfaces"
+  ],
+  [
+   "Ekta Tayal",
+   "Multiphase Microfluidics"
+  ],
+  [
+   "Kunderu Pallavi",
+   "Multiphase Flow"
+  ],
+  [
+   "Aditya Shivaji Patwari",
+   "Microfluidics"
+  ],
+  [
+   "Pawan Prakash",
+   "Solar Air Conditioning"
+  ],
+  [
+   "Pratim Biswas",
+   "Environmental Impact on Health and Wellbeing"
+  ],
+  [
+   "Rahul Roy",
+   "Microfluidics and Nanofluidics"
+  ],
+  [
+   "Raju Mullick",
+   "Environmental Neuroscience"
+  ],
+  [
+   "Saraswata Ghosh",
+   "Power Plant Engineering"
+  ],
+  [
+   "Shaik Sydavali",
+   "Wind Energy Harvesting"
+  ],
+  [
+   "Souhardya Modak",
+   "Solar Energy Engineering"
+  ],
+  [
+   "Souparna Chakraborty",
+   "Building Energy and District Cooling with Renewable Energy Integration"
+  ],
+  [
+   "Souradeep Satpathy",
+   "Nanotechnology and Energy Materials"
+  ],
+  [
+   "Subradip Debnath",
+   "Microfluidics"
+  ],
+  [
+   "Sumanta Juin",
+   "Solar Photovoltaics"
+  ],
+  [
+   "Tanmoy Majhi",
+   "Solid–Liquid Interaction on 2D Materials"
+  ],
+  [
+   "Tripuresh Shanker Dwivedi",
+   "Functional Advanced Nanomaterials"
+  ],
+  [
+   "Vaibhav Saxena",
+   "Advanced Thermal Transport and Management"
+  ],
+  [
+   "Vikas Kumar",
+   "Hybrid Energy Storage Systems"
+  ],
+  [
+   "Vikash Chandra",
+   "Building Energy"
+  ]
+ ],
+ "alumni_phd": [
+  {
+   "name": "Vinay Arya",
+   "year": 2026,
+   "area": "Microfluidics and Nanofluidics",
+   "thesis": "Transport Control under Confinement: Molecular Mechanisms, Soft Matter Effects, and Multiscale Integration",
+   "now": "Institute Postdoctoral Fellow, IIT Kharagpur"
+  },
+  {
+   "name": "Shashi Rastogi",
+   "year": 2026,
+   "area": "Thermal Management of Devices",
+   "thesis": "Multiscale Heat Transfer in Confined Thermal Systems: Interplay of Geometry, Rheology, and Nanoparticle-Induced Transport"
+  },
+  {
+   "name": "Aniruddha Guha",
+   "year": 2024,
+   "area": "Microfluidics and Nanofluidics",
+   "thesis": "Transport in Physiological and Bio-Inspired Ion-Channels: Implications in Plant-Based Energy Harvesting and Nanopore Based Synaptic-Mimics"
+  },
+  {
+   "name": "Avinash Kumar",
+   "year": 2024,
+   "area": "Microfluidics and Nanofluidics",
+   "thesis": "Modulating Interfacial Phenomena over Small Scales for Optimal Energy Conversion, Thermal Management and Biomolecular Analysis",
+   "now": "Research Associate, IIT Madras"
+  },
+  {
+   "name": "Nilanjan Mondal",
+   "year": 2024,
+   "area": "Thermal Management of Devices",
+   "thesis": "Unravelling Non-Intuitive Links between Bulk and Interfaces for Fluids at Micro and Nanoscale",
+   "now": "Postdoctoral Fellow, University of Luxembourg"
+  }
+ ],
+ "alumni_ms": [
+  {
+   "name": "Souparna Chakraborty",
+   "year": 2023,
+   "area": "Building Energy",
+   "thesis": "Optimization of Some Passive Technologies towards an Energy Efficient Building"
+  },
+  {
+   "name": "Abhirup Chaudhuri",
+   "year": 2022,
+   "area": "Microfluidics and Nanofluidics",
+   "thesis": "Modulating Nanofluidic Transport via Interfacial Interactions over Molecular Scales"
+  }
+ ],
+ "alumni_mtech": [
+  {
+   "name": "Krupakar Mani",
+   "years": "2020–2022",
+   "now": "Commissioned officer, Aeronautical Engineering (Electronics) branch, Indian Air Force"
+  },
+  {
+   "name": "Jayant Agarwal",
+   "years": "2018–2020",
+   "now": "ONGC"
+  },
+  {
+   "name": "Siva Shankar S S",
+   "years": "",
+   "now": "Deputy Executive Engineer, NLC India Limited (since August 2021)"
+  },
+  {
+   "name": "Sumit Kumar",
+   "years": "2023–2025"
+  },
+  {
+   "name": "Aparna Sharma",
+   "years": "2023–2025"
+  },
+  {
+   "name": "Parthkumar Sohaliya",
+   "years": "2023–2025"
+  },
+  {
+   "name": "Rathod Krunal Ashwinbhai",
+   "years": "2023–2025"
+  }
+ ],
+ "themes": [
+  {
+   "id": "2d",
+   "name": "2D Materials and Nanoconfinement",
+   "icon": "hex",
+   "short": "Engineering solid–liquid interfaces at the nanoscale: wettability, slip and transport in graphene and carbon nanochannels.",
+   "text": "The science of manipulating solid–liquid interfaces at micro and nano sizes has great potential for a wide range of applications. By altering the surface chemistry or topography of solids, properties such as wettability and adhesion can be precisely adjusted, opening opportunities in self-cleaning coatings, microfluidic devices, wettability sensors, heat transfer, self-assembly, catalysis and thermal management. Starting from the smallest scale, the goal is to create long-lasting technologies that improve access to water and energy.",
+   "keys": [
+    "graphene",
+    "nanochannel",
+    "nanopore",
+    "nanotube",
+    "carbon",
+    "nanoconfine",
+    "confinement",
+    "slip",
+    "2d",
+    "mos",
+    "capillary filling",
+    "nanoscale",
+    "sub-nanometer",
+    "membrane",
+    "nanofluidic",
+    "angstrofluidic",
+    "nanodroplet"
+   ]
+  },
+  {
+   "id": "nanofluid",
+   "name": "Nanofluid Heat Transfer",
+   "icon": "flame",
+   "short": "Nanoparticle suspensions, porous media and engineered heat sinks for better thermal management.",
+   "text": "Nanofluid heat transfer combines fluid dynamics and nanotechnology to transform thermal management. Dispersing nanoparticles in a base fluid such as water or oil raises thermal conductivity and improves convective transport, which enhances heat exchangers, radiators and cooling systems used in renewable energy generation and energy-efficient buildings. The group designs nanofluid compositions and heat-sink geometries that maximise heat transfer while minimising environmental impact.",
+   "keys": [
+    "nanofluid",
+    "heat sink",
+    "heat exchanger",
+    "thermal conductivity",
+    "heat transfer",
+    "boiling",
+    "thermo-hydraulic",
+    "thermal performance",
+    "porous",
+    "thermoelectric",
+    "cooling"
+   ]
+  },
+  {
+   "id": "fsi",
+   "name": "Fluid–Structure Interaction",
+   "icon": "wave",
+   "short": "Coupled dynamics of deformable structures and the fluids around them, from flexible conduits to bio-inspired flows.",
+   "text": "Fluid–structure interaction (FSI) captures the two-way coupling between deformable structures and surrounding fluids, from fluttering flags to blood flow in arteries. Understanding this coupling is essential for optimising design, performance and structural integrity in aerospace, civil engineering, biomechanics and sustainable energy systems. The group combines computational methods, experiments and theory to study these interactions.",
+   "keys": [
+    "flexible",
+    "deformable",
+    "fluid-structure",
+    "fluid–structure",
+    "compliant",
+    "elastic",
+    "strain sensor",
+    "composite"
+   ]
+  },
+  {
+   "id": "buildings",
+   "name": "Energy Studies of Buildings",
+   "icon": "building",
+   "short": "Passive cooling, phase-change materials, façades and green roofs for energy-efficient buildings.",
+   "text": "Buildings are a large share of energy demand. The group studies passive thermal management of buildings: phase-change materials integrated in direct-gain walls, machine-learning-guided façade optimisation, tree-shaped microchannel networks for passive cooling, hydrogel-based cooling, micro green roofing and district cooling with renewable energy integration.",
+   "keys": [
+    "building",
+    "façade",
+    "facade",
+    "roof",
+    "wall",
+    "phase change material",
+    "air condition",
+    "passive cooling",
+    "hydrogel",
+    "urban",
+    "district cooling",
+    "dryer",
+    "greenhouse"
+   ]
+  },
+  {
+   "id": "multiphase",
+   "name": "Interfacial Phenomena and Multiphase Microfluidics",
+   "icon": "drops",
+   "short": "Immiscible phases in small channels: plugs, jets, mixing and core–annular flow.",
+   "text": "In multiphase microfluidics the interaction between immiscible phases controls a wide range of phenomena, from the adjustment of surface tension forces to the motion of droplets and bubbles. Precise control of fluid interfaces improves energy conversion and storage, and small channels allow effective blending, regulation of reactions and creation of materials.",
+   "keys": [
+    "multiphase",
+    "biphasic",
+    "core annular",
+    "core-annular",
+    "jet",
+    "plug",
+    "mixing",
+    "mixer",
+    "liquid-liquid",
+    "oil",
+    "two-phase",
+    "millichannel",
+    "draining",
+    "rheology",
+    "shear-thinning",
+    "viscoplastic"
+   ]
+  },
+  {
+   "id": "droplets",
+   "name": "Droplet Dynamics",
+   "icon": "drop",
+   "short": "Formation, impact, wetting and propulsion of droplets on engineered surfaces.",
+   "text": "Droplet dynamics examines how liquid droplets behave as they interact with their environment, shaped by surface tension, viscosity and external forces from formation to break-up, coalescence and impact. These processes matter for fuel combustion, spray cooling in power plants and water droplets on solar panels, and understanding them helps improve energy conversion and utilisation.",
+   "keys": [
+    "droplet",
+    "drop ",
+    "wetting",
+    "meniscus",
+    "spill",
+    "impingement",
+    "touchdown",
+    "water removal",
+    "fuel cell",
+    "condensation",
+    "contact line",
+    "wettability"
+   ]
+  },
+  {
+   "id": "electrokinetics",
+   "name": "Electrokinetics",
+   "icon": "bolt",
+   "short": "Electric fields, ions and flow at the micro- and nanoscale: streaming potential, energy conversion and translocation.",
+   "text": "Electrokinetics explores the interaction between electric fields and fluid flow. By manipulating electric charges it is possible to regulate the motion of fluids, colloids and particles at the micro- and nanoscale. The group studies electrophoresis, electroosmosis and streaming potential for electrokinetic energy conversion, desalination, ion rectification and biomolecule translocation.",
+   "keys": [
+    "electrokinetic",
+    "electroosmotic",
+    "electro-osmotic",
+    "streaming potential",
+    "ion ",
+    "ionic",
+    "translocation",
+    "dna",
+    "rectification",
+    "memristor",
+    "zwitterion",
+    "electric double layer",
+    "desalination",
+    "surface charge",
+    "electric field",
+    "double-layer",
+    "double layer",
+    "electrical"
+   ]
+  }
+ ],
+ "projects_current": {
+  "Principal Investigator": [
+   [
+    "Digital Transformation Initiative for Enhanced Alumni Engagement and Global Branding of Energy Science and Engineering",
+    "SRIC, IIT Kharagpur"
+   ],
+   [
+    "Energy Alumni Relations and Global Interactive Engagement for SESE Excellence",
+    "SRIC, IIT Kharagpur"
+   ],
+   [
+    "Institutional Data Management and Analytics Support for NEP 2020 Implementation (IoE Grant)",
+    "IIT Kharagpur"
+   ],
+   [
+    "Multiphase flow in flexible conduits: stability and machine learning",
+    "Indo-French Centre for the Promotion of Advanced Research (CEFIPRA)"
+   ],
+   [
+    "SHEETAL: Sustainable Hydrogel-enabled Energy Efficient Thermal Augmentation for Air Conditioning Load Reduction (Platinum Jubilee Innovation Challenge Grant, IoE)",
+    "Sponsored Research and Industrial Consultancy (SRIC)"
+   ],
+   [
+    "Understanding heterogeneous vapour condensation and diffusion of gas mixtures in semiconductor equipment using molecular-level simulation",
+    "LAM Research Corporation"
+   ]
+  ],
+  "Co-Principal Investigator": [
+   [
+    "Centre of Excellence on Energy Aware Urban Infrastructure",
+    "Science and Engineering Research Board (SERB)"
+   ],
+   [
+    "Development of high-power grid-friendly conductive and static wireless chargers for electric vehicles",
+    "Anusandhan National Research Foundation (ANRF)"
+   ],
+   [
+    "Development of polymer composite-based strain sensors",
+    "Ministry of Electronics and Information Technology"
+   ],
+   [
+    "Kotak-IITM Save Energy Mission (KISEM) spoke at IIT Kharagpur",
+    "IIT Madras"
+   ]
+  ]
+ },
+ "projects_completed": {
+  "Principal Investigator": [
+   [
+    "Micro Green Roofing (IMPRINT-2)",
+    "Science and Engineering Research Board (SERB)"
+   ],
+   [
+    "Energy Harvesting using Droplets on Slippery Surfaces",
+    "ISIRD, SRIC"
+   ],
+   [
+    "Eco-friendly and Energy Efficient Storage of Bio-Hydrogen",
+    ""
+   ],
+   [
+    "Solar Decathlon India Product Design",
+    ""
+   ],
+   [
+    "An interdisciplinary approach to Sustainable Energy Transition to Equitable Systems: The Role of Solar Energy and Thermal Storage within the UK–India contexts",
+    ""
+   ]
+  ],
+  "Co-Principal Investigator": [
+   [
+    "3D printing of intricate fluid conduits using ceramic particles for fluid flow",
+    "Shell India Markets Pvt. Ltd."
+   ],
+   [
+    "Confinement-induced Dynamics in Nanoscale Phase Transition",
+    "Apex Committee of SPARC"
+   ],
+   [
+    "Indo-Korean Joint Network Centre on Computational Materials",
+    "Department of Science and Technology (International Bilateral Cooperation Division)"
+   ]
+  ]
+ },
+ "facilities": [
+  [
+   "Goniometer",
+   "Contact angle measurement"
+  ],
+  [
+   "Wind tunnel",
+   "Lift and drag force measurements"
+  ],
+  [
+   "Solar water heater",
+   "Natural vs forced convection"
+  ],
+  [
+   "High-end workstations",
+   "Molecular dynamics and CFD simulations"
+  ],
+  [
+   "Nanovoltmeter and picoammeter",
+   "Low voltage and current measurement"
+  ],
+  [
+   "Syringe pump",
+   "Precise delivery of small fluid volumes"
+  ],
+  [
+   "High-speed camera",
+   "Imaging at very high frame rates"
+  ],
+  [
+   "Oscilloscope",
+   "Signal measurement"
+  ],
+  [
+   "Ultrasonicator",
+   "Dispersion and sample preparation"
+  ]
+ ],
+ "facilities_note": [
+  "Central Research Facility (CRF), IIT Kharagpur",
+  "http://crf.iitkgp.ac.in/"
+ ],
+ "events": [
+  {
+   "when": "8–12 July 2024",
+   "title": "Indo-UK Capacity Building Symposium: Sustainable Energy Transition — Engineering, Entrepreneurship and Wellbeing",
+   "text": "Organised by IIT Kharagpur and the University of Birmingham, for faculty, research scholars and PG/UG students from engineering, science, management and law."
+  },
+  {
+   "when": "24–25 March 2023",
+   "title": "3rd International Workshop on Fluids under Confinement",
+   "text": "A two-day hybrid workshop."
+  },
+  {
+   "when": "March 2021",
+   "title": "Fluids under Confinement 2021",
+   "text": "A virtual workshop with talks by Prof. Todd Squires, Prof. Arun Majumdar, Prof. Kripa Varanasi, Prof. Detlef Lohse and Prof. Amit Agrawal."
+  },
+  {
+   "when": "December 2019",
+   "title": "Workshop on Multiscale Modelling Approach in Micro/Nano-Fluidics",
+   "text": ""
+  },
+  {
+   "when": "2019",
+   "title": "SPARC Workshop",
+   "text": ""
+  }
+ ],
+ "news": [
+  {
+   "when": "2026",
+   "text": "Two PhD theses defended: **Vinay Arya** and **Shashi Rastogi**."
+  },
+  {
+   "when": "2024",
+   "text": "PhD theses defended by **Aniruddha Guha**, **Avinash Kumar** and **Nilanjan Mondal**."
+  },
+  {
+   "when": "",
+   "text": "**Sambit Kumar Behera**, an M.Tech student of the lab, received the Reliance Foundation scholarship."
+  }
+ ],
+ "lectures": {
+  "program": "INAE–Infosys Foundation Centre for Engineering Education Excellence Programme",
+  "text": "A lecture archive curated by the lab to promote foundational understanding of renewable and sustainable energy systems.",
+  "url": "https://drive.google.com/drive/u/1/folders/117wknPdlVHnqk4y_bE2Z13JfYLRcfiyP",
+  "topics": [
+   "Global Energy Landscape",
+   "Solar Energy Technologies",
+   "Hydropower Fundamentals",
+   "Wind Energy Systems"
+  ]
+ },
+ "collaborators": {
+  "International": [
+   [
+    "Prof. BoHung Kim",
+    "MNTF Lab, University of Ulsan, Republic of Korea",
+    ""
+   ],
+   [
+    "Prof. James Sprittles",
+    "University of Warwick, UK",
+    "https://jamessprittles.com/"
+   ],
+   [
+    "Dr. Indrajit Chakraborty",
+    "University of Warwick, UK",
+    "https://scholar.google.co.in/citations?user=qcNf7YEAAAAJ&hl=en"
+   ],
+   [
+    "Prof. Rohit Karnik",
+    "Mechanical Engineering, Massachusetts Institute of Technology, USA",
+    "https://meche.mit.edu/people/faculty/karnik@mit.edu"
+   ],
+   [
+    "Dr. Shivangi Sharma",
+    "Birmingham Energy Institute, University of Birmingham, UK",
+    "https://scholar.google.co.uk/citations?user=GXmX5S8AAAAJ&hl=en"
+   ]
+  ],
+  "National": [
+   [
+    "Prof. Suman Chakraborty",
+    "Mechanical Engineering, IIT Kharagpur",
+    "https://www.iitkgp.ac.in/department/ME/faculty/me-suman"
+   ],
+   [
+    "Prof. Rabibrata Mukherjee",
+    "Chemical Engineering, IIT Kharagpur",
+    "https://www.iitkgp.ac.in/department/CH/faculty/ch-rabibrata"
+   ],
+   [
+    "Prof. Chandra Sekhar Tiwary",
+    "Metallurgical and Materials Engineering, IIT Kharagpur",
+    "https://www.iitkgp.ac.in/department/MT/faculty/mt-chandra.tiwary"
+   ],
+   [
+    "Prof. Siddhartha Mukhopadhyay",
+    "Electrical Engineering, IIT Kharagpur",
+    "https://www.iitkgp.ac.in/department/EE/faculty/ee-smukh"
+   ],
+   [
+    "Dr. Titash Mondal",
+    "Rubber Technology, IIT Kharagpur",
+    "https://www.iitkgp.ac.in/department/RT/faculty/rt-titash"
+   ],
+   [
+    "Dr. Rajaram Lakkaraju",
+    "Mechanical Engineering, IIT Kharagpur",
+    "https://www.iitkgp.ac.in/department/ME/faculty/me-rlakkaraju"
+   ],
+   [
+    "Dr. Prashant Anand",
+    "Architecture and Regional Planning, IIT Kharagpur",
+    "https://www.iitkgp.ac.in/department/AR/faculty/ar-prashantanand"
+   ],
+   [
+    "Dr. Chandan Bera",
+    "Institute of Nano Science and Technology, Mohali",
+    "https://inst.ac.in/scientist/40-chandan-bera"
+   ],
+   [
+    "Dr. Debasis Ghosh",
+    "Jain University, Bangalore",
+    "https://cnms.jainuniversity.ac.in/Faculty-Debasis.htm"
+   ]
+  ]
+ },
+ "join": {
+  "text": "We are always looking for enthusiastic young minds to join the lab. The group is currently looking for interns who are proficient in coding.",
+  "routes": [
+   [
+    "PhD",
+    "Admission is through IIT Kharagpur's PhD admission process (School of Energy Science and Engineering). Write to Dr. Bakli with your CV and research interests before applying."
+   ],
+   [
+    "Project positions (JRF/SRF/RA)",
+    "Openings on sponsored projects are advertised on IIT Kharagpur's temporary jobs page.",
+    "https://www.iitkgp.ac.in/temporary-jobs"
+   ],
+   [
+    "Internships",
+    "Students proficient in coding (simulation, data analysis, machine learning) are welcome to write in with a CV and a short note on what they would like to work on."
+   ],
+   [
+    "Collaborations",
+    "We welcome collaborations with academic and industry partners. Contact Dr. Bakli directly."
+   ]
+  ]
+ }
+}

@@ -1,0 +1,6 @@
+{
+ "_comment": "Manual corrections applied on top of the ORCID record by tools/update_publications.py. Keys are the start of the title (case-insensitive). Authors/DOIs below are taken from the lab's own publication lists (TeNSorE Google Site, IIT KGP faculty page).",
+ "Effect of Porous Walls and Nanofluids on the Thermo-Hydraulic Performance": {"authors": ["A. Kumar", "C. Bakli"], "doi": "10.1115/power2022-86626", "type": "conference"},
+ "Optimizing Effectiveness of Double Pipe Heat Exchanger": {"authors": ["A. Kumar", "V. Arya", "C. Bakli"], "doi": "10.1115/power2021-64248", "type": "conference"},
+ "Optimizing Water Harvesting on Bioinspired Surfaces": {"authors": ["S. Chakraborty", "A. Chaudhuri", "C. Bakli"], "doi": "10.1115/power2021-64668", "type": "conference"}
+}

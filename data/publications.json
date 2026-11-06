@@ -1,0 +1,1625 @@
+{
+ "source": "https://orcid.org/0000-0002-5882-143X",
+ "updated": "2026-11-06",
+ "publications": [
+  {
+   "title": "2-D Numerical Investigation of horizontal core annular flow - Performance, Insights and Challenges",
+   "authors": [
+    "Ekta Tayal",
+    "Joydip Chaudhuri",
+    "Chirodeep Bakli",
+    "Subhabrata Ray",
+    "Gargi Das"
+   ],
+   "year": 2026,
+   "venue": "JOURNAL OF INDUSTRIAL AND ENGINEERING CHEMISTRY",
+   "type": "journal",
+   "doi": "10.1016/j.jiec.2026.02.034",
+   "url": null,
+   "volume": "160",
+   "issue": null,
+   "pages": "872-884"
+  },
+  {
+   "title": "Aggregation dynamics of molybdenum-based precursors in rarefied carrier gas mixtures under sub-nucleation conditions",
+   "authors": [
+    "Nilanjan Mondal",
+    "Saurish Das",
+    "Sourav Mondal",
+    "Chirodeep Bakli"
+   ],
+   "year": 2026,
+   "venue": "The Journal of Chemical Physics",
+   "type": "journal",
+   "doi": "10.1063/5.0293119",
+   "url": "https://doi.org/10.1063/5.0293119",
+   "volume": "164",
+   "issue": "22",
+   "pages": "224310"
+  },
+  {
+   "title": "All-climate high-voltage MnO2 pseudocapacitor enabled by a molecularly crowded water-in-salt electrolyte",
+   "authors": [
+    "Prahlada Thippeswamy",
+    "Vinay Arya",
+    "Indranil Dey",
+    "Chirodeep Bakli",
+    "Debasis Ghosh"
+   ],
+   "year": 2026,
+   "venue": "Journal of Materials Chemistry A",
+   "type": "journal",
+   "doi": "10.1039/d5ta10251k",
+   "url": "https://doi.org/10.1039/D5TA10251K",
+   "volume": "14",
+   "issue": "41",
+   "pages": "27642-27658"
+  },
+  {
+   "title": "Atomistic calculations of the precursor molecular diffusivity at rarefaction: Understanding gas transport in semiconductor fabrication lines",
+   "authors": [
+    "Ramisetti Lalitha",
+    "Neha Kumari",
+    "Saurish Das",
+    "Keerthi Gowdaru",
+    "Nilanajan Mondal",
+    "Chirodeep Bakli",
+    "Sourav Mondal"
+   ],
+   "year": 2026,
+   "venue": "Results in Engineering",
+   "type": "journal",
+   "doi": "10.1016/j.rineng.2026.111534",
+   "url": "https://doi.org/10.1016/j.rineng.2026.111534",
+   "volume": "31",
+   "issue": null,
+   "pages": "111534"
+  },
+  {
+   "title": "Cover Feature: Dual‐Function Hydrogel Synthesis for Passive Photovoltaic Cooling for Climate‐Resilient Solar Infrastructure (Sol. RRL 6/2026)",
+   "authors": [
+    "Vinay Arya",
+    "Vikash Chandra",
+    "Anirban Roy",
+    "Chirodeep Bakli"
+   ],
+   "year": 2026,
+   "venue": "Solar RRL",
+   "type": "journal",
+   "doi": "10.1002/solr.70337",
+   "url": "https://doi.org/10.1002/solr.70337",
+   "volume": "10",
+   "issue": "6",
+   "pages": "e70337"
+  },
+  {
+   "title": "Dual‐Function Hydrogel Synthesis for Passive Photovoltaic Cooling for Climate‐Resilient Solar Infrastructure",
+   "authors": [
+    "Vinay Arya",
+    "Vikash Chandra",
+    "Anirban Roy",
+    "Chirodeep Bakli"
+   ],
+   "year": 2026,
+   "venue": "Solar RRL",
+   "type": "journal",
+   "doi": "10.1002/solr.202500913",
+   "url": "https://doi.org/10.1002/solr.202500913",
+   "volume": "10",
+   "issue": "6",
+   "pages": "e202500913"
+  },
+  {
+   "title": "Effective removal of water from a fuel cell: Engineering the gas-diffusion layer",
+   "authors": [
+    "Diptesh Biswas",
+    "Nilanjan Mondal",
+    "Rabibrata Mukherjee",
+    "Chirodeep Bakli"
+   ],
+   "year": 2026,
+   "venue": "International Journal of Hydrogen Energy",
+   "type": "journal",
+   "doi": "10.1016/j.ijhydene.2025.153145",
+   "url": "https://doi.org/10.1016/j.ijhydene.2025.153145",
+   "volume": "203",
+   "issue": null,
+   "pages": "153145"
+  },
+  {
+   "title": "Energy performance of a trifurcated channel water cooled glass facade for building cooling",
+   "authors": [
+    "Souparna Chakraborty",
+    "Nilanjan Mondal",
+    "Chirodeep Bakli"
+   ],
+   "year": 2026,
+   "venue": "Energy and Buildings",
+   "type": "journal",
+   "doi": "10.1016/j.enbuild.2026.117642",
+   "url": "https://doi.org/10.1016/j.enbuild.2026.117642",
+   "volume": "365",
+   "issue": null,
+   "pages": "117642"
+  },
+  {
+   "title": "Field‐Unmasked Surface Charge Enables Programmable Nanofluidics",
+   "authors": [
+    "Debmalya Roy",
+    "Aniruddha Guha",
+    "James Yates",
+    "Abhirup Chaudhuri",
+    "Chirodeep Bakli",
+    "Suman Chakraborty"
+   ],
+   "year": 2026,
+   "venue": "Small",
+   "type": "journal",
+   "doi": "10.1002/smll.73324",
+   "url": "https://doi.org/10.1002/smll.73324",
+   "volume": "22",
+   "issue": "30",
+   "pages": "e73324"
+  },
+  {
+   "title": "Interfacial molecular structuring governs mechanical performance in hybrid rubber–epoxy composites: Insights from experiments and atomistic simulations",
+   "authors": [
+    "Rajesh Roy",
+    "Barnali Dutta Roy",
+    "Md.Basiruddin Sk",
+    "Partha Haldar",
+    "Vinay Arya",
+    "Chirodeep Bakli",
+    "Nipu Modak"
+   ],
+   "year": 2026,
+   "venue": "Composites Part A: Applied Science and Manufacturing",
+   "type": "journal",
+   "doi": "10.1016/j.compositesa.2026.109687",
+   "url": "https://doi.org/10.1016/j.compositesa.2026.109687",
+   "volume": "205",
+   "issue": null,
+   "pages": "109687"
+  },
+  {
+   "title": "Ion-specific symmetry-breaking at nanoconfined water-hydrocarbon interfaces",
+   "authors": [
+    "Abhirup Chaudhuri",
+    "Vinay Arya",
+    "Chirodeep Bakli",
+    "Suman Chakraborty"
+   ],
+   "year": 2026,
+   "venue": "JOURNAL OF COLLOID AND INTERFACE SCIENCE",
+   "type": "journal",
+   "doi": "10.1016/j.jcis.2026.141099",
+   "url": null,
+   "volume": "724",
+   "issue": null,
+   "pages": "141099"
+  },
+  {
+   "title": "Molecular Friction Trumps Viscosity in Angstrofluidic Transport",
+   "authors": [
+    "Jaber Al Hossain",
+    "Murat Barisik",
+    "Chirodeep Bakli",
+    "Suman Chakraborty",
+    "BoHung Kim"
+   ],
+   "year": 2026,
+   "venue": "Small",
+   "type": "journal",
+   "doi": "10.1002/smll.75044",
+   "url": "https://doi.org/10.1002/smll.75044",
+   "volume": "22",
+   "issue": "51",
+   "pages": "e75044"
+  },
+  {
+   "title": "Nanofluid induced droplet pinch-off in the jetting regime of liquid–liquid flow",
+   "authors": [
+    "Kunderu Pallavi",
+    "Chirodeep Bakli",
+    "Subhabrata Ray",
+    "Gargi Das"
+   ],
+   "year": 2026,
+   "venue": "Physics of Fluids",
+   "type": "journal",
+   "doi": "10.1063/5.0315890",
+   "url": "https://doi.org/10.1063/5.0315890",
+   "volume": "38",
+   "issue": "3",
+   "pages": "032006"
+  },
+  {
+   "title": "Optimizing air-cooled battery thermal management through analytical heat generation modelling and numerical investigation of cooling performance",
+   "authors": [
+    "Shashi Rastogi",
+    "Parth Sohaliya",
+    "Chirodeep Bakli"
+   ],
+   "year": 2026,
+   "venue": "Journal of Power Sources",
+   "type": "journal",
+   "doi": "10.1016/j.jpowsour.2026.239362",
+   "url": "https://doi.org/10.1016/j.jpowsour.2026.239362",
+   "volume": "669",
+   "issue": null,
+   "pages": "239362"
+  },
+  {
+   "title": "Passive augmentation of heat transfer and entropy generation minimization of a microchannel heat sink: A computational thermodynamic analysis",
+   "authors": [
+    "Avinash Kumar",
+    "Anirban Roy",
+    "Chirodeep Bakli"
+   ],
+   "year": 2026,
+   "venue": "Case Studies in Thermal Engineering",
+   "type": "journal",
+   "doi": "10.1016/j.csite.2026.108078",
+   "url": "https://doi.org/10.1016/j.csite.2026.108078",
+   "volume": "82",
+   "issue": null,
+   "pages": "108078"
+  },
+  {
+   "title": "Physics-informed machine learning for electroosmotic flow in graphene nanochannels: Towards next-generation desalination membranes",
+   "authors": [
+    "Vinay Arya",
+    "Ankit Agarwal",
+    "Chirodeep Bakli"
+   ],
+   "year": 2026,
+   "venue": "DESALINATION",
+   "type": "journal",
+   "doi": "10.1016/j.desal.2025.119824",
+   "url": null,
+   "volume": "623",
+   "issue": null,
+   "pages": "119824"
+  },
+  {
+   "title": "Reconfigurable electrokinetic transport in charge-regulated Janus droplets",
+   "authors": [
+    "Rahul Roy",
+    "Aditya Patwari",
+    "Chirodeep Bakli"
+   ],
+   "year": 2026,
+   "venue": "Soft Matter",
+   "type": "journal",
+   "doi": "10.1039/d6sm00501b",
+   "url": "https://doi.org/10.1039/D6SM00501B",
+   "volume": "22",
+   "issue": "31",
+   "pages": "5187-5201"
+  },
+  {
+   "title": "Sustainable Thermal Solutions: Wind‐Enhanced Hybrid Hydrogel‐Thermoelectric Architecture for Self‐Regulating Cooling and Energy Recovery",
+   "authors": [
+    "Vinay Arya",
+    "Tajamul Shafi",
+    "Vaibhav Saxena",
+    "Nilanjan Mondal",
+    "Shamik Chowdhury",
+    "Brajesh Kumar Dubey",
+    "Chirodeep Bakli"
+   ],
+   "year": 2026,
+   "venue": "Advanced Sustainable Systems",
+   "type": "journal",
+   "doi": "10.1002/adsu.202501720",
+   "url": "https://doi.org/10.1002/adsu.202501720",
+   "volume": "10",
+   "issue": "3",
+   "pages": "e01720"
+  },
+  {
+   "title": "Sustainable Thermal Solutions: Wind‐Enhanced Hybrid Hydrogel‐Thermoelectric Architecture for Self‐Regulating Cooling and Energy Recovery (Adv. Sustainable Syst. 3/2026)",
+   "authors": [
+    "Vinay Arya",
+    "Tajamul Shafi",
+    "Vaibhav Saxena",
+    "Nilanjan Mondal",
+    "Shamik Chowdhury",
+    "Brajesh Kumar Dubey",
+    "Chirodeep Bakli"
+   ],
+   "year": 2026,
+   "venue": "Advanced Sustainable Systems",
+   "type": "journal",
+   "doi": "10.1002/adsu.70455",
+   "url": "https://doi.org/10.1002/adsu.70455",
+   "volume": "10",
+   "issue": "3",
+   "pages": "e70455"
+  },
+  {
+   "title": "Tariff-Responsive Battery Dispatch for Residential Rooftop PV Systems: Cost Reduction and Grid Relief Under Time-of-Use Pricing",
+   "authors": [
+    "Ashutosh Malik",
+    "Rajesh Kumar Sarkar",
+    "Chirodeep Bakli"
+   ],
+   "year": 2026,
+   "venue": "2026 4th Odisha International Conference on Electrical Power Engineering, Communication and Computing Technology (ODICON)",
+   "type": "conference",
+   "doi": "10.1109/odicon66687.2026.11470985",
+   "url": "https://doi.org/10.1109/ODICON66687.2026.11470985",
+   "volume": null,
+   "issue": null,
+   "pages": "1-6"
+  },
+  {
+   "title": "Wettability-driven propulsion of a shear-thinning droplet on micro-textured and confined surfaces",
+   "authors": [
+    "Rahul Roy",
+    "Subradip Debnath",
+    "Chirodeep Bakli"
+   ],
+   "year": 2026,
+   "venue": "Microfluidics and Nanofluidics",
+   "type": "journal",
+   "doi": "10.1007/s10404-026-02915-x",
+   "url": "https://doi.org/10.1007/s10404-026-02915-x",
+   "volume": "30",
+   "issue": "9",
+   "pages": "63"
+  },
+  {
+   "title": "Adaptive Polyzwitterion Coatings Enable Optimal Ion Rectification in Functionalized Nanochannels",
+   "authors": [
+    "Aditya Patwari",
+    "Abhirup Chaudhuri",
+    "Chirodeep Bakli",
+    "Suman Chakraborty"
+   ],
+   "year": 2025,
+   "venue": "Analytical Chemistry",
+   "type": "journal",
+   "doi": "10.1021/acs.analchem.5c05942",
+   "url": "https://doi.org/10.1021/acs.analchem.5c05942",
+   "volume": "97",
+   "issue": "48",
+   "pages": "26905-26917"
+  },
+  {
+   "title": "Anomalous interplay of confinement, wettability, and salt concentration toward diffusion of saline water in nanochannels",
+   "authors": [
+    "Abhirup Chaudhuri",
+    "Chirodeep Bakli",
+    "Suman Chakraborty"
+   ],
+   "year": 2025,
+   "venue": "The Journal of Chemical Physics",
+   "type": "journal",
+   "doi": "10.1063/5.0282500",
+   "url": "https://doi.org/10.1063/5.0282500",
+   "volume": "163",
+   "issue": "15",
+   "pages": "154110"
+  },
+  {
+   "title": "Anomalous Water Flow in Sub-Nanometer Carbon Nanoconfinement",
+   "authors": [
+    "Md Masuduzzaman",
+    "Chirodeep Bakli",
+    "Murat Barisik",
+    "BoHung Kim"
+   ],
+   "year": 2025,
+   "venue": "SMALL",
+   "type": "journal",
+   "doi": "10.1002/smll.202508637",
+   "url": null,
+   "volume": "21",
+   "issue": "51",
+   "pages": "e08637"
+  },
+  {
+   "title": "Compact microfluidic T-channel-mixer via tunable pulsatile actuation and fluid rheology",
+   "authors": [
+    "Rahul Roy",
+    "Anirban Roy",
+    "Chirodeep Bakli"
+   ],
+   "year": 2025,
+   "venue": "Physics of Fluids",
+   "type": "journal",
+   "doi": "10.1063/5.0283262",
+   "url": "https://doi.org/10.1063/5.0283262",
+   "volume": "37",
+   "issue": "8",
+   "pages": "082019"
+  },
+  {
+   "title": "Comparative Analysis of Power Performance Enhancement in Solar PV Systems Using Phase Change Materials Across Distinct Indian Climate Zones",
+   "authors": [
+    "Nagaraju Jadi",
+    "Kalpitkumar Solanki",
+    "Mohammed Rehan Raza",
+    "Ishika Agarwal",
+    "Chirodeep Bakli"
+   ],
+   "year": 2025,
+   "venue": "2025 IEEE 4th International Conference on Smart Technologies for Power, Energy and Control (STPEC)",
+   "type": "conference",
+   "doi": "10.1109/stpec66316.2025.11490228",
+   "url": "https://doi.org/10.1109/STPEC66316.2025.11490228",
+   "volume": null,
+   "issue": null,
+   "pages": "1-6"
+  },
+  {
+   "title": "Confinement and wettability-driven dispersed phase hydrodynamics in cross-flow jets at low velocity and density ratios",
+   "authors": [
+    "Nilanjan Mondal",
+    "Diptesh Biswas",
+    "Rabibrata Mukherjee",
+    "Chirodeep Bakli"
+   ],
+   "year": 2025,
+   "venue": "Physics of Fluids",
+   "type": "journal",
+   "doi": "10.1063/5.0250568",
+   "url": "https://doi.org/10.1063/5.0250568",
+   "volume": "37",
+   "issue": "2",
+   "pages": "022011"
+  },
+  {
+   "title": "Dynamics and applications of jets: a review focusing on the numerical and experimental approaches towards studying jet physics at micro and nanoscales",
+   "authors": [
+    "Nilanjan Mondal",
+    "Rajaram Lakkaraju",
+    "Chirodeep Bakli"
+   ],
+   "year": 2025,
+   "venue": "Sādhanā",
+   "type": "journal",
+   "doi": "10.1007/s12046-025-02904-w",
+   "url": "https://doi.org/10.1007/s12046-025-02904-w",
+   "volume": "50",
+   "issue": "4",
+   "pages": "281"
+  },
+  {
+   "title": "Electrokinetic energy harvesting over nanometer and sub-nanometer scales",
+   "authors": [
+    "Suman Chakraborty",
+    "Chirodeep Bakli",
+    "Debmalya Roy",
+    "Abhirup Chaudhuri",
+    "Aniruddha Guha",
+    "Aditya Patwari"
+   ],
+   "year": 2025,
+   "venue": "Applied Physics Reviews",
+   "type": "journal",
+   "doi": "10.1063/5.0241150",
+   "url": "https://doi.org/10.1063/5.0241150",
+   "volume": "12",
+   "issue": "1",
+   "pages": "011305"
+  },
+  {
+   "title": "Energy efficient pipeline transportation of heavy oil - A novel static device to stabilize and re-establish core annular flow",
+   "authors": [
+    "Ekta Tayal",
+    "Subhabrata Ray",
+    "Sayan Halder",
+    "Chirodeep Bakli",
+    "Gargi Das"
+   ],
+   "year": 2025,
+   "venue": "Energy",
+   "type": "journal",
+   "doi": "10.1016/j.energy.2025.137027",
+   "url": "https://doi.org/10.1016/j.energy.2025.137027",
+   "volume": "331",
+   "issue": null,
+   "pages": "137027"
+  },
+  {
+   "title": "Enhanced Polysulfide Regulation in Rechargeable Li-S Batteries with ZnS as Electrocatalyst: Experimental Validation and Interfacial Insights from Simulations",
+   "authors": [
+    "Naveen S Reddy",
+    "Chirodeep Bakli",
+    "Vinay Arya",
+    "Debasis Ghosh"
+   ],
+   "year": 2025,
+   "venue": "CHEMISTRY-A EUROPEAN JOURNAL",
+   "type": "journal",
+   "doi": "10.1002/chem.202501030",
+   "url": null,
+   "volume": "31",
+   "issue": "36",
+   "pages": "e202501030"
+  },
+  {
+   "title": "Hydrodynamic analysis of core annular flow with a viscoplastic lubricant",
+   "authors": [
+    "Ekta Tayal",
+    "Subhabrata Ray",
+    "Chirodeep Bakli",
+    "Gargi Das"
+   ],
+   "year": 2025,
+   "venue": "International Journal of Multiphase Flow",
+   "type": "journal",
+   "doi": "10.1016/j.ijmultiphaseflow.2024.105036",
+   "url": "https://doi.org/10.1016/j.ijmultiphaseflow.2024.105036",
+   "volume": "182",
+   "issue": null,
+   "pages": "105036"
+  },
+  {
+   "title": "Hydrodynamics inside brush decorated nano-confinements: an all-atom molecular dynamics study",
+   "authors": [
+    "Vinay Arya",
+    "Chirodeep Bakli"
+   ],
+   "year": 2025,
+   "venue": "Nanoscale",
+   "type": "journal",
+   "doi": "10.1039/d5nr00920k",
+   "url": "https://doi.org/10.1039/D5NR00920K",
+   "volume": "17",
+   "issue": "34",
+   "pages": "19854-19869"
+  },
+  {
+   "title": "Interplay of topography, wettability, and confinement controls boiling of water over functionalized graphene interfaces",
+   "authors": [
+    "Subradip Debnath",
+    "Vinay Arya",
+    "BoHung Kim",
+    "Chirodeep Bakli",
+    "Suman Chakraborty"
+   ],
+   "year": 2025,
+   "venue": "Energy",
+   "type": "journal",
+   "doi": "10.1016/j.energy.2025.137284",
+   "url": "https://doi.org/10.1016/j.energy.2025.137284",
+   "volume": "333",
+   "issue": null,
+   "pages": "137284"
+  },
+  {
+   "title": "Nanofluid induced continuous production of monodispersed plugs during biphasic liquid flow in meso-scale",
+   "authors": [
+    "Kunderu Pallavi",
+    "Alex Koshy",
+    "Gargi Das",
+    "Chirodeep Bakli",
+    "Subhabrata Ray"
+   ],
+   "year": 2025,
+   "venue": "CHEMICAL ENGINEERING AND PROCESSING-PROCESS INTENSIFICATION",
+   "type": "journal",
+   "doi": "10.1016/j.cep.2025.110193",
+   "url": null,
+   "volume": "209",
+   "issue": null,
+   "pages": "110193"
+  },
+  {
+   "title": "Performance Evaluation of Amorphous Silicon Photovoltaics Integrated in Marine Structures: Impact of Submersion Depth and Thermal Management",
+   "authors": [
+    "Mohammed Rehan Raza",
+    "Kalpitkumar Solanki",
+    "Sunanda Sinha",
+    "Girish Kumar Rudraraju",
+    "Chirodeep Bakli"
+   ],
+   "year": 2025,
+   "venue": "2025 IEEE 4th International Conference on Smart Technologies for Power, Energy and Control (STPEC)",
+   "type": "conference",
+   "doi": "10.1109/stpec66316.2025.11549549",
+   "url": "https://doi.org/10.1109/STPEC66316.2025.11549549",
+   "volume": null,
+   "issue": null,
+   "pages": "1-6"
+  },
+  {
+   "title": "Redefining flow regimes in sub-nanometer carbon channels under life-scale confinement",
+   "authors": [
+    "Md Masuduzzaman",
+    "Chirodeep Bakli",
+    "Murat Barisik",
+    "BoHung Kim"
+   ],
+   "year": 2025,
+   "venue": "Physics of Fluids",
+   "type": "journal",
+   "doi": "10.1063/5.0284134",
+   "url": "https://doi.org/10.1063/5.0284134",
+   "volume": "37",
+   "issue": "9",
+   "pages": "092014"
+  },
+  {
+   "title": "Transient meniscus response in tilted cuvettes: Role of surface tension and tilting rate",
+   "authors": [
+    "Anirban Roy",
+    "Gopal Verma",
+    "Subhabrata Ray",
+    "Gargi Das",
+    "Chirodeep Bakli"
+   ],
+   "year": 2025,
+   "venue": "Physics of Fluids",
+   "type": "journal",
+   "doi": "10.1063/5.0282134",
+   "url": "https://doi.org/10.1063/5.0282134",
+   "volume": "37",
+   "issue": "8",
+   "pages": "082129"
+  },
+  {
+   "title": "Tuning of Nanoparticle–Surfactant (NPS) Concentration for Continuous Production of Monodispersed Droplets during Biphasic Flow in Reduced Dimensions",
+   "authors": [
+    "Kunderu Pallavi",
+    "Chirodeep Bakli",
+    "Subhabrata Ray",
+    "Gargi Das"
+   ],
+   "year": 2025,
+   "venue": "Industrial & Engineering Chemistry Research",
+   "type": "journal",
+   "doi": "10.1021/acs.iecr.5c01699",
+   "url": "https://doi.org/10.1021/acs.iecr.5c01699",
+   "volume": "64",
+   "issue": "38",
+   "pages": "18805-18816"
+  },
+  {
+   "title": "Unsteady two-dimensional concentration distribution in an ice-covered channel with temperature dependent settling velocity",
+   "authors": [
+    "Sweta Narayan Sahu",
+    "Chirodeep Bakli",
+    "Koeli Ghoshal"
+   ],
+   "year": 2025,
+   "venue": "Physics of Fluids",
+   "type": "journal",
+   "doi": "10.1063/5.0300606",
+   "url": "https://doi.org/10.1063/5.0300606",
+   "volume": "37",
+   "issue": "11",
+   "pages": "115116"
+  },
+  {
+   "title": "A 2.5 V In-Plane Flexi-Pseudocapacitor with Unprecedented Energy and Cycling Efficiency for All-Weather Applications",
+   "authors": [
+    "Prahlada Thippeswamy",
+    "Ketaki Samanta",
+    "Vinay Arya",
+    "Diptesh Biswas",
+    "Hun‐Seong Kim",
+    "Chirodeep Bakli",
+    "Hyun Young Jung",
+    "Debasis Ghosh"
+   ],
+   "year": 2024,
+   "venue": "SMALL",
+   "type": "journal",
+   "doi": "10.1002/smll.202400975",
+   "url": null,
+   "volume": "20",
+   "issue": "34",
+   "pages": "2400975"
+  },
+  {
+   "title": "A facile design of porous heat sink optimized thermodynamically for thermo-hydraulic performance",
+   "authors": [
+    "Avinash Kumar",
+    "Subradip Debnath",
+    "Chirodeep Bakli"
+   ],
+   "year": 2024,
+   "venue": "APPLIED THERMAL ENGINEERING",
+   "type": "journal",
+   "doi": "10.1016/j.applthermaleng.2024.123574",
+   "url": null,
+   "volume": "250",
+   "issue": null,
+   "pages": "123574"
+  },
+  {
+   "title": "Applied Electric Field Effects on Diffusivity and Electrical Double-Layer Thickness",
+   "authors": [
+    "Md Masuduzzaman",
+    "Chirodeep Bakli",
+    "Murat Barisik",
+    "BoHung Kim"
+   ],
+   "year": 2024,
+   "venue": "SMALL",
+   "type": "journal",
+   "doi": "10.1002/smll.202404397",
+   "url": null,
+   "volume": "20",
+   "issue": "46",
+   "pages": "2404397"
+  },
+  {
+   "title": "Capillary filling dynamics in closed-end carbon nanotubes—Defying the classical Lucas–Washburn paradigm",
+   "authors": [
+    "Abhirup Chaudhuri",
+    "Vinay Arya",
+    "Chirodeep Bakli",
+    "Suman Chakraborty"
+   ],
+   "year": 2024,
+   "venue": "The Journal of Chemical Physics",
+   "type": "journal",
+   "doi": "10.1063/5.0237885",
+   "url": "https://doi.org/10.1063/5.0237885",
+   "volume": "161",
+   "issue": "18",
+   "pages": "184702"
+  },
+  {
+   "title": "Estimating water transport in carbon nanotubes: a critical review and inclusion of scale effects",
+   "authors": [
+    "Kazi Ehsanul Karim",
+    "Murat Barisik",
+    "Chirodeep Bakli",
+    "BoHung Kim"
+   ],
+   "year": 2024,
+   "venue": "Physical Chemistry Chemical Physics",
+   "type": "journal",
+   "doi": "10.1039/d4cp01068j",
+   "url": "https://doi.org/10.1039/D4CP01068J",
+   "volume": "26",
+   "issue": "28",
+   "pages": "19069-19082"
+  },
+  {
+   "title": "Flow rectification in a micro-nanochannel junction: Interplay of channel geometry and interfacial properties for directional transport",
+   "authors": [
+    "Nilanjan Mondal",
+    "Chirodeep Bakli"
+   ],
+   "year": 2024,
+   "venue": "EUROPEAN JOURNAL OF MECHANICS B-FLUIDS",
+   "type": "journal",
+   "doi": "10.1016/j.euromechflu.2023.11.001",
+   "url": null,
+   "volume": "104",
+   "issue": null,
+   "pages": "8-16"
+  },
+  {
+   "title": "How does the diurnal biological clock influence electrokinetics in a living plant?",
+   "authors": [
+    "Aniruddha Guha",
+    "Saumyadwip Bandyopadhyay",
+    "Chirodeep Bakli",
+    "Suman Chakraborty"
+   ],
+   "year": 2024,
+   "venue": "PHYSICS OF FLUIDS",
+   "type": "journal",
+   "doi": "10.1063/5.0195088",
+   "url": null,
+   "volume": "36",
+   "issue": "5",
+   "pages": "052015"
+  },
+  {
+   "title": "Interplay of fluid rheology and micro-patterning toward modulating draining characteristics on an inclined substrate",
+   "authors": [
+    "Arka Das",
+    "Avinash Kumar",
+    "Chirodeep Bakli"
+   ],
+   "year": 2024,
+   "venue": "PHYSICS OF FLUIDS",
+   "type": "journal",
+   "doi": "10.1063/5.0189609",
+   "url": null,
+   "volume": "36",
+   "issue": "2",
+   "pages": "023116"
+  },
+  {
+   "title": "Interplay of geometry and shape-engineered-nanoparticles for efficient thermal performance in forced convection-based electronic cooling",
+   "authors": [
+    "Shashi Rastogi",
+    "Vinay Arya",
+    "Chirodeep Bakli"
+   ],
+   "year": 2024,
+   "venue": "NUMERICAL HEAT TRANSFER PART A-APPLICATIONS",
+   "type": "journal",
+   "doi": "10.1080/10407782.2023.2251090",
+   "url": null,
+   "volume": "85",
+   "issue": "23",
+   "pages": "3982-4005"
+  },
+  {
+   "title": "Interplay of roughness and wettability in microchannel fluid flows-Elucidating hydrodynamic details assisted by deep learning",
+   "authors": [
+    "Nilanjan Mondal",
+    "Vinay Arya",
+    "Paritosh Sarangi",
+    "Chirodeep Bakli"
+   ],
+   "year": 2024,
+   "venue": "PHYSICS OF FLUIDS",
+   "type": "journal",
+   "doi": "10.1063/5.0208554",
+   "url": null,
+   "volume": "36",
+   "issue": "6",
+   "pages": "062014"
+  },
+  {
+   "title": "Ion-Solvent Interactions under Confinement Hold the Key to Tuning the DNA Translocation Speeds in Polyelectrolyte-Functionalized Nanopores",
+   "authors": [
+    "Avinash Kumar",
+    "Chirodeep Bakli",
+    "Suman Chakraborty"
+   ],
+   "year": 2024,
+   "venue": "LANGMUIR",
+   "type": "journal",
+   "doi": "10.1021/acs.langmuir.3c02816",
+   "url": null,
+   "volume": "40",
+   "issue": "14",
+   "pages": "7300-7309"
+  },
+  {
+   "title": "Modulating fluid rheology and confinement toward augmenting the performance of a double layered microchannel heat sink",
+   "authors": [
+    "Avinash Kumar",
+    "Arka Das",
+    "Chirodeep Bakli"
+   ],
+   "year": 2024,
+   "venue": "HEAT TRANSFER",
+   "type": "journal",
+   "doi": "10.1002/htj.22990",
+   "url": null,
+   "volume": "53",
+   "issue": "3",
+   "pages": "1190-1219"
+  },
+  {
+   "title": "Non-monotonic variation in the streaming potential in polyelectrolyte grafted nanochannels mediated by ion partitioning effects",
+   "authors": [
+    "Aditya Patwari",
+    "Avinash Kumar",
+    "Chirodeep Bakli",
+    "Suman Chakraborty"
+   ],
+   "year": 2024,
+   "venue": "Analytica Chimica Acta",
+   "type": "journal",
+   "doi": "10.1016/j.aca.2024.342997",
+   "url": "https://doi.org/10.1016/j.aca.2024.342997",
+   "volume": "1321",
+   "issue": null,
+   "pages": "342997"
+  },
+  {
+   "title": "Non-trivial thermal and rheological behaviour of complex nanofluids in bifurcated micro-confinements",
+   "authors": [
+    "Shashi Rastogi",
+    "Nilanjan Mondal",
+    "Chirodeep Bakli"
+   ],
+   "year": 2024,
+   "venue": "THERMAL SCIENCE AND ENGINEERING PROGRESS",
+   "type": "journal",
+   "doi": "10.1016/j.tsep.2023.102359",
+   "url": null,
+   "volume": "47",
+   "issue": null,
+   "pages": "102359"
+  },
+  {
+   "title": "Passive fractionating mechanism for oil spill using shear-wettability modulation",
+   "authors": [
+    "Vinay Arya",
+    "Abhirup Chaudhuri",
+    "Chirodeep Bakli"
+   ],
+   "year": 2024,
+   "venue": "NANOSCALE",
+   "type": "journal",
+   "doi": "10.1039/d4nr01235f",
+   "url": null,
+   "volume": "16",
+   "issue": "29",
+   "pages": "13885-13894"
+  },
+  {
+   "title": "Systematic design of tree-like branching network microchannel heat sinks for enhanced heat transfer with nanofluids",
+   "authors": [
+    "Shashi Rastogi",
+    "Nilanjan Mondal",
+    "Chirodeep Bakli"
+   ],
+   "year": 2024,
+   "venue": "Applied Thermal Engineering",
+   "type": "journal",
+   "doi": "10.1016/j.applthermaleng.2024.124272",
+   "url": "https://doi.org/10.1016/j.applthermaleng.2024.124272",
+   "volume": "257",
+   "issue": null,
+   "pages": "124272"
+  },
+  {
+   "title": "To spill or not: Short-time pouring dynamics of a toppled liquid bottle",
+   "authors": [
+    "Anirban Roy",
+    "Avinash Kumar",
+    "Subhabrata Ray",
+    "Gargi Das",
+    "Chirodeep Bakli"
+   ],
+   "year": 2024,
+   "venue": "Physics of Fluids",
+   "type": "journal",
+   "doi": "10.1063/5.0238416",
+   "url": "https://doi.org/10.1063/5.0238416",
+   "volume": "36",
+   "issue": "12",
+   "pages": "123112"
+  },
+  {
+   "title": "Unveiling the Potential of Metal–Organic Frameworks: Nucleation-Induced Strain Activating Electrocatalytic Water Splitting",
+   "authors": [
+    "Aashi",
+    "Abhirup Chaudhuri",
+    "Krishankant",
+    "Vikas Pundir",
+    "Zubair Ahmed",
+    "Chandan Bera",
+    "Chirodeep Bakli",
+    "Vivek Bagchi"
+   ],
+   "year": 2024,
+   "venue": "ACS Sustainable Chemistry & Engineering",
+   "type": "journal",
+   "doi": "10.1021/acssuschemeng.4c05046",
+   "url": "https://doi.org/10.1021/acssuschemeng.4c05046",
+   "volume": "12",
+   "issue": "38",
+   "pages": "14276-14287"
+  },
+  {
+   "title": "Wettability-modulated behavior of polymers under varying degrees of nano-confinement",
+   "authors": [
+    "Vinay Arya",
+    "Abhirup Chaudhuri",
+    "Chirodeep Bakli"
+   ],
+   "year": 2024,
+   "venue": "JOURNAL OF CHEMICAL PHYSICS",
+   "type": "journal",
+   "doi": "10.1063/5.0185533",
+   "url": null,
+   "volume": "160",
+   "issue": "6",
+   "pages": "064905"
+  },
+  {
+   "title": "Carbonized Cotton Fibers for Ultrahigh Power-Density Electrokinetic Energy Harvesting",
+   "authors": [
+    "Kundan Saha",
+    "Jumi Deka",
+    "Avinash Kumar",
+    "Monotosh Mondal",
+    "Barsha Rani Bora",
+    "Chirodeep Bakli",
+    "A. K. Sood",
+    "Suman Chakraborty",
+    "Kalyan Raidongia"
+   ],
+   "year": 2023,
+   "venue": "ACS APPLIED ENERGY MATERIALS",
+   "type": "journal",
+   "doi": "10.1021/acsaem.3c02409",
+   "url": null,
+   "volume": "7",
+   "issue": "1",
+   "pages": "176-185"
+  },
+  {
+   "title": "COUPLED EFFECT OF VARIABLE WETTABILITY AND BODY FORCE ON FLUID FLOW THROUGH NANOCHANNELS: A MULTISCALE APPROACH",
+   "authors": [
+    "Abhirup Chaudhuri",
+    "Vinay Arya",
+    "Chirodeep Bakli"
+   ],
+   "year": 2023,
+   "venue": "COMPUTATIONAL THERMAL SCIENCES",
+   "type": "journal",
+   "doi": "10.1615/computthermalscien.2022043262",
+   "url": null,
+   "volume": "15",
+   "issue": "2",
+   "pages": "37-47"
+  },
+  {
+   "title": "Damped Oscillatory Dynamics of a Drop Impacting over Oil-Infused Slippery Interfaces-Does the Oil Viscosity Slow it Down?",
+   "authors": [
+    "Saumyadwip Bandyopadhyay",
+    "Chirodeep Bakli",
+    "Rabibrata Mukherjee",
+    "Suman Chakraborty"
+   ],
+   "year": 2023,
+   "venue": "LANGMUIR",
+   "type": "journal",
+   "doi": "10.1021/acs.langmuir.3c01689",
+   "url": null,
+   "volume": "39",
+   "issue": "36",
+   "pages": "12826-12834"
+  },
+  {
+   "title": "Draining of shear-thinning liquids from closed-top millichannels",
+   "authors": [
+    "Banashree Samanta",
+    "Priyanka",
+    "Anirban Roy",
+    "Subhabrata Ray",
+    "Chirodeep Bakli",
+    "Gargi Das",
+    "Manish Kaushal"
+   ],
+   "year": 2023,
+   "venue": "Physics of Fluids",
+   "type": "journal",
+   "doi": "10.1063/5.0171521",
+   "url": "https://doi.org/10.1063/5.0171521",
+   "volume": "35",
+   "issue": "10",
+   "pages": "103114"
+  },
+  {
+   "title": "Improving water removal efficiency in a PEM fuel cell: Microstructured surfaces for controlling instability-driven pinching",
+   "authors": [
+    "Nilanjan Mondal",
+    "Diptesh Biswas",
+    "Chirodeep Bakli"
+   ],
+   "year": 2023,
+   "venue": "APL ENERGY",
+   "type": "journal",
+   "doi": "10.1063/5.0171953",
+   "url": null,
+   "volume": "1",
+   "issue": "3",
+   "pages": "036105"
+  },
+  {
+   "title": "Interplay of fluid rheology and flow actuation for modulation of mixing characteristics in T-shaped microchannels",
+   "authors": [
+    "Anirban Roy",
+    "Avinash Kumar",
+    "Chirodeep Bakli",
+    "Gargi Das",
+    "Subhabrata Ray"
+   ],
+   "year": 2023,
+   "venue": "SADHANA-ACADEMY PROCEEDINGS IN ENGINEERING SCIENCES",
+   "type": "conference",
+   "doi": "10.1007/s12046-023-02324-8",
+   "url": null,
+   "volume": "48",
+   "issue": "4",
+   "pages": "260"
+  },
+  {
+   "title": "Mapping fluid structuration to flow enhancement in nanofluidic channels",
+   "authors": [
+    "Ankit Agarwal",
+    "Vinay Arya",
+    "Bhushan Golani",
+    "Chirodeep Bakli",
+    "Suman Chakraborty"
+   ],
+   "year": 2023,
+   "venue": "JOURNAL OF CHEMICAL PHYSICS",
+   "type": "journal",
+   "doi": "10.1063/5.0140765",
+   "url": null,
+   "volume": "158",
+   "issue": "21",
+   "pages": "214701"
+  },
+  {
+   "title": "Passive building cooling using tree-shaped converging microchannel nets",
+   "authors": [
+    "Souparna Chakraborty",
+    "Nilanjan Mondal",
+    "Chirodeep Bakli"
+   ],
+   "year": 2023,
+   "venue": "AIP Conference Proceedings",
+   "type": "conference",
+   "doi": "10.1063/5.0128790",
+   "url": "https://publons.com/wos-op/publon/61856522/",
+   "volume": "2778",
+   "issue": null,
+   "pages": "050001"
+  },
+  {
+   "title": "Renewable energy potential towards attainment of net-zero energy buildings status-A critical review",
+   "authors": [
+    "S. Christopher",
+    "M.P. Vikram",
+    "Chirodeep Bakli",
+    "Amrit Kumar Thakur",
+    "Y. Ma",
+    "Zhenjun Ma",
+    "Huijin Xu",
+    "Pinar Mert Cuce",
+    "Erdem Cuce",
+    "Punit Singh"
+   ],
+   "year": 2023,
+   "venue": "JOURNAL OF CLEANER PRODUCTION",
+   "type": "journal",
+   "doi": "10.1016/j.jclepro.2023.136942",
+   "url": null,
+   "volume": "405",
+   "issue": null,
+   "pages": "136942"
+  },
+  {
+   "title": "Significantly reduced thermal conductivity and enhanced thermoelectric performance of twisted bilayer graphene",
+   "authors": [
+    "Naveen Kumar",
+    "Abhirup Chaudhuri",
+    "Vinay Arya",
+    "Chirodeep Bakli",
+    "Chandan Bera"
+   ],
+   "year": 2023,
+   "venue": "JOURNAL OF APPLIED PHYSICS",
+   "type": "journal",
+   "doi": "10.1063/5.0153052",
+   "url": null,
+   "volume": "134",
+   "issue": "4",
+   "pages": "044301"
+  },
+  {
+   "title": "Touchdown dynamics of a liquid droplet on a patterned substrate: A generalized lumped parameter-based model",
+   "authors": [
+    "Nilanjan Mondal",
+    "Diptesh Biswas",
+    "Rabibrata Mukherjee",
+    "Chirodeep Bakli"
+   ],
+   "year": 2023,
+   "venue": "PHYSICS OF FLUIDS",
+   "type": "journal",
+   "doi": "10.1063/5.0161192",
+   "url": null,
+   "volume": "35",
+   "issue": "8",
+   "pages": "082117"
+  },
+  {
+   "title": "Utilizing Phase Change Material Integration for Passive Cooling in Direct Heat Gain Walls",
+   "authors": [
+    "Vikash Chandra",
+    "Chirodeep Bakli",
+    "Prashant Anand"
+   ],
+   "year": 2023,
+   "venue": "PROCEEDINGS OF THE 10TH ACM INTERNATIONAL CONFERENCE ON SYSTEMS FOR ENERGY-EFFICIENT BUILDINGS, CITIES, AND TRANSPORTATION, BUILDSYS 2023",
+   "type": "conference",
+   "doi": "10.1145/3600100.3627030",
+   "url": null,
+   "volume": null,
+   "issue": null,
+   "pages": "503-508"
+  },
+  {
+   "title": "Assessing Effectiveness of Pulsed Input on Mixing Characteristics of Non-Newtonian fluids in T-shaped Channels",
+   "authors": [],
+   "year": 2022,
+   "venue": "Arxiv",
+   "type": "preprint",
+   "doi": null,
+   "url": null
+  },
+  {
+   "title": "Coupling solute interactions with functionalized graphene membranes: towards facile membrane-level engineering",
+   "authors": [
+    "Vinay Arya",
+    "Abhirup Chaudhuri",
+    "Chirodeep Bakli"
+   ],
+   "year": 2022,
+   "venue": "NANOSCALE",
+   "type": "journal",
+   "doi": "10.1039/d2nr05552j",
+   "url": null,
+   "volume": "14",
+   "issue": "44",
+   "pages": "16661-16672"
+  },
+  {
+   "title": "Effect of Porous Walls and Nanofluids on the Thermo-Hydraulic Performance of Tapered Double-Layered Microchannel Heat Sink",
+   "authors": [
+    "A. Kumar",
+    "C. Bakli"
+   ],
+   "year": 2022,
+   "venue": "PROCEEDINGS OF THE ASME 2022 POWER CONFERENCE, POWER2022",
+   "type": "conference",
+   "doi": "10.1115/power2022-86626",
+   "url": null
+  },
+  {
+   "title": "Interplay of wettability and confinement enhancing the performance of heat sinks",
+   "authors": [
+    "Avinash Kumar",
+    "Chirodeep Bakli"
+   ],
+   "year": 2022,
+   "venue": "APPLIED THERMAL ENGINEERING",
+   "type": "journal",
+   "doi": "10.1016/j.applthermaleng.2022.118865",
+   "url": null,
+   "volume": "214",
+   "issue": null,
+   "pages": "118865"
+  },
+  {
+   "title": "Molecular Self-Assembly Enables Tuning of Nanopores in Atomically Thin Graphene Membranes for Highly Selective Transport",
+   "authors": [
+    "Doojoon Jang",
+    "Chirodeep Bakli",
+    "Suman Chakraborty",
+    "Rohit Karnik"
+   ],
+   "year": 2022,
+   "venue": "ADVANCED MATERIALS",
+   "type": "journal",
+   "doi": "10.1002/adma.202108940",
+   "url": null,
+   "volume": "34",
+   "issue": "11",
+   "pages": "2108940"
+  },
+  {
+   "title": "Optimization of Building Facade for Passive Thermal Management: A Machine Learning Based Simulation Study for Kolkata, India",
+   "authors": [
+    "Souparna Chakraborty",
+    "Vinay Arya",
+    "Siva Shankar SS",
+    "Chirodeep Bakli"
+   ],
+   "year": 2022,
+   "venue": "PROCEEDINGS OF THE 2022 THE 9TH ACM INTERNATIONAL CONFERENCE ON SYSTEMS FOR ENERGY-EFFICIENT BUILDINGS, CITIES, AND TRANSPORTATION, BUILDSYS 2022",
+   "type": "conference",
+   "doi": "10.1145/3563357.3566139",
+   "url": null,
+   "volume": null,
+   "issue": null,
+   "pages": "413-418"
+  },
+  {
+   "title": "Understanding the mechanics of complex topology of the 3D printed Anthill architecture",
+   "authors": [
+    "Brijesh Kushwaha",
+    "Avinash Kumar",
+    "Rushikesh S Ambekar",
+    "Vinay Arya",
+    "Solomon Demiss Negedu",
+    "Deep Bakshi",
+    "Femi Emmanuel Olu",
+    "Ravi Sastri Ayyagari",
+    "Varinder Pal",
+    "Kishor Kumar Sadasivuni",
+    "Nicola M Pugno",
+    "Chirodeep Bakli",
+    "Chandra S Tiwary"
+   ],
+   "year": 2022,
+   "venue": "OXFORD OPEN MATERIALS SCIENCE",
+   "type": "journal",
+   "doi": "10.1093/oxfmat/itac003",
+   "url": null,
+   "volume": "2",
+   "issue": "1",
+   "pages": "itac003"
+  },
+  {
+   "title": "OPTIMIZING EFFECTIVENESS OF DOUBLE PIPE HEAT EXCHANGER USING NANOFLUID AND DIFFERENT POROUS FINS ARRANGEMENT",
+   "authors": [
+    "A. Kumar",
+    "V. Arya",
+    "C. Bakli"
+   ],
+   "year": 2021,
+   "venue": "PROCEEDINGS OF THE ASME 2021 POWER CONFERENCE (POWER2021)",
+   "type": "conference",
+   "doi": "10.1115/power2021-64248",
+   "url": null
+  },
+  {
+   "title": "OPTIMIZING WATER HARVESTING ON BIOINSPIRED SURFACES: A MESOSCOPIC PERSPECTIVE",
+   "authors": [
+    "S. Chakraborty",
+    "A. Chaudhuri",
+    "C. Bakli"
+   ],
+   "year": 2021,
+   "venue": "PROCEEDINGS OF THE ASME 2021 POWER CONFERENCE (POWER2021)",
+   "type": "conference",
+   "doi": "10.1115/power2021-64668",
+   "url": null
+  },
+  {
+   "title": "Substrate wettability guided oriented self assembly of Janus particles",
+   "authors": [
+    "Meneka Banik",
+    "Shaili Sett",
+    "Chirodeep Bakli",
+    "Arup Kumar Raychaudhuri",
+    "Suman Chakraborty",
+    "Rabibrata Mukherjee"
+   ],
+   "year": 2021,
+   "venue": "SCIENTIFIC REPORTS",
+   "type": "journal",
+   "doi": "10.1038/s41598-020-80760-w",
+   "url": null,
+   "volume": "11",
+   "issue": "1",
+   "pages": "1182"
+  },
+  {
+   "title": "Upstream events dictate interfacial slip in geometrically converging nanopores",
+   "authors": [
+    "Nilanjan Mondal",
+    "Abhirup Chaudhuri",
+    "Chirodeep Bakli",
+    "Suman Chakraborty"
+   ],
+   "year": 2021,
+   "venue": "JOURNAL OF CHEMICAL PHYSICS",
+   "type": "journal",
+   "doi": "10.1063/5.0050317",
+   "url": null,
+   "volume": "154",
+   "issue": "16",
+   "pages": "164709"
+  },
+  {
+   "title": "Liquid-phase reinforced metal matrix (LMM) composite with non-intuitive properties",
+   "authors": [
+    "Pal, V.",
+    "Das, R.",
+    "Ambekhar, R.",
+    "Kumar, A.",
+    "Vasavada, J.",
+    "Kumar, B.",
+    "Kar, S.K.",
+    "Sarkar, S.",
+    "Palit, M.",
+    "Roy, A.K.",
+    "Paliwal, M.",
+    "Biswas, K.",
+    "Bhoumik, S.",
+    "Mishra, S.",
+    "Bakli, C.",
+    "Tiwary, C.S."
+   ],
+   "year": 2020,
+   "venue": "arXiv",
+   "type": "preprint",
+   "doi": null,
+   "url": "http://www.scopus.com/inward/record.url?eid=2-s2.0-85094525642&partnerID=MN8TOARS"
+  },
+  {
+   "title": "Mechanistic insights into surface contribution towards heat transfer in a nanofluid",
+   "authors": [
+    "Ajit Singh",
+    "Ramanujam Lenin",
+    "Naimat Kalim Bari",
+    "Chirodeep Bakli",
+    "Chandan Bera"
+   ],
+   "year": 2020,
+   "venue": "NANOSCALE ADVANCES",
+   "type": "journal",
+   "doi": "10.1039/d0na00452a",
+   "url": null,
+   "volume": "2",
+   "issue": "8",
+   "pages": "3507-3513"
+  },
+  {
+   "title": "Anomalous interplay of slip, shear and wettability in nanoconfined water",
+   "authors": [
+    "Chirodeep Bakli",
+    "Suman Chakraborty"
+   ],
+   "year": 2019,
+   "venue": "NANOSCALE",
+   "type": "journal",
+   "doi": "10.1039/c9nr01572h",
+   "url": null,
+   "volume": "11",
+   "issue": "23",
+   "pages": "11254-11261"
+  },
+  {
+   "title": "Mimicking wettability alterations using temperature gradients for water nanodroplets",
+   "authors": [
+    "Chirodeep Bakli",
+    "Sree Hari P. D.",
+    "Suman Chakraborty"
+   ],
+   "year": 2017,
+   "venue": "NANOSCALE",
+   "type": "journal",
+   "doi": "10.1039/c7nr03320f",
+   "url": null,
+   "volume": "9",
+   "issue": "34",
+   "pages": "12509-12515"
+  },
+  {
+   "title": "Fractional Separation of Polymers in Nanochannels: Combined Influence of Wettability and Structure",
+   "authors": [
+    "P. D. Sree Hari",
+    "Chirodeep Bakli",
+    "Suman Chakraborty"
+   ],
+   "year": 2016,
+   "venue": "JOURNAL OF POLYMER SCIENCE PART B-POLYMER PHYSICS",
+   "type": "journal",
+   "doi": "10.1002/polb.24122",
+   "url": null,
+   "volume": "54",
+   "issue": "20",
+   "pages": "2118-2125"
+  },
+  {
+   "title": "On the Comparability of Chemical Structure and Roughness of Nanochannels in Altering Fluid Slippage",
+   "authors": [],
+   "year": 2016,
+   "venue": "Arxiv",
+   "type": "preprint",
+   "doi": null,
+   "url": null
+  },
+  {
+   "title": "Rapid capillary filling via ion-water interactions over the nanoscale",
+   "authors": [
+    "Chirodeep Bakli",
+    "Suman Chakraborty"
+   ],
+   "year": 2016,
+   "venue": "NANOSCALE",
+   "type": "journal",
+   "doi": "10.1039/c5nr08704j",
+   "url": null,
+   "volume": "8",
+   "issue": "12",
+   "pages": "6535-6541"
+  },
+  {
+   "title": "Effect of entrapped phase on the filling characteristics of closed-end nanopores",
+   "authors": [
+    "Chirodeep Bakli",
+    "Suman Chakraborty"
+   ],
+   "year": 2015,
+   "venue": "SOFT MATTER",
+   "type": "journal",
+   "doi": "10.1039/c4sm02240h",
+   "url": null,
+   "volume": "11",
+   "issue": "1",
+   "pages": "161-168"
+  },
+  {
+   "title": "Electrokinetic energy conversion in nanofluidic channels: Addressing the loose ends in nanodevice efficiency",
+   "authors": [
+    "Chirodeep Bakli",
+    "Suman Chakraborty"
+   ],
+   "year": 2015,
+   "venue": "ELECTROPHORESIS",
+   "type": "journal",
+   "doi": "10.1002/elps.201400317",
+   "url": null,
+   "volume": "36",
+   "issue": "5",
+   "pages": "675-681"
+  },
+  {
+   "title": "Electrokinetic Pumping And Energy Conversion At Nanoscales",
+   "authors": [],
+   "year": 2015,
+   "venue": "Arxiv",
+   "type": "preprint",
+   "doi": null,
+   "url": null
+  },
+  {
+   "title": "Slippery to Sticky Transition of Hydrophobic Nanochannels",
+   "authors": [
+    "Chirodeep Bakli",
+    "Suman Chakraborty"
+   ],
+   "year": 2015,
+   "venue": "NANO LETTERS",
+   "type": "journal",
+   "doi": "10.1021/acs.nanolett.5b03082",
+   "url": null,
+   "volume": "15",
+   "issue": "11",
+   "pages": "7497-7502"
+  },
+  {
+   "title": "Effect of presence of salt on the dynamics of water in uncharged nanochannels",
+   "authors": [
+    "Chirodeep Bakli",
+    "Suman Chakraborty"
+   ],
+   "year": 2013,
+   "venue": "JOURNAL OF CHEMICAL PHYSICS",
+   "type": "journal",
+   "doi": "10.1063/1.4789586",
+   "url": null,
+   "volume": "138",
+   "issue": "5",
+   "pages": "054504"
+  },
+  {
+   "title": "Nonlinear Amplification in Electrokinetic Pumping in Nanochannels in the Presence of Hydrophobic Interactions",
+   "authors": [
+    "Suman Chakraborty",
+    "Dipankar Chatterjee",
+    "Chirodeep Bakli"
+   ],
+   "year": 2013,
+   "venue": "PHYSICAL REVIEW LETTERS",
+   "type": "journal",
+   "doi": "10.1103/physrevlett.110.184503",
+   "url": null,
+   "volume": "110",
+   "issue": "18",
+   "pages": "184503"
+  },
+  {
+   "title": "Capillary filling dynamics of water in nanopores",
+   "authors": [
+    "Chirodeep Bakli",
+    "Suman Chakraborty"
+   ],
+   "year": 2012,
+   "venue": "APPLIED PHYSICS LETTERS",
+   "type": "journal",
+   "doi": "10.1063/1.4758683",
+   "url": null,
+   "volume": "101",
+   "issue": "15",
+   "pages": "153112"
+  }
+ ]
+}
