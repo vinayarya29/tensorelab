@@ -2,7 +2,8 @@
 
 Website of the **TeNSorE Lab** (Thermofluidics and Nanotechnology for Sustainable Energy Systems
 Laboratory), School of Energy Science and Engineering, IIT Kharagpur. PI: Dr. Chirodeep Bakli.
-Served by GitHub Pages. Separate from Vinay Arya's personal site (vinayarya29.github.io).
+Served by GitHub Pages at https://vinayarya29.github.io/tensorelab/ (repo vinayarya29/tensorelab).
+Separate from Vinay Arya's personal site (vinayarya29.github.io).
 
 | Page | File |
 |---|---|

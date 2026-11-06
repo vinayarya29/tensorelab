@@ -12,7 +12,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 LAB = json.loads((ROOT / "data" / "lab.json").read_text())
 PUBS = json.loads((ROOT / "data" / "publications.json").read_text())
 L = LAB["lab"]
-SITE = "https://tensorelab.github.io/"
+SITE = "https://vinayarya29.github.io/tensorelab/"
 TODAY = datetime.date.today()
 
 NAV = [("index.html", "Home"), ("research.html", "Research"), ("people.html", "People"),
