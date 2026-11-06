@@ -26,6 +26,11 @@ python3 tools/build.py                 # regenerate the six pages
 git add -A && git commit -m "Update" && git push
 ```
 
+Images (`images/`): the lab emblem (`tensore-logo.png`, supplied by the user); theme figures
+(`images/themes/`), lab photos (`images/lab/`) and research-highlight slides (`images/highlights/`,
+rendered by PowerPoint from `TENSORE_Lab work.pptx`). Theme figures, photos and highlights are
+listed in `data/lab.json` (`image`, `lab_photos`, `highlights`).
+
 Python 3.8+ standard library only. Lab members are highlighted in author lists automatically
 (from the names in `lab.json`); research themes are assigned to papers by keywords in their titles.
 

@@ -152,7 +152,7 @@ def page(fname, title, desc, body):
 <link rel="canonical" href="{url}">
 <meta property="og:type" content="website"><meta property="og:title" content="{E(full)}">
 <meta property="og:description" content="{E(desc)}"><meta property="og:url" content="{url}">
-<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="images/tensore-logo-64.png" type="image/png"><link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
@@ -160,7 +160,7 @@ def page(fname, title, desc, body):
 </head>
 <body>
 <header class="topbar"><div class="in">
-<a class="brand" href="index.html">{LOGO}<span><b>{E(L['short'])}</b><small>IIT Kharagpur</small></span></a>
+<a class="brand" href="index.html"><img src="images/tensore-logo-64.png" width="34" height="34" alt=""><span><b>{E(L['short'])}</b><small>IIT Kharagpur</small></span></a>
 <button class="menu-btn" aria-expanded="false" aria-label="Menu">Menu</button>
 <nav aria-label="Main">{nav}</nav>
 </div></header>
@@ -184,6 +184,39 @@ def reveal(i):
     return f' class="card reveal" style="--d:{min(i, 8) * 60}ms"'
 
 
+HL = LAB.get("highlights", [])
+THEME_NAME = {t["id"]: t["name"] for t in THEMES}
+
+
+def theme_card(t, i, n):
+    img = (f'<div class="img"><img src="{E(t["image"])}" alt="{E(t["name"])}" loading="lazy"></div>' if t.get("image")
+           else f'<div class="img noimg">{icon(t["icon"])}</div>')
+    return (f'<a href="research.html#{t["id"]}" class="card fig reveal" style="--d:{min(i, 8) * 60}ms">{img}'
+            f'<div class="body"><h3>{E(t["name"])}</h3><p>{E(t["short"])}</p><div class="n">{n} papers →</div></div></a>')
+
+
+def hl_button(h, idx, cls=""):
+    sub = " · ".join(x for x in (THEME_NAME.get(h["theme"], ""), h.get("ref")) if x)
+    return (f'<button type="button" data-hl="{idx}" data-theme="{h["theme"]}" aria-label="Enlarge: {E(h["title"])}">'
+            f'<img src="{E(h["thumb"])}" alt="{E(h["title"])}" loading="lazy">'
+            + ('' if cls == "mini" else f'<div class="cap"><b>{E(h["title"])}</b><span>{E(sub)}</span></div>') + '</button>')
+
+
+def lightbox():
+    data = json.dumps([{"src": h["image"], "title": h["title"], "ref": h.get("ref", ""),
+                        "doi": h.get("doi", "")} for h in HL])
+    return (f'<dialog class="lb" id="lb"><img alt=""><div class="bar"><span class="t"></span>'
+            f'<span class="nav"><button type="button" data-step="-1">← Prev</button><button type="button" data-step="1">Next →</button>'
+            f'<button type="button" data-close>Close</button></span></div></dialog>'
+            f'<script type="application/json" id="hl-data">{data.replace("</", "<\\/")}</script>')
+
+
+def photos():
+    return '<div class="photos">' + "".join(
+        f'<figure class="photo reveal" style="--d:{i * 60}ms"><img src="{E(f)}" alt="{E(c)}" loading="lazy"><figcaption>{E(c)}</figcaption></figure>'
+        for i, (f, c) in enumerate(LAB.get("lab_photos", []))) + '</div>'
+
+
 # ---------------------------------------------------------------- pages
 def home():
     pubs = PUBS["publications"]
@@ -192,27 +225,29 @@ def home():
     n_members = 1 + len(LAB["postdocs"]) + len(LAB["phd"])
     facts = [(len(pubs), "publications"), (sum(1 for p in pubs if (p["year"] or 0) >= yr - 2), f"papers since {yr - 2}"),
              (n_members, "people in the group"), (len(LAB["alumni_phd"]) + len(LAB["alumni_ms"]), "PhD & MS graduates")]
-    theme_cards = "".join(
-        f'<a href="research.html#{t["id"]}"{reveal(i)}><div class="ico">{icon(t["icon"])}</div><h3>{E(t["name"])}</h3>'
-        f'<p>{E(t["short"])}</p><div class="n">{sum(t["id"] in p["themes"] for p in pubs)} papers →</div></a>'
-        for i, t in enumerate(THEMES))
+    theme_cards = "".join(theme_card(t, i, sum(t["id"] in p["themes"] for p in pubs)) for i, t in enumerate(THEMES))
+    picks = [0, 5, 10, 14, 7, 1]
+    hl_home = "".join(hl_button(HL[k], k) for k in picks if k < len(HL))
     pi = LAB["pi"]
     news = "".join(f'<li><time>{E(n["when"]) or "&nbsp;"}</time><div class="what">{md(n["text"])}</div></li>' for n in LAB["news"])
     ev = LAB["events"][0]
     news += f'<li><time>{E(ev["when"])}</time><div class="what"><b>{E(ev["title"])}</b><p>{E(ev["text"])}</p></div></li>'
     body = f"""
-<div class="hero"><canvas aria-hidden="true"></canvas><div class="wrap">
+<div class="hero"><canvas aria-hidden="true"></canvas><div class="wrap"><div>
 <div class="eyebrow">{E(L['school'])} · IIT Kharagpur</div>
-<h1>{E(L['name'])}</h1>
+<h1><em>Thermofluidics</em> and <em>Nanotechnology</em> for Sustainable Energy Systems Laboratory</h1>
 <p class="lead">{E(L['intro'])}</p>
 <div class="cta"><a class="btn solid" href="research.html">Our research</a><a class="btn ghost" href="publications.html">Publications</a><a class="btn ghost" href="join.html">Join the lab</a></div>
 <div class="facts">{"".join(f'<div><b>{n}</b><span>{E(t)}</span></div>' for n, t in facts)}</div>
-</div></div>
+</div><img class="logo" src="{E(L['logo'])}" alt="TeNSorE Lab logo" width="300" height="300"></div></div>
 <div class="wrap">
 <section><div class="eyebrow">How we work</div><h2 class="sec">From molecules to systems</h2>
 <div class="scales reveal">{"".join(f'<div><i>{i + 1}</i><b>{E(a)}</b><p>{E(b)}</p></div>' for i, (a, b) in enumerate(L['approach']))}</div></section>
 <section><div class="eyebrow">Research themes</div><h2 class="sec">What we study</h2>
-<div class="grid g4">{theme_cards}<a href="publications.html" class="card reveal" style="--d:420ms"><div class="ico">{icon('tool')}</div><h3>All publications</h3><p>Search and filter every paper by theme, type and year.</p><div class="n">{len(pubs)} papers →</div></a></div></section>
+<div class="grid g4">{theme_cards}<a href="publications.html" class="card fig reveal" style="--d:420ms"><div class="img noimg">{icon('tool')}</div><div class="body"><h3>All publications</h3><p>Search and filter every paper by theme, type and year.</p><div class="n">{len(pubs)} papers →</div></div></a></div></section>
+<section><div class="eyebrow">Research highlights</div><h2 class="sec">Selected work</h2>
+<div class="hl">{hl_home}</div><p class="more"><a href="research.html#highlights">All {len(HL)} highlights →</a></p></section>
+<section><div class="eyebrow">In the lab</div><h2 class="sec">Experiments and test beds</h2>{photos()}</section>
 <section><div class="grid g2">
 <div><div class="eyebrow">Principal investigator</div><h2 class="sec">{E(pi['name'])}</h2>
 <div class="card pi reveal"><div class="avatar">{initials(pi['name'])}</div><div>
@@ -225,20 +260,23 @@ def home():
 <section><div class="eyebrow">Recent work</div><h2 class="sec">Recent journal papers</h2>
 <ol class="pubs">{"".join(pub_li(p) for p in recent)}</ol>
 <p class="more"><a href="publications.html">All {len(pubs)} publications →</a></p></section>
-</div>"""
+</div>{lightbox()}"""
     return page("index.html", L["short"], L["intro"], body)
 
 
 def research():
     pubs = PUBS["publications"]
-    toc = "".join(f'<a href="#{t["id"]}">{E(t["name"])}</a>' for t in THEMES) + '<a href="#projects">Projects</a><a href="#facilities">Facilities</a>'
+    toc = "".join(f'<a href="#{t["id"]}">{E(t["name"])}</a>' for t in THEMES) + '<a href="#highlights">Highlights</a><a href="#projects">Projects</a><a href="#facilities">Facilities</a>'
     blocks = []
     for t in THEMES:
         rel = [p for p in pubs if t["id"] in p["themes"]]
         relh = (f'<details class="rel"><summary>{len(rel)} related publications</summary><ol>{"".join(pub_li(p, True) for p in rel[:8])}</ol>'
                 f'<p class="note"><a href="publications.html?theme={t["id"]}">See all {len(rel)} in Publications →</a></p></details>') if rel else ""
+        fig = f'<div class="figure"><img src="{E(t["image"])}" alt="{E(t["name"])}" loading="lazy"></div>' if t.get("image") else ""
+        mine = [(k, h) for k, h in enumerate(HL) if h["theme"] == t["id"]]
+        minis = (f'<div class="theme-hl">{"".join(hl_button(h, k, "mini") for k, h in mine)}</div>') if mine else ""
         blocks.append(f'<div class="theme reveal" id="{t["id"]}"><div class="ico">{icon(t["icon"])}</div><div><h3>{E(t["name"])}</h3>'
-                      f'<p>{E(t["text"])}</p>{relh}</div></div>')
+                      f'{fig}<p>{E(t["text"])}</p>{minis}{relh}</div></div>')
 
     def projlist(d):
         out = ""
@@ -251,13 +289,17 @@ def research():
     body = phead("Research", "Research themes", E(L["intro"])) + f"""
 <div class="wrap"><div class="toc">{toc}</div>
 <section>{"".join(blocks)}</section>
+<section id="highlights"><div class="eyebrow">Research highlights</div><h2 class="sec">Highlights <span class="count">{len(HL)}</span></h2>
+<div class="hl-filter" role="group" aria-label="Filter highlights"><button type="button" data-f="" aria-pressed="true">All</button>{"".join(f'<button type="button" data-f="{t["id"]}" aria-pressed="false">{E(t["name"])}</button>' for t in THEMES if any(h["theme"] == t["id"] for h in HL))}</div>
+<div class="hl" id="hl-grid">{"".join(hl_button(h, k) for k, h in enumerate(HL))}</div></section>
 <section id="projects"><div class="eyebrow">Funding</div><h2 class="sec">Projects</h2>
 <h3 class="sub" style="color:var(--accent)">Current</h3>{projlist(LAB['projects_current'])}
 <h3 class="sub" style="color:var(--accent);margin-top:34px">Completed</h3>{projlist(LAB['projects_completed'])}</section>
 <section id="facilities"><div class="eyebrow">Infrastructure</div><h2 class="sec">Research facilities</h2>
-<div class="grid g3">{fac}</div>
+{photos()}
+<div class="grid g3" style="margin-top:18px">{fac}</div>
 <p class="note">Also available: <a href="{LAB['facilities_note'][1]}">{E(LAB['facilities_note'][0])}</a>.</p></section>
-</div>"""
+</div>{lightbox()}"""
     return page("research.html", "Research", "Research themes, projects and facilities of the TeNSorE Lab, IIT Kharagpur.", body)
 
 
@@ -355,7 +397,6 @@ def join():
 
 
 if __name__ == "__main__":
-    (ROOT / "images" / "favicon.svg").write_text(LOGO.replace('<svg ', '<svg xmlns="http://www.w3.org/2000/svg" '))
     for name, fn in (("index.html", home), ("research.html", research), ("people.html", people),
                      ("publications.html", publications), ("news.html", news), ("join.html", join)):
         (ROOT / name).write_text(fn())

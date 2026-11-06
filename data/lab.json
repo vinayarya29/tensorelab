@@ -1,5 +1,5 @@
 {
- "_sources": "Members, projects, PI roles and awards: IIT Kharagpur faculty page https://www.iitkgp.ac.in/department/ES/faculty/es-chirodeep (Nov 2026). Postdocs, M.Tech alumni, themes, facilities, events, lectures, collaborators: https://sites.google.com/view/tensore. Publications: data/publications.json (from ORCID).",
+ "_sources": "Members, projects, PI roles and awards: IIT Kharagpur faculty page https://www.iitkgp.ac.in/department/ES/faculty/es-chirodeep (Nov 2026). Postdocs, M.Tech alumni, themes, facilities, events, lectures, collaborators: https://sites.google.com/view/tensore. Publications: data/publications.json (from ORCID). Images: TENSORE_Lab work.pptx (lab deck), Nov 2026. Logo: TeNSoRE lab emblem (brand/tensore-emblem-512.png) supplied by the user.",
  "lab": {
   "short": "TeNSorE Lab",
   "name": "Thermofluidics and Nanotechnology for Sustainable Energy Systems Laboratory",
@@ -23,7 +23,8 @@
     "System scale",
     "Solar thermal, wind and building energy systems, increasingly guided by machine learning."
    ]
-  ]
+  ],
+  "logo": "images/tensore-logo.png"
  },
  "pi": {
   "name": "Dr. Chirodeep Bakli",
@@ -283,7 +284,8 @@
     "nanofluidic",
     "angstrofluidic",
     "nanodroplet"
-   ]
+   ],
+   "image": "images/themes/2d.jpg"
   },
   {
    "id": "nanofluid",
@@ -303,7 +305,8 @@
     "porous",
     "thermoelectric",
     "cooling"
-   ]
+   ],
+   "image": "images/themes/nanofluid.jpg"
   },
   {
    "id": "fsi",
@@ -342,7 +345,8 @@
     "district cooling",
     "dryer",
     "greenhouse"
-   ]
+   ],
+   "image": "images/themes/buildings.jpg"
   },
   {
    "id": "multiphase",
@@ -367,7 +371,8 @@
     "rheology",
     "shear-thinning",
     "viscoplastic"
-   ]
+   ],
+   "image": "images/themes/multiphase.jpg"
   },
   {
    "id": "droplets",
@@ -388,7 +393,8 @@
     "condensation",
     "contact line",
     "wettability"
-   ]
+   ],
+   "image": "images/themes/droplets.jpg"
   },
   {
    "id": "electrokinetics",
@@ -415,7 +421,8 @@
     "double-layer",
     "double layer",
     "electrical"
-   ]
+   ],
+   "image": "images/themes/electrokinetics.jpg"
   }
  ],
  "projects_current": {
@@ -693,5 +700,177 @@
     "We welcome collaborations with academic and industry partners. Contact Dr. Bakli directly."
    ]
   ]
- }
+ },
+ "lab_photos": [
+  [
+   "images/lab/rooftop-pv.jpg",
+   "Rooftop solar PV test bed for cooling and cleaning studies"
+  ],
+  [
+   "images/lab/battery-cooling.jpg",
+   "Micro-channel heat sink for battery thermal management"
+  ],
+  [
+   "images/lab/3d-printer.jpg",
+   "Resin 3D printing of substrates for interfacial solar evaporation"
+  ],
+  [
+   "images/lab/workstation.jpg",
+   "Experimental workstation"
+  ]
+ ],
+ "highlights": [
+  {
+   "image": "images/highlights/slide02.jpg",
+   "thumb": "images/highlights/slide02-thumb.jpg",
+   "title": "Carbonized cotton fibers for ultrahigh power-density electrokinetic energy harvesting",
+   "theme": "electrokinetics",
+   "ref": "ACS Applied Energy Materials, 2023",
+   "doi": "10.1021/acsaem.3c02409"
+  },
+  {
+   "image": "images/highlights/slide03.jpg",
+   "thumb": "images/highlights/slide03-thumb.jpg",
+   "title": "Mapping fluid structuration to flow enhancement in nanofluidic channels",
+   "theme": "2d",
+   "ref": "The Journal of Chemical Physics, 2023",
+   "doi": "10.1063/5.0140765"
+  },
+  {
+   "image": "images/highlights/slide04.jpg",
+   "thumb": "images/highlights/slide04-thumb.jpg",
+   "title": "Interfacial solar evaporation energy harvesting on 3D-printed substrates",
+   "theme": "electrokinetics",
+   "ref": "",
+   "doi": ""
+  },
+  {
+   "image": "images/highlights/slide05.jpg",
+   "thumb": "images/highlights/slide05-thumb.jpg",
+   "title": "Porous-media capillary flow for solar-evaporation-based energy harvesting",
+   "theme": "2d",
+   "ref": "",
+   "doi": ""
+  },
+  {
+   "image": "images/highlights/slide06.jpg",
+   "thumb": "images/highlights/slide06-thumb.jpg",
+   "title": "Smart materials and nanotechnology: an overview",
+   "theme": "2d",
+   "ref": "",
+   "doi": ""
+  },
+  {
+   "image": "images/highlights/slide09.jpg",
+   "thumb": "images/highlights/slide09-thumb.jpg",
+   "title": "Wettability-modulated smart graphene nanopores for desalination",
+   "theme": "2d",
+   "ref": "Nanoscale, 2022",
+   "doi": "10.1039/D2NR05552J"
+  },
+  {
+   "image": "images/highlights/slide10.jpg",
+   "thumb": "images/highlights/slide10-thumb.jpg",
+   "title": "Nanofluidic diode using smart surfaces",
+   "theme": "2d",
+   "ref": "The Journal of Chemical Physics, 2021",
+   "doi": "10.1063/5.0050317"
+  },
+  {
+   "image": "images/highlights/slide11.jpg",
+   "thumb": "images/highlights/slide11-thumb.jpg",
+   "title": "Efficient water removal using textured surfaces",
+   "theme": "droplets",
+   "ref": "Physics of Fluids and APL Energy, 2023",
+   "doi": "10.1063/5.0171953"
+  },
+  {
+   "image": "images/highlights/slide12.jpg",
+   "thumb": "images/highlights/slide12-thumb.jpg",
+   "title": "Electronics cooling with shape-engineered interfaces and non-Newtonian nanofluids",
+   "theme": "nanofluid",
+   "ref": "Thermal Science and Engineering Progress, 2023",
+   "doi": ""
+  },
+  {
+   "image": "images/highlights/slide13.jpg",
+   "thumb": "images/highlights/slide13-thumb.jpg",
+   "title": "Smart surfaces for biomimetics and self-propulsion of droplets",
+   "theme": "droplets",
+   "ref": "ASME POWER, 2021",
+   "doi": "10.1115/POWER2021-64668"
+  },
+  {
+   "image": "images/highlights/slide07.jpg",
+   "thumb": "images/highlights/slide07-thumb.jpg",
+   "title": "Passive cooling using hydrogels",
+   "theme": "buildings",
+   "ref": "",
+   "doi": ""
+  },
+  {
+   "image": "images/highlights/slide20.jpg",
+   "thumb": "images/highlights/slide20-thumb.jpg",
+   "title": "The dual-function solution: hydrogel cooling of photovoltaics",
+   "theme": "buildings",
+   "ref": "Solar RRL, 2026",
+   "doi": ""
+  },
+  {
+   "image": "images/highlights/slide14.jpg",
+   "thumb": "images/highlights/slide14-thumb.jpg",
+   "title": "Energy-aware urban infrastructure",
+   "theme": "buildings",
+   "ref": "",
+   "doi": ""
+  },
+  {
+   "image": "images/highlights/slide15.jpg",
+   "thumb": "images/highlights/slide15-thumb.jpg",
+   "title": "Phase-change material in direct heat gain walls for passive cooling",
+   "theme": "buildings",
+   "ref": "BuildSys 2023",
+   "doi": "10.1145/3600100.3627030"
+  },
+  {
+   "image": "images/highlights/slide16.jpg",
+   "thumb": "images/highlights/slide16-thumb.jpg",
+   "title": "Retrofitting large glass façades for energy saving and generation",
+   "theme": "buildings",
+   "ref": "AIP Conference Proceedings, 2023",
+   "doi": "10.1063/5.0128790"
+  },
+  {
+   "image": "images/highlights/slide17.jpg",
+   "thumb": "images/highlights/slide17-thumb.jpg",
+   "title": "Optimizing solar PV systems through cooling and cleaning",
+   "theme": "buildings",
+   "ref": "",
+   "doi": ""
+  },
+  {
+   "image": "images/highlights/slide18.jpg",
+   "thumb": "images/highlights/slide18-thumb.jpg",
+   "title": "Battery thermal management using micro-channel heat sinks",
+   "theme": "nanofluid",
+   "ref": "",
+   "doi": ""
+  },
+  {
+   "image": "images/highlights/slide19.jpg",
+   "thumb": "images/highlights/slide19-thumb.jpg",
+   "title": "Solar PV thermal management using micro-channel heat sinks",
+   "theme": "nanofluid",
+   "ref": "",
+   "doi": ""
+  },
+  {
+   "image": "images/highlights/slide08.jpg",
+   "thumb": "images/highlights/slide08-thumb.jpg",
+   "title": "Unified multiscale research framework (Dr. Vinay Arya)",
+   "theme": "2d",
+   "ref": "",
+   "doi": ""
+  }
+ ]
 }

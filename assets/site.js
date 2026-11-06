@@ -31,6 +31,7 @@
 
     heroField();
     pubFilters();
+    highlights();
   });
 
   // Drifting particles with faint links: a nod to molecules in a nanochannel.
@@ -54,13 +55,48 @@
           if (p.x > W + 5) p.x = -5; if (p.y < 0 || p.y > H) p.vy *= -1;
           for (var j = i + 1; j < P.length; j++) {
             var q = P[j], dx = p.x - q.x, dy = p.y - q.y, d2 = dx * dx + dy * dy;
-            if (d2 < 7000) { ctx.strokeStyle = "rgba(220,250,248," + (0.22 * (1 - d2 / 7000)) + ")"; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y); ctx.stroke(); }
+            if (d2 < 7000) { ctx.strokeStyle = "rgba(26,138,143," + (0.16 * (1 - d2 / 7000)) + ")"; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y); ctx.stroke(); }
           }
-          ctx.fillStyle = "rgba(230,252,250,.75)"; ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.283); ctx.fill();
+          ctx.fillStyle = "rgba(26,138,143,.28)"; ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.283); ctx.fill();
         }
       }
       requestAnimationFrame(frame);
     })();
+  }
+
+  // Research highlights: filter chips + full-size viewer (native <dialog>, keyboard friendly).
+  function highlights() {
+    var dlg = document.getElementById("lb"), data = document.getElementById("hl-data");
+    if (!dlg || !data) return;
+    var H = JSON.parse(data.textContent), cur = 0, img = dlg.querySelector("img"), t = dlg.querySelector(".t");
+    function show(i) {
+      cur = (i + H.length) % H.length; var h = H[cur];
+      img.src = h.src; img.alt = h.title;
+      t.innerHTML = "";
+      var b = document.createElement("b"); b.textContent = h.title; t.appendChild(b);
+      if (h.ref) t.appendChild(document.createTextNode(" · " + h.ref));
+      if (h.doi) { var a = document.createElement("a"); a.href = "https://doi.org/" + h.doi; a.textContent = " DOI ↗"; a.target = "_blank"; a.rel = "noopener"; t.appendChild(a); }
+    }
+    document.querySelectorAll("[data-hl]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        show(+b.dataset.hl);
+        if (dlg.showModal) dlg.showModal(); else window.open(H[cur].src, "_blank");
+      });
+    });
+    dlg.querySelectorAll("[data-step]").forEach(function (b) { b.addEventListener("click", function () { show(cur + +b.dataset.step); }); });
+    dlg.querySelector("[data-close]").addEventListener("click", function () { dlg.close(); });
+    dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
+    dlg.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight") show(cur + 1);
+      if (e.key === "ArrowLeft") show(cur - 1);
+    });
+    var grid = document.getElementById("hl-grid");
+    document.querySelectorAll(".hl-filter button").forEach(function (b) {
+      b.addEventListener("click", function () {
+        document.querySelectorAll(".hl-filter button").forEach(function (x) { x.setAttribute("aria-pressed", x === b); });
+        grid.querySelectorAll("button").forEach(function (x) { x.hidden = !!b.dataset.f && x.dataset.theme !== b.dataset.f; });
+      });
+    });
   }
 
   function pubFilters() {
