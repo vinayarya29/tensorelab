@@ -276,6 +276,15 @@ def li_button(label="Follow us on LinkedIn"):
             f'{icon("linkedin")}<span>{E(label)}</span></a>')
 
 
+def li_widget():
+    """Latest LinkedIn posts via the SociableKIT widget (embed id in lab.json)."""
+    w = L.get("linkedin_widget")
+    if not w:
+        return ""
+    return (f'<div class="li-widget"><div class="sk-ww-linkedin-page-post" data-embed-id="{E(w["embed_id"])}"></div></div>'
+            f'<script src="{E(w["script"])}" defer></script>')
+
+
 def li_embed_url(post):
     """Accepts an embed URL/URN or a normal post link and returns the official embed URL."""
     m = re.search(r"urn:li:(share|activity|ugcPost):(\d+)", post) or re.search(r"(activity)-(\d{15,})", post)
@@ -351,6 +360,7 @@ def home():
 <p class="more"><a href="news.html">All news and events →</a></p>
 <div class="li-card reveal"><div><b>TeNSorE Lab on LinkedIn</b><span>Updates, new papers and openings.</span></div>{li_button("Follow")}</div></div>
 </div></section>
+{f'<section id="linkedin"><div class="eyebrow">Social media</div><h2 class="sec">Latest on LinkedIn</h2>{li_widget()}</section>' if L.get("linkedin_widget") else ''}
 <section><div class="eyebrow">Recent work</div><h2 class="sec">Recent journal papers</h2>
 <ol class="pubs">{"".join(pub_li(p) for p in recent)}</ol>
 <p class="more"><a href="publications.html">All {len(pubs)} publications →</a></p></section>
@@ -465,6 +475,7 @@ def news():
 <section><div class="eyebrow">Group news</div><h2 class="sec">News</h2><ul class="list">{nl}</ul></section>
 <section><div class="eyebrow">Organised by the lab</div><h2 class="sec">Workshops and events</h2><ul class="list">{ev}</ul></section>
 <section id="linkedin"><div class="eyebrow">Social media</div><h2 class="sec">On LinkedIn</h2>
+{li_widget()}
 {f'<div class="li-grid">{li_posts()}</div>' if li_posts() else ''}
 <div class="li-card"><div><b>Follow the TeNSorE Lab on LinkedIn</b><span>Lab news, new papers, events and openings — as they happen.</span></div>{li_button()}</div></section>
 <section id="lectures"><div class="eyebrow">Teaching resources</div><h2 class="sec">Lecture archive</h2>

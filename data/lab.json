@@ -31,7 +31,11 @@
    "small": "images/research-platform-1000.jpg",
    "caption": "The TeNSorE Lab energy-transition research platform: interfacial and transport physics, from molecules to systems, across four pillars — thermal management and energy efficiency; water–energy nexus and energy harvesting; smart materials and interfaces for energy and water; multiscale physics and AI for energy systems."
   },
-  "linkedin": "https://www.linkedin.com/company/tensore-lab-iit-kgp/"
+  "linkedin": "https://www.linkedin.com/company/tensore-lab-iit-kgp/",
+  "linkedin_widget": {
+   "embed_id": "25727873",
+   "script": "https://widgets.sociablekit.com/linkedin-page-posts/widget.js"
+  }
  },
  "pi": {
   "name": "Dr. Chirodeep Bakli",
