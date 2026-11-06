@@ -47,7 +47,7 @@ def best(path, maxw=4000):
     return c[-1] if c else (v[0][0] if v else path)
 
 
-def pic(path, alt, sizes, cls="", eager=False, defer=False):
+def pic(path, alt, sizes, cls="", eager=False, defer=False, lqip=True):
     """<img> with WebP srcset, intrinsic size and lazy loading. defer=True puts the sources in
     data-* attributes (loaded by site.js just before the image is shown, e.g. carousel slides)."""
     m, v = _variants(path)
@@ -62,6 +62,8 @@ def pic(path, alt, sizes, cls="", eager=False, defer=False):
     if srcset:
         a += f' {pre}srcset="{srcset}" sizes="{sizes}"'
     a += ' loading="eager" fetchpriority="high"' if eager else ' loading="lazy"'
+    if m and m.get("lqip") and lqip:
+        a += f' style="background-image:url({m["lqip"]})" data-lqip'
     return f"<img{a} decoding=\"async\">"
 
 
@@ -75,7 +77,7 @@ def avatar(name, cls=""):
     f = ROOT / "images" / "people" / (slug(name) + ".jpg")
     c = f"avatar {cls}".strip()
     if f.exists():
-        return pic(f"images/people/{slug(name)}.jpg", name, "132px" if not cls else "56px", f"{c} photo-av")
+        return pic(f"images/people/{slug(name)}.jpg", name, "132px" if not cls else "56px", f"{c} photo-av", lqip=False)
     return f'<div class="{c}">{initials(name)}</div>'
 
 
@@ -330,7 +332,7 @@ def home():
     news += f'<li><time>{E(ev["when"])}</time><div class="what"><b>{E(ev["title"])}</b><p>{E(ev["text"])}</p></div></li>'
     body = f"""
 <div class="hero"><div class="wrap"><div>
-<div class="mark">{pic(L['logo'], "TeNSorE Lab logo", "64px", eager=True)}<div class="eyebrow">{E(L['school'])}<br>IIT Kharagpur</div></div>
+<div class="mark">{pic(L['logo'], "TeNSorE Lab logo", "64px", eager=True, lqip=False)}<div class="eyebrow">{E(L['school'])}<br>IIT Kharagpur</div></div>
 <h1><em>Thermofluidics</em> and <em>Nanotechnology</em> for Sustainable Energy Systems Laboratory</h1>
 <p class="tagline">{E(L.get('tagline', ''))}</p>
 <p class="lead">{E(L['intro'])}</p>

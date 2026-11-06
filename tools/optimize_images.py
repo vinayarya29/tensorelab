@@ -7,7 +7,7 @@ the fallback `src`. tools/build.py reads the manifest to emit `srcset`, `width` 
 Run after adding or replacing images (needs Pillow):
     python3 tools/optimize_images.py && python3 tools/build.py
 """
-import json, pathlib
+import base64, io, json, pathlib
 from PIL import Image
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -42,7 +42,12 @@ def main():
                 (im if w == im.width else im.resize((w, h), Image.LANCZOS)).save(out, "WEBP", quality=q, method=6)
                 done.append(w)
             rel = src.relative_to(ROOT).as_posix()
-            manifest[rel] = {"w": im.width, "h": im.height, "webp": done}
+            # tiny blurred preview shown while the real image downloads (inlined in the HTML)
+            lw = 24 if im.width >= im.height else 16
+            buf = io.BytesIO()
+            im.convert("RGB").resize((lw, max(1, round(im.height * lw / im.width))), Image.LANCZOS).save(buf, "WEBP", quality=45)
+            lqip = "data:image/webp;base64," + base64.b64encode(buf.getvalue()).decode()
+            manifest[rel] = {"w": im.width, "h": im.height, "webp": done, "lqip": lqip}
             before = src.stat().st_size // 1024
             after = src.with_name(f"{src.stem}.{done[0]}.webp").stat().st_size // 1024
             print(f"{rel:42s} {before:5d} KB  ->  {done[0]}w webp {after:4d} KB  ({', '.join(map(str, done))})")

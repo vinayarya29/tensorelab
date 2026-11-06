@@ -320,3 +320,10 @@ img.avatar.sm { width: 56px; height: 56px; }
 @media (max-width: 960px) { .li-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 700px) { .li-grid { grid-template-columns: 1fr; } .li-card { flex-direction: column; align-items: flex-start; } }
 .li-widget { min-height: 120px; margin-bottom: 8px; }
+/* Blurred previews while images load (removed by site.js on load) */
+img[data-lqip] { background-size: cover; background-position: center; background-repeat: no-repeat; }
+.card.fig .img img[data-lqip], .theme .figure img[data-lqip] { background-size: contain; background-origin: content-box; }
+.card.fig .img { background: #f3f6f6; }
+/* LinkedIn widget: fixed-height box that scrolls on its own */
+.li-widget { max-height: 640px; overflow-y: auto; overscroll-behavior: contain; border: 1px solid var(--rule); border-radius: var(--radius); padding: 10px; background: #fff; box-shadow: var(--shadow); scrollbar-width: thin; }
+@media (max-width: 700px) { .li-widget { max-height: 560px; } }

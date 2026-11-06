@@ -10,7 +10,12 @@
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (!reduce && "IntersectionObserver" in window) root.classList.add("anim");
 
+  // drop the blurred preview once the real image has arrived
+  function unblur(im) { im.style.backgroundImage = ""; im.removeAttribute("data-lqip"); }
+  document.addEventListener("load", function (e) { var t = e.target; if (t.tagName === "IMG" && t.hasAttribute("data-lqip")) unblur(t); }, true);
+
   document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("img[data-lqip]").forEach(function (im) { if (im.complete && im.naturalWidth) unblur(im); });
     // Inside an embed frame (e.g. Google Sites) top-level navigation is blocked: open links in a new tab.
     if (embedded) document.querySelectorAll("a[href]").forEach(function (a) {
       if (!a.getAttribute("href").startsWith("#")) a.target = "_blank", a.rel = "noopener";
