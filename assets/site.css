@@ -327,3 +327,11 @@ img[data-lqip] { background-size: cover; background-position: center; background
 /* LinkedIn widget: fixed-height box that scrolls on its own */
 .li-widget { max-height: 640px; overflow-y: auto; overscroll-behavior: contain; border: 1px solid var(--rule); border-radius: var(--radius); padding: 10px; background: #fff; box-shadow: var(--shadow); scrollbar-width: thin; }
 @media (max-width: 700px) { .li-widget { max-height: 560px; } }
+/* images carry width/height attributes (to reserve space); let CSS aspect-ratio decide the box */
+.hl img, .theme-hl img, .photo img, .theme .figure img, .platform img { height: auto; }
+/* lab photos: one common height, cropped to fill */
+.photos { align-items: start; }
+.photo img { aspect-ratio: auto; height: 230px; width: 100%; object-fit: cover; }
+@media (max-width: 700px) { .photo img { height: 210px; } }
+/* hide the browser's alt-text placeholder over the blurred preview while an image is still loading */
+img[data-lqip] { color: transparent; font-size: 0; }
