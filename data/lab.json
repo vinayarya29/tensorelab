@@ -905,7 +905,7 @@
  ],
  "linkedin_posts": [],
  "requests": {
-  "form": "https://docs.google.com/forms/d/e/1FAIpQLSeEaU5jYbFlw50cmIEbt43xWCttbeHYc4RFZCYuK17S1NC-Xg/viewform?usp=dialog",
+  "form": "https://docs.google.com/forms/d/e/1FAIpQLSeEaU5jYbFlw50cmIEbt43xWCttbeHYc4RFZCYuK17S1NC-Xg/viewform",
   "endpoint": "https://script.google.com/macros/s/AKfycbw7ghX-g9hYTsBiejKacaSFUGUNowhnrp-L4ytiIFTZE9GoUcrhcxD9jpfbMB6Yj-DX/exec"
  }
 }
