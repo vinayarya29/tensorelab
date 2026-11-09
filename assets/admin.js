@@ -146,13 +146,13 @@
     $("li-list").innerHTML = listHTML(lab.linkedin_posts, function (u) {
       return '<time>Post</time><span><a href="https://www.linkedin.com/feed/update/' + esc(u) + '/" target="_blank" rel="noopener">' + esc(u) + "</a></span>";
     });
-    $("news-list").innerHTML = listHTML(lab.news || [], function (n) { return "<time>" + esc(n.when || "—") + "</time><span>" + md(n.text) + "</span>"; }, true);
+    $("news-list").innerHTML = listHTML(lab.news || [], function (n) { return "<time>" + esc(n.when || "—") + "</time><span>" + (n.title ? "<b>" + esc(n.title) + "</b><br><span class=status>" + md(n.text || "") + "</span>" : md(n.text)) + "</span>"; }, true);
     $("ev-list").innerHTML = listHTML(lab.events || [], function (e) { return "<time>" + esc(e.when) + "</time><span><b>" + esc(e.title) + "</b>" + (e.text ? "<br><span class=status>" + esc(e.text) + "</span>" : "") + "</span>"; }, true);
   }
   // editing[key] = index of the item loaded into the form (null = the form adds a new item)
   var editing = { news: null, events: null };
   var FORMS = {
-    news: { fields: { "n-when": "when", "n-text": "text" }, add: "n-add", cancel: "n-cancel", addLabel: "Add news", status: "n-status" },
+    news: { fields: { "n-when": "when", "n-title": "title", "n-text": "text" }, add: "n-add", cancel: "n-cancel", addLabel: "Add news", status: "n-status" },
     events: { fields: { "e-when": "when", "e-title": "title", "e-text": "text" }, add: "e-add", cancel: "e-cancel", addLabel: "Add event", status: "e-status" }
   };
   function setEditing(key, i) {
@@ -188,17 +188,18 @@
   });
 
   $("n-add").addEventListener("click", function () {
-    var when = $("n-when").value.trim(), text = $("n-text").value.trim();
-    if (!text) return status("n-status", "Write the news text first.", "err");
+    var when = $("n-when").value.trim(), title = $("n-title").value.trim(), text = $("n-text").value.trim();
+    if (!title && !text) return status("n-status", "Write a heading and the details first.", "err");
     lab.news = lab.news || [];
-    var i = editing.news, item = { when: when, text: text };
+    var i = editing.news, item = { when: when, title: title, text: text };
+    if (!title) delete item.title;
     if (i != null) {
-      var old = lab.news[i]; lab.news[i] = Object.assign({}, old, item);
-      return saveLab("Edit news: " + text.replace(/\*/g, "").slice(0, 60), "n-status").then(function () { setEditing("news", null); status("n-status", "Saved. Live in about 3–4 minutes.", "ok"); })
+      var old = lab.news[i]; lab.news[i] = Object.assign({}, old, item); if (!title) delete lab.news[i].title;
+      return saveLab("Edit news: " + (title || text).replace(/\*/g, "").slice(0, 60), "n-status").then(function () { setEditing("news", null); status("n-status", "Saved. Live in about 3–4 minutes.", "ok"); })
         .catch(function () { lab.news[i] = old; });
     }
     lab.news.unshift(item);
-    saveLab("Add news: " + text.replace(/\*/g, "").slice(0, 60), "n-status").then(function () { $("n-when").value = ""; $("n-text").value = ""; })
+    saveLab("Add news: " + (title || text).replace(/\*/g, "").slice(0, 60), "n-status").then(function () { $("n-when").value = ""; $("n-title").value = ""; $("n-text").value = ""; })
       .catch(function () { lab.news.shift(); });
   });
   $("e-add").addEventListener("click", function () {

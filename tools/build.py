@@ -327,7 +327,7 @@ def home():
     picks = [0, 5, 10, 14, 7, 1]
     hl_home = "".join(hl_button(HL[k], k) for k in picks if k < len(HL))
     pi = LAB["pi"]
-    news = "".join(f'<li><time>{E(n["when"]) or "&nbsp;"}</time><div class="what">{md(n["text"])}</div></li>' for n in LAB["news"])
+    news = "".join(f'<li><time>{E(n["when"]) or "&nbsp;"}</time><div class="what">{news_body(n)}</div></li>' for n in LAB["news"])
     ev = LAB["events"][0]
     news += f'<li><time>{E(ev["when"])}</time><div class="what"><b>{E(ev["title"])}</b><p>{E(ev["text"])}</p></div></li>'
     body = f"""
@@ -341,7 +341,7 @@ def home():
 <div><div class="carousel" aria-roledescription="carousel" aria-label="Research highlights"><div class="track">{slides}</div>
 <button type="button" class="nav prev" aria-label="Previous slide">‹</button><button type="button" class="nav next" aria-label="Next slide">›</button>
 <div class="dots">{dots}</div></div>
-{f'<a class="latest" href="news.html"><span class="tag">Latest</span><span>{md(latest["text"])}</span></a>' if latest else ''}</div>
+{f'<a class="latest" href="news.html"><span class="tag">Latest</span><span>{E(latest["title"]) if latest.get("title") else md(latest["text"])}</span></a>' if latest else ''}</div>
 </div></div>
 <div class="wrap">
 <section><div class="eyebrow">Research platform</div><h2 class="sec">From molecules to systems</h2>
@@ -468,8 +468,15 @@ def publications():
     return page("publications.html", "Publications", f"{len(pubs)} publications of the TeNSorE Lab, IIT Kharagpur, with search and filters.", body)
 
 
+def news_body(n):
+    """A news item: optional heading in bold, then the details."""
+    if n.get("title"):
+        return f'<b>{E(n["title"])}</b>' + (f'<p>{md(n["text"])}</p>' if n.get("text") else "")
+    return md(n.get("text", ""))
+
+
 def news():
-    nl = "".join(f'<li><time>{E(n["when"]) or "&nbsp;"}</time><div class="what">{md(n["text"])}</div></li>' for n in LAB["news"])
+    nl = "".join(f'<li><time>{E(n["when"]) or "&nbsp;"}</time><div class="what">{news_body(n)}</div></li>' for n in LAB["news"])
     ev = "".join(f'<li><time>{E(e["when"])}</time><div class="what"><b>{E(e["title"])}</b>{f"<p>{E(e[chr(116)+chr(101)+chr(120)+chr(116)])}</p>" if e["text"] else ""}</div></li>' for e in LAB["events"])
     lc = LAB["lectures"]
     body = phead("News & Events", "News and events", "Milestones, workshops the lab has organised, and open lecture material.") + f"""
