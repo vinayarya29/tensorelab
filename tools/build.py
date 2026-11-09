@@ -231,7 +231,7 @@ def page(fname, title, desc, body):
 </main>
 <footer><div class="wrap">
 <span>{E(L['name'])} · <a href="{L['school_url']}">{E(L['school'])}</a>, <a href="{L['institute_url']}">IIT Kharagpur</a></span>
-<span><a href="mailto:{L['email']}">{L['email']}</a> · Updated {TODAY.strftime('%B %Y')} · <a href="{L['linkedin']}">LinkedIn</a> · <a href="admin.html" rel="nofollow">Admin</a></span>
+<span><a href="mailto:{L['email']}">{L['email']}</a> · Updated {TODAY.strftime('%B %Y')} · <a href="{L['linkedin']}">LinkedIn</a>{f' · <a href="{E(submit_url())}" target="_blank" rel="noopener">Submit news</a>' if submit_url() else ''} · <a href="admin.html" rel="nofollow">Admin</a></span>
 </div></footer>
 </body>
 </html>
@@ -471,8 +471,19 @@ def publications():
 def news_body(n):
     """A news item: optional heading in bold, then the details."""
     if n.get("title"):
-        return f'<b>{E(n["title"])}</b>' + (f'<p>{md(n["text"])}</p>' if n.get("text") else "")
-    return md(n.get("text", ""))
+        body = f'<b>{E(n["title"])}</b>' + (f'<p>{md(n["text"])}</p>' if n.get("text") else "")
+    else:
+        body = md(n.get("text", ""))
+    link = (n.get("link") or "").strip()
+    if link.lower().startswith(("http://", "https://")):
+        body += f' <a href="{E(link)}" target="_blank" rel="noopener">Read&nbsp;more&nbsp;→</a>'
+    return body
+
+
+def submit_url():
+    """The Google Form where lab members send news (admin page → Requests settings)."""
+    u = (LAB.get("requests") or {}).get("form", "")
+    return u if u.startswith("https://") else ""
 
 
 def news():
@@ -481,7 +492,8 @@ def news():
     lc = LAB["lectures"]
     body = phead("News & Events", "News and events", "Milestones, workshops the lab has organised, and open lecture material.") + f"""
 <div class="wrap">
-<section><div class="eyebrow">Group news</div><h2 class="sec">News</h2><ul class="list">{nl}</ul></section>
+<section><div class="eyebrow">Group news</div><h2 class="sec">News</h2><ul class="list">{nl}</ul>
+{f'<p class="more">Lab members: <a href="{E(submit_url())}" target="_blank" rel="noopener">send news, awards, papers or photos for the website →</a></p>' if submit_url() else ''}</section>
 <section><div class="eyebrow">Organised by the lab</div><h2 class="sec">Workshops and events</h2><ul class="list">{ev}</ul></section>
 <section id="linkedin"><div class="eyebrow">Social media</div><h2 class="sec">On LinkedIn</h2>
 {li_widget()}

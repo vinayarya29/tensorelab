@@ -118,12 +118,100 @@
   });
   $("signout").addEventListener("click", function () { try { sessionStorage.removeItem(KEY); localStorage.removeItem(KEY); } catch (e) {} location.reload(); });
 
+  // ---------------------------------------------------------------- requests from lab members (Google Form)
+  // The form's Apps Script (tools/requests_form.gs) is deployed as a web app. It lists requests only for callers
+  // whose GitHub token can write to this repository, i.e. someone who opened this page with the admin password.
+  var rqData = [], rqDraft = null;
+  function rqCfg() { return (lab && lab.requests) || {}; }
+  function rqCall(action, extra) {
+    var body = Object.assign({ token: token, action: action }, extra || {});
+    // no Content-Type header -> a "simple" request, which Apps Script answers without a CORS preflight
+    return fetch(rqCfg().endpoint, { method: "POST", body: JSON.stringify(body) })
+      .then(function (r) { return r.json(); })
+      .then(function (j) { if (j.error) throw new Error(j.error); return j; });
+  }
+  function rqShowSetup(show) {
+    $("rq-setup").hidden = !show;
+    $("rq-form").value = rqCfg().form || ""; $("rq-endpoint").value = rqCfg().endpoint || "";
+  }
+  function rqLoad() {
+    var c = rqCfg();
+    $("rq-formlink").hidden = !c.form; if (c.form) $("rq-formlink").href = c.form;
+    if (!c.endpoint) { rqShowSetup(true); $("rq-box").hidden = true; return; }
+    $("rq-box").hidden = false;
+    status("rq-status", "Loading requests…");
+    rqCall("list").then(function (j) { rqData = j.requests || []; status("rq-status", ""); rqRender(); })
+      .catch(function (e) { status("rq-status", "Could not load requests: " + e.message + " (check the Web app URL in Settings)", "err"); });
+  }
+  function rqKgp(email) { return /@([a-z0-9-]+\.)*iitkgp\.ac\.in$/i.test(email || ""); }
+  function rqRender() {
+    var all = $("rq-all").checked, pending = rqData.filter(function (r) { return r.status === "pending"; });
+    $("rq-count").textContent = pending.length || "";
+    var show = all ? rqData : pending;
+    $("rq-list").innerHTML = show.length ? show.map(function (r) {
+      var done = r.status !== "pending";
+      return '<div class="rq' + (done ? " done" : "") + '" data-id="' + esc(r.id) + '"><div class="meta"><span class="ty">' + esc(r.type) + "</span><span>" + esc(r.when) + "</span>" +
+        "<span>from <b>" + esc(r.name) + "</b> &lt;" + esc(r.email) + "&gt;</span>" +
+        (rqKgp(r.email) ? '<span class="ok">✓ IIT KGP email</span>' : '<span class="warn">non-institute email</span>') +
+        "<span>sent " + esc(new Date(r.at).toLocaleString()) + "</span>" +
+        (done ? '<span class="' + (r.status === "published" ? "ok" : "warn") + '">' + esc(r.status) + "</span>" : "") + "</div>" +
+        "<h3>" + esc(r.title) + "</h3><p>" + esc(r.text) + "</p>" +
+        '<div class="links">' + (r.link ? '<a href="' + esc(r.link) + '" target="_blank" rel="noopener">Link ↗</a>' : "") +
+        (r.photo ? '<a href="' + esc(r.photo) + '" target="_blank" rel="noopener">Photo ↗</a>' : "") + "</div>" +
+        '<div class="actions">' + (done ? '<button data-rq="reopen">Move back to pending</button>' :
+          '<button class="primary" data-rq="news">Publish as news</button><button data-rq="event">Publish as event</button>' +
+          '<button data-rq="edit">Edit first</button><button class="danger" data-rq="decline">Decline</button>') + "</div></div>";
+    }).join("") : '<p class="hint" style="margin-top:12px">' + (all ? "No requests yet." : "No pending requests. 🎉") + "</p>";
+  }
+  function rqSet(id, st, note) {
+    status("rq-status", "Updating…");
+    return rqCall("set", { id: id, status: st, note: note || "" }).then(function () {
+      rqData.forEach(function (r) { if (r.id === id) { r.status = st; r.note = note || ""; } });
+      rqRender(); status("rq-status", st === "published" ? "Published, and the member was emailed." : st === "declined" ? "Declined, and the member was emailed." : "Moved back to pending.", "ok");
+    }).catch(function (e) { status("rq-status", "Saved on the site, but could not update the request: " + e.message, "err"); });
+  }
+  $("rq-list").addEventListener("click", function (ev) {
+    var b = ev.target.closest("button[data-rq]"); if (!b) return;
+    var id = b.closest(".rq").dataset.id, r = rqData.filter(function (x) { return x.id === id; })[0], op = b.dataset.rq;
+    if (!r) return;
+    var label = r.title.slice(0, 60);
+    if (op === "news") {
+      var item = { when: r.when, title: r.title, text: r.text }; if (r.link) item.link = r.link;
+      lab.news = lab.news || []; lab.news.unshift(item);
+      saveLab("Add news (request from " + r.name + "): " + label, "rq-status").then(function () { rqSet(id, "published"); }).catch(function () { lab.news.shift(); });
+    } else if (op === "event") {
+      lab.events = lab.events || []; lab.events.unshift({ when: r.when, title: r.title, text: r.text + (r.link ? " " + r.link : "") });
+      saveLab("Add event (request from " + r.name + "): " + label, "rq-status").then(function () { rqSet(id, "published"); }).catch(function () { lab.events.shift(); });
+    } else if (op === "edit") {
+      setEditing("news", null);
+      $("n-when").value = r.when; $("n-title").value = r.title; $("n-text").value = r.text;
+      rqDraft = { id: id, link: r.link };
+      status("n-status", "Loaded the request from " + r.name + ". Adjust it and press Add news; the request is then marked published.");
+      $("n-add").scrollIntoView({ block: "center", behavior: "smooth" }); $("n-title").focus();
+    } else if (op === "decline") {
+      var note = prompt("Decline this request? Optional note for " + r.name + " (sent by email):", "");
+      if (note === null) return;
+      rqSet(id, "declined", note);
+    } else if (op === "reopen") rqSet(id, "pending");
+  });
+  $("rq-reload").addEventListener("click", rqLoad);
+  $("rq-all").addEventListener("change", rqRender);
+  $("rq-config").addEventListener("click", function (e) { e.preventDefault(); rqShowSetup($("rq-setup").hidden); });
+  $("rq-hide").addEventListener("click", function () { rqShowSetup(false); });
+  $("rq-save").addEventListener("click", function () {
+    var f = $("rq-form").value.trim(), u = $("rq-endpoint").value.trim();
+    if (f && !/^https:\/\/(docs\.google\.com\/forms\/|forms\.gle\/)/.test(f)) return status("rq-set-status", "The form link should start with https://docs.google.com/forms/ or https://forms.gle/", "err");
+    if (u && !/^https:\/\/script\.google\.com\/macros\/s\/[^/]+\/exec$/.test(u)) return status("rq-set-status", "The Web app URL should look like https://script.google.com/macros/s/…/exec", "err");
+    var old = lab.requests; lab.requests = { form: f, endpoint: u };
+    saveLab("Requests form settings", "rq-set-status").then(function () { rqShowSetup(false); rqLoad(); }).catch(function () { lab.requests = old; });
+  });
+
   function load() {
     return Promise.all([readJSON("data/lab.json"), readJSON("data/publication_themes.json"), readJSON("data/publications.json")])
       .then(function (r) {
         lab = r[0].data; labSha = r[0].sha; themesDoc = r[1].data; themesSha = r[1].sha; pubs = r[2].data;
         $("who").textContent = "Signed in. Editing " + REPO + " (" + pubs.publications.length + " publications, updated " + pubs.updated + ").";
-        render(); renderUnassigned(); runs();
+        render(); renderUnassigned(); runs(); rqLoad();
         $("raw").value = JSON.stringify(lab, null, 1);
       });
   }
@@ -157,6 +245,7 @@
   };
   function setEditing(key, i) {
     var f = FORMS[key]; editing[key] = i;
+    if (key === "news") rqDraft = null;  // leaving the form drops a half-done "Edit first" request
     Object.keys(f.fields).forEach(function (id) { $(id).value = i == null ? "" : (lab[key][i][f.fields[id]] || ""); });
     $(f.add).textContent = i == null ? f.addLabel : "Save changes";
     $(f.cancel).hidden = i == null;
@@ -198,9 +287,12 @@
       return saveLab("Edit news: " + (title || text).replace(/\*/g, "").slice(0, 60), "n-status").then(function () { setEditing("news", null); status("n-status", "Saved. Live in about 3–4 minutes.", "ok"); })
         .catch(function () { lab.news[i] = old; });
     }
+    if (rqDraft && rqDraft.link) item.link = rqDraft.link;
     lab.news.unshift(item);
-    saveLab("Add news: " + (title || text).replace(/\*/g, "").slice(0, 60), "n-status").then(function () { $("n-when").value = ""; $("n-title").value = ""; $("n-text").value = ""; })
-      .catch(function () { lab.news.shift(); });
+    saveLab("Add news: " + (title || text).replace(/\*/g, "").slice(0, 60), "n-status").then(function () {
+      $("n-when").value = ""; $("n-title").value = ""; $("n-text").value = "";
+      if (rqDraft) { var d = rqDraft; rqDraft = null; rqSet(d.id, "published"); }
+    }).catch(function () { lab.news.shift(); });
   });
   $("e-add").addEventListener("click", function () {
     var when = $("e-when").value.trim(), title = $("e-title").value.trim(), text = $("e-text").value.trim();

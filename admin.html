@@ -40,6 +40,19 @@
   .adm #locked .card { max-width: 640px; }
   .adm ol.steps { padding-left: 1.2em; color: var(--soft); font-size: .92em; }
   .adm ol.steps li { margin: 4px 0; }
+  .adm .rq { border: 1px solid var(--rule); border-radius: 12px; padding: 14px 16px; margin: 12px 0 0; background: #fff; }
+  .adm .rq.done { opacity: .6; }
+  .adm .rq .meta { font-size: .8em; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: center; }
+  .adm .rq .meta .ty { font-weight: 700; color: var(--accent-2); text-transform: uppercase; letter-spacing: .05em; }
+  .adm .rq .meta .ok { color: #1b7a43; font-weight: 600; } .adm .rq .meta .warn { color: #b9770e; font-weight: 600; }
+  .adm .rq h3 { margin: 6px 0 4px; font-size: 1.02em; }
+  .adm .rq p { margin: 0 0 6px; font-size: .92em; color: var(--soft); white-space: pre-wrap; }
+  .adm .rq .links { font-size: .86em; display: flex; gap: 14px; flex-wrap: wrap; }
+  .adm .rq .actions { margin-top: 10px; }
+  .adm .rq .actions button { padding: 5px 12px; font-size: .84em; }
+  .adm .rq-chk { display: inline-flex !important; gap: 6px; align-items: center; text-transform: none !important; letter-spacing: 0 !important; font-weight: 500 !important; margin: 0 !important; font-size: .9em !important; color: var(--soft) !important; }
+  .adm .rq-count { display: inline-block; min-width: 1.6em; padding: 1px 8px; border-radius: 999px; background: #b3261e; color: #fff; font-size: .62em; vertical-align: middle; text-align: center; }
+  .adm .rq-count:empty { display: none; }
   .adm .runs { font-size: .86em; color: var(--soft); margin: 8px 0 0; padding-left: 1.1em; }
   @media (max-width: 700px) { .adm { padding: 0 16px 40px; } .adm .row, .adm .items li { grid-template-columns: 1fr; } }
 </style>
@@ -86,6 +99,30 @@
 
 <div id="unlocked" hidden>
 <p class="status" id="who" style="margin-top:18px"></p>
+
+<!-- ---------------- requests ---------------- -->
+<section id="requests">
+  <h2>Requests from lab members <span class="rq-count" id="rq-count"></span></h2>
+  <p class="hint">Sent through the lab's Google Form. Members sign in with Google, so the email shown is verified. <b>Publish</b> adds the item to the site and emails the member; <b>Edit first</b> loads it into the News form below.</p>
+  <div class="card" id="rq-setup" hidden>
+    <ol class="steps">
+      <li>Open <a href="https://script.google.com/home/projects/create" target="_blank" rel="noopener">script.google.com → New project</a> and paste the code from <a href="https://github.com/vinayarya29/tensorelab/blob/main/tools/requests_form.gs" target="_blank" rel="noopener">tools/requests_form.gs</a> (open it, then “Copy raw file”).</li>
+      <li>Select <code>setup</code> in the toolbar and press <b>Run</b>; allow the permissions. The log shows the <b>form link</b>.</li>
+      <li><b>Deploy → New deployment</b> → type <b>Web app</b>, Execute as <b>Me</b>, Who has access <b>Anyone</b> → Deploy → copy the <b>Web app URL</b>.</li>
+      <li>Paste both below and save.</li>
+    </ol>
+    <label for="rq-form">Form link (shared with lab members)</label><input type="text" id="rq-form" placeholder="https://docs.google.com/forms/d/e/…/viewform">
+    <label for="rq-endpoint">Web app URL</label><input type="text" id="rq-endpoint" placeholder="https://script.google.com/macros/s/…/exec">
+    <div class="actions"><button class="primary" id="rq-save">Save settings</button><button id="rq-hide">Close</button><span class="status" id="rq-set-status"></span></div>
+  </div>
+  <div id="rq-box">
+    <div class="actions" style="margin-top:0"><button id="rq-reload">Refresh</button>
+      <label class="rq-chk"><input type="checkbox" id="rq-all"> Show handled requests</label>
+      <a href="#" id="rq-config">Settings</a><a href="#" id="rq-formlink" target="_blank" rel="noopener" hidden>Open the form ↗</a>
+      <span class="status" id="rq-status"></span></div>
+    <div id="rq-list"></div>
+  </div>
+</section>
 
 <!-- ---------------- news ---------------- -->
 <section id="news">
