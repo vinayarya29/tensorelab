@@ -121,6 +121,18 @@
       <a href="#" id="rq-config">Settings</a><a href="#" id="rq-formlink" target="_blank" rel="noopener" hidden>Open the form ↗</a>
       <span class="status" id="rq-status"></span></div>
     <div id="rq-list"></div>
+    <div class="card" id="duty" style="margin-top:18px">
+      <h2 style="font-size:1.1em">Weekly admin duty</h2>
+      <p class="hint">Emails about new requests go only to the person on duty that week, never to anyone else. The rota repeats in this order, one person per week (Monday–Sunday); each Monday the person on duty also gets a short hand-over email listing pending requests. Leave it empty to send no emails. Names and emails are kept privately in the Google script, not on the website.</p>
+      <ul class="items" id="duty-list"></ul>
+      <div class="row" style="margin-top:10px"><div><label for="d-name">Name</label><input type="text" id="d-name" placeholder="Riya Sen"></div>
+      <div><label for="d-email">Email</label><input type="text" id="d-email" placeholder="riya@kgpian.iitkgp.ac.in"></div></div>
+      <div class="actions"><button id="d-add">Add to rota</button></div>
+      <div class="row"><div><label for="d-start">Rota starts (week 1)</label><input type="text" id="d-start" placeholder="2026-11-09"></div>
+      <div><label>Emails</label><label class="rq-chk"><input type="checkbox" id="d-instant" checked> An email for each new request</label>
+      <label class="rq-chk" style="margin-top:6px!important"><input type="checkbox" id="d-digest" checked> Monday hand-over email</label></div></div>
+      <div class="actions"><button class="primary" id="d-save">Save duty rota</button><span class="status" id="d-status"></span></div>
+    </div>
   </div>
 </section>
 

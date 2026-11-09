@@ -140,6 +140,7 @@
     if (!c.endpoint) { rqShowSetup(true); $("rq-box").hidden = true; return; }
     $("rq-box").hidden = false;
     status("rq-status", "Loading requests…");
+    dutyLoad();
     rqCall("list").then(function (j) { rqData = j.requests || []; status("rq-status", ""); rqRender(); })
       .catch(function (e) { status("rq-status", "Could not load requests: " + e.message + " (check the Web app URL in Settings)", "err"); });
   }
@@ -193,6 +194,44 @@
       if (note === null) return;
       rqSet(id, "declined", note);
     } else if (op === "reopen") rqSet(id, "pending");
+  });
+  // ---- weekly admin duty (stored in the Google script, not in the public repository)
+  var duty = { rota: [], start: "", instant: true, digest: true }, dutyCur = -1, dutyNext = -1;
+  function mondayISO(d) { d = new Date(d.getFullYear(), d.getMonth(), d.getDate()); d.setDate(d.getDate() - ((d.getDay() + 6) % 7)); return d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2); }
+  function dutyRender() {
+    var n = duty.rota.length;
+    $("duty-list").innerHTML = n ? duty.rota.map(function (p, i) {
+      var tag = i === dutyCur ? '<b style="color:#1b7a43">This week</b>' : i === dutyNext ? "Next week" : "Week " + (i + 1);
+      return "<li><time>" + tag + "</time><span>" + esc(p.name) + ' <span class="status">&lt;' + esc(p.email) + "&gt;</span></span>" +
+        '<span class="ops"><button data-d="up" data-i="' + i + '"' + (i ? "" : " disabled") + '>↑</button><button data-d="down" data-i="' + i + '"' + (i < n - 1 ? "" : " disabled") + '>↓</button>' +
+        '<button data-d="del" data-i="' + i + '" class="danger">Remove</button></span></li>';
+    }).join("") : '<li><span></span><span class="status">Nobody on the rota, so no emails are sent.</span><span></span></li>';
+    $("d-start").value = duty.start || mondayISO(new Date()); $("d-instant").checked = duty.instant !== false; $("d-digest").checked = duty.digest !== false;
+  }
+  function dutyLoad() {
+    rqCall("getDuty").then(function (j) { duty = j.duty; dutyCur = j.current; dutyNext = j.next; dutyRender(); })
+      .catch(function (e) { status("d-status", "Could not load the rota: " + e.message + " (update the Google script to the latest version)", "err"); });
+  }
+  $("duty-list").addEventListener("click", function (ev) {
+    var b = ev.target.closest("button[data-d]"); if (!b) return;
+    var i = +b.dataset.i, r = duty.rota;
+    if (b.dataset.d === "del") r.splice(i, 1); else { var j = b.dataset.d === "up" ? i - 1 : i + 1, t = r[i]; r[i] = r[j]; r[j] = t; }
+    dutyCur = dutyNext = -1; dutyRender(); status("d-status", "Not saved yet: press Save duty rota.");
+  });
+  $("d-add").addEventListener("click", function () {
+    var name = $("d-name").value.trim(), email = $("d-email").value.trim();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return status("d-status", "Enter a valid email address.", "err");
+    duty.rota.push({ name: name, email: email }); $("d-name").value = $("d-email").value = "";
+    dutyCur = dutyNext = -1; dutyRender(); status("d-status", "Not saved yet: press Save duty rota.");
+  });
+  $("d-save").addEventListener("click", function () {
+    var start = $("d-start").value.trim();
+    if (start && !/^\d{4}-\d{2}-\d{2}$/.test(start)) return status("d-status", "Write the start date as YYYY-MM-DD.", "err");
+    status("d-status", "Saving…");
+    rqCall("setDuty", { duty: { rota: duty.rota, start: start, instant: $("d-instant").checked, digest: $("d-digest").checked } })
+      .then(function (j) { duty = j.duty; dutyCur = j.current; dutyNext = j.next; dutyRender();
+        status("d-status", duty.rota.length ? "Saved. On duty this week: " + (duty.rota[dutyCur].name || duty.rota[dutyCur].email) + "." : "Saved. No emails will be sent.", "ok"); })
+      .catch(function (e) { status("d-status", "Not saved: " + e.message, "err"); });
   });
   $("rq-reload").addEventListener("click", rqLoad);
   $("rq-all").addEventListener("change", rqRender);
