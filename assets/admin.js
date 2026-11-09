@@ -129,10 +129,10 @@
   }
 
   // ---------------------------------------------------------------- lists (news, events)
-  function listHTML(arr, fmt) {
+  function listHTML(arr, fmt, editable) {
     if (!arr.length) return '<li><span></span><span class="status">Nothing yet.</span><span></span></li>';
     return arr.map(function (x, i) {
-      return "<li>" + fmt(x) + '<span class="ops"><button data-op="up" data-i="' + i + '" ' + (i ? "" : "disabled") + ' title="Move up">↑</button>' +
+      return "<li>" + fmt(x) + '<span class="ops">' + (editable ? '<button data-op="edit" data-i="' + i + '" title="Edit">Edit</button>' : "") + '<button data-op="up" data-i="' + i + '" ' + (i ? "" : "disabled") + ' title="Move up">↑</button>' +
         '<button data-op="down" data-i="' + i + '" ' + (i < arr.length - 1 ? "" : "disabled") + ' title="Move down">↓</button>' +
         '<button data-op="del" data-i="' + i + '" class="danger" title="Delete">Delete</button></span></li>';
     }).join("");
@@ -146,13 +146,31 @@
     $("li-list").innerHTML = listHTML(lab.linkedin_posts, function (u) {
       return '<time>Post</time><span><a href="https://www.linkedin.com/feed/update/' + esc(u) + '/" target="_blank" rel="noopener">' + esc(u) + "</a></span>";
     });
-    $("news-list").innerHTML = listHTML(lab.news || [], function (n) { return "<time>" + esc(n.when || "—") + "</time><span>" + md(n.text) + "</span>"; });
-    $("ev-list").innerHTML = listHTML(lab.events || [], function (e) { return "<time>" + esc(e.when) + "</time><span><b>" + esc(e.title) + "</b>" + (e.text ? "<br><span class=status>" + esc(e.text) + "</span>" : "") + "</span>"; });
+    $("news-list").innerHTML = listHTML(lab.news || [], function (n) { return "<time>" + esc(n.when || "—") + "</time><span>" + md(n.text) + "</span>"; }, true);
+    $("ev-list").innerHTML = listHTML(lab.events || [], function (e) { return "<time>" + esc(e.when) + "</time><span><b>" + esc(e.title) + "</b>" + (e.text ? "<br><span class=status>" + esc(e.text) + "</span>" : "") + "</span>"; }, true);
   }
+  // editing[key] = index of the item loaded into the form (null = the form adds a new item)
+  var editing = { news: null, events: null };
+  var FORMS = {
+    news: { fields: { "n-when": "when", "n-text": "text" }, add: "n-add", cancel: "n-cancel", addLabel: "Add news", status: "n-status" },
+    events: { fields: { "e-when": "when", "e-title": "title", "e-text": "text" }, add: "e-add", cancel: "e-cancel", addLabel: "Add event", status: "e-status" }
+  };
+  function setEditing(key, i) {
+    var f = FORMS[key]; editing[key] = i;
+    Object.keys(f.fields).forEach(function (id) { $(id).value = i == null ? "" : (lab[key][i][f.fields[id]] || ""); });
+    $(f.add).textContent = i == null ? f.addLabel : "Save changes";
+    $(f.cancel).hidden = i == null;
+    status(f.status, i == null ? "" : "Editing item " + (i + 1) + " — change it and press Save changes.");
+    if (i != null) { $(Object.keys(f.fields)[1]).focus(); $(f.add).scrollIntoView({ block: "center", behavior: "smooth" }); }
+  }
+  $("n-cancel").addEventListener("click", function () { setEditing("news", null); });
+  $("e-cancel").addEventListener("click", function () { setEditing("events", null); });
   function wireList(listId, key, label, statusId) {
     $(listId).addEventListener("click", function (ev) {
       var b = ev.target.closest("button"); if (!b) return;
       var arr = lab[key], i = +b.dataset.i, op = b.dataset.op, msg;
+      if (op === "edit") return setEditing(key, i);
+      if (key in editing && editing[key] != null) setEditing(key, null);  // list order changes; drop a half-done edit
       if (op === "del") { if (!confirm("Delete this " + label + "?")) return; msg = "Delete " + label + ": " + String(arr[i].title || arr[i].text || arr[i]).slice(0, 60); arr.splice(i, 1); }
       else { var j = op === "up" ? i - 1 : i + 1; var t = arr[i]; arr[i] = arr[j]; arr[j] = t; msg = "Reorder " + label + "s"; }
       saveLab(msg, statusId).catch(function () { load(); });
@@ -172,14 +190,28 @@
   $("n-add").addEventListener("click", function () {
     var when = $("n-when").value.trim(), text = $("n-text").value.trim();
     if (!text) return status("n-status", "Write the news text first.", "err");
-    lab.news = lab.news || []; lab.news.unshift({ when: when, text: text });
+    lab.news = lab.news || [];
+    var i = editing.news, item = { when: when, text: text };
+    if (i != null) {
+      var old = lab.news[i]; lab.news[i] = Object.assign({}, old, item);
+      return saveLab("Edit news: " + text.replace(/\*/g, "").slice(0, 60), "n-status").then(function () { setEditing("news", null); status("n-status", "Saved. Live in about 3–4 minutes.", "ok"); })
+        .catch(function () { lab.news[i] = old; });
+    }
+    lab.news.unshift(item);
     saveLab("Add news: " + text.replace(/\*/g, "").slice(0, 60), "n-status").then(function () { $("n-when").value = ""; $("n-text").value = ""; })
       .catch(function () { lab.news.shift(); });
   });
   $("e-add").addEventListener("click", function () {
     var when = $("e-when").value.trim(), title = $("e-title").value.trim(), text = $("e-text").value.trim();
     if (!when || !title) return status("e-status", "Give the event a date and a title.", "err");
-    lab.events = lab.events || []; lab.events.unshift({ when: when, title: title, text: text });
+    lab.events = lab.events || [];
+    var i = editing.events, item = { when: when, title: title, text: text };
+    if (i != null) {
+      var old = lab.events[i]; lab.events[i] = Object.assign({}, old, item);
+      return saveLab("Edit event: " + title.slice(0, 60), "e-status").then(function () { setEditing("events", null); status("e-status", "Saved. Live in about 3–4 minutes.", "ok"); })
+        .catch(function () { lab.events[i] = old; });
+    }
+    lab.events.unshift(item);
     saveLab("Add event: " + title.slice(0, 60), "e-status").then(function () { $("e-when").value = ""; $("e-title").value = ""; $("e-text").value = ""; })
       .catch(function () { lab.events.shift(); });
   });

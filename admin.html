@@ -90,12 +90,12 @@
 <!-- ---------------- news ---------------- -->
 <section id="news">
   <h2>News</h2>
-  <p class="hint">Newest first. The first item also appears as “Latest” on the home page. Use <code>**bold**</code> for names.</p>
+  <p class="hint">Newest first. The first item also appears as “Latest” on the home page. Use <code>**bold**</code> for names. Press <b>Edit</b> on an item to change it.</p>
   <ul class="items" id="news-list"></ul>
   <div class="card" style="margin-top:14px">
     <div class="row"><div><label for="n-when">When</label><input type="text" id="n-when" placeholder="2026-11 or Nov 2026"></div>
     <div><label for="n-text">Text</label><input type="text" id="n-text" placeholder="**Name** received the … award."></div></div>
-    <div class="actions"><button class="primary" id="n-add">Add news</button><span class="status" id="n-status"></span></div>
+    <div class="actions"><button class="primary" id="n-add">Add news</button><button id="n-cancel" hidden>Cancel edit</button><span class="status" id="n-status"></span></div>
   </div>
 </section>
 
@@ -108,7 +108,7 @@
     <div class="row"><div><label for="e-when">When</label><input type="text" id="e-when" placeholder="12–14 March 2027"></div>
     <div><label for="e-title">Title</label><input type="text" id="e-title" placeholder="Workshop on …"></div></div>
     <label for="e-text">Description (optional)</label><textarea id="e-text" placeholder="Organised by …"></textarea>
-    <div class="actions"><button class="primary" id="e-add">Add event</button><span class="status" id="e-status"></span></div>
+    <div class="actions"><button class="primary" id="e-add">Add event</button><button id="e-cancel" hidden>Cancel edit</button><span class="status" id="e-status"></span></div>
   </div>
 </section>
 
